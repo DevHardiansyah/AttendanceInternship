@@ -1,0 +1,76 @@
+    <tbody>
+                                        @foreach (var item in Model) {
+                                        <tr>
+
+                                            @using (Html.BeginForm("Details", "Admin", FormMethod.Get))
+                                            { 
+                                                <input type="hidden" name="q" value="@(item.EMEMP)">
+                                                <td>    <button class="btn btn-primary  btn-icon"><i data-feather="eye" class="btn-icon-prepend "></i></button></td>
+                                            }
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.EMCMPY)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.EMEMP)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.EMNAME)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.EMSEXT)
+                                            </td>
+                                            @if (item.EMCOMM != null)
+                                            {
+                                                <td>
+                                                    @(item.EMCOMM.Substring(0,9))
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td></td>
+                                            } @if (item.ENDCONT != null)
+                                            {
+                                                <td>
+                                                    @(item.ENDCONT.Substring(0,10))
+                                                </td>
+                                                <td></td>
+
+
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                </td>
+                                                <td>
+                                                    @(item.OLDOCONT)
+                                                </td>
+                                            }
+
+
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.EMJOBA)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.EMDEPT)
+                                            </td>
+                                            <td>@Html.DisplayFor(modelItem => item.DEPT_NAME)</td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.EMLOC)
+                                            </td>
+                                            <td>@Html.DisplayFor(modelItem => item.SECT_NAME)</td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.EMJOBD)
+                                            </td>
+                                            <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.EMSUP_)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.SUPNAME)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.EMGRAD)
+                                            </td>
+                                        </tr>
+                                        }
+                                    </tbody>

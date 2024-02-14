@@ -1,0 +1,33 @@
+﻿<style>
+    #viewContent {
+        border-top: solid 2px #CCC;
+    }
+
+        #viewContent > form > span {
+            display: block;
+            color: red;
+        }
+
+        #viewContent h3 {
+            border-bottom: none;
+        }
+</style>
+@model ImportExcel.Models.ImportExcel
+@{ ViewBag.Title = "Import Excel File into Database Table using SqlBulkCopy Class";}
+<h1>Import Excel File into Database Table using SqlBulkCopy Class</h1>
+<h2>
+    <a href="http://www.yogihosting.com/import-excel-asp-net-mvc/">Read the tutorial on YogiHosting » </a>
+    @using (Html.BeginForm("Reset", "ImportExcel"))
+    {
+        <button id="reset">Reset »</button>
+    }
+</h2>
+<div id="viewContent">
+    <h3>@ViewBag.Result</h3>
+    @using (Html.BeginForm("Index", "ImportExcel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+        @Html.TextBoxFor(m => m.file, new { type = "file" })
+        <button id="submitButton" type="submit">Submit</button>
+        @Html.ValidationMessageFor(model => model.file)
+    }
+</div>

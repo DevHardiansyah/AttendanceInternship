@@ -1,0 +1,571 @@
+﻿@model IEnumerable<HRIS_Employee.Models.ALL_employee>
+
+@{
+    ViewBag.Title = "Detailkpk";
+    Layout = "~/Views/Shared/_dashboard.cshtml";
+}
+<style>
+    .body{
+    
+  margin: 0;
+  padding: 0;
+}
+  
+    @@media print {
+
+ .id_card {
+    height:100%; 
+    margin: 0 !important; 
+    padding: 0 !important;
+    overflow: hidden !important;
+      background-color: whitesmoke;
+        height: 92mm, width: 60mm color: black;
+  }
+
+}
+
+
+    .container-image {
+        height: 42mm;
+        width: 27mm;
+    }
+
+    .img-card-id {
+        height: 33mm, width: 15mm
+    }
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-description">
+                    Master All(Staff and non-staff) <br>  <a href="@Url.Action("createNewKpk","Employee")" class="btn btn-sm btn-primary">Create new</a>
+
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="table-kpk-management">
+                        <thead>
+                            <tr>
+                                <th>Action</th>
+                                <th>kpk</th>
+                                <th>Employee Name</th>
+                                <th>Departement</th>
+                                <th>Section</th>
+                                <th>PS ID</th>
+
+                                <th>Bus Route</th>
+                                <th>Label 1</th>
+                                <th>Label 2</th>
+                                <th>Label 3</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td><button class="btn btn-icon btn-primary" data-toggle="modal" data-target="#editData"><i data-feather="edit"></i></button>  <button type="button " class="btn btn-icon btn-danger btn-round" onclick="printDiv()"><i data-feather="printer"></i></button></td>
+                                    <td>@item.EMEMP</td>
+                                    <td>@item.EMNAME</td>
+                                    <td>@item.DEPT_NAME</td>
+                                    <td>@item.SECT_NAME</td>
+
+                                    @if (item.PSID != null)
+                                    {
+                                        <td class="text-center text-success"><i data-feather="check-circle"></i><hr><br>@item.PSID</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="text-center text-warning"><i data-feather="x-circle"></i></td>
+                                    }
+                                    @if (item.EMBUSR != null && item.EMBUSR != "")
+                                    {
+                                        <td class="text-center text-success"><i data-feather="check-circle"></i><hr><br>@item.EMBUSR</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="text-center text-warning"><i data-feather="x-circle"></i></td>
+                                    }
+                                    @if (item.LABEL_1 != null)
+                                    {
+                                        <td class="text-center text-success"><i data-feather="check-circle"></i><hr><br>@item.LABEL_1</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="text-center text-warning"><i data-feather="x-circle"></i></td>
+                                    }
+                                    @if (item.LABEL_2 != null)
+                                    {
+                                        <td class="text-center text-success"><i data-feather="check-circle"></i><hr><br>@item.LABEL_2</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="text-center text-warning"><i data-feather="x-circle"></i></td>
+                                    }
+                                    @if (item.LABEL_3 != null)
+                                    {
+                                        <td class="text-center text-success"><i data-feather="check-circle"></i><hr><br>@item.LABEL_3</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="text-center text-warning"><i data-feather="x-circle"></i></td>
+                                    }
+                                </tr>
+
+
+
+                                @*  <!-- Modal --> *@
+                                <div class="modal fade" id="editData" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Update Data @item.EMNAME</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="" method="post">
+                                                    @Html.AntiForgeryToken()
+                                                    <input type="hidden" name="EMEMP" value="@item.EMEMP">
+                                                   
+                                                    <div class="form-group">
+                                                        <label for="">Bus Route</label>
+                                                        <select class="form-control" name="EMBUSR" id="EMBUSR" >
+                                                            <option value=" " disabled selected>Choose Bus Route</option>
+                                                            <option value="BKSA">BKSA</option>
+                                                            <option value="BKSB">BKSB</option>
+                                                            <option value="BKSC">BKSC</option>
+                                                            <option value="BKSD">BKSD</option>
+                                                            <option value="CBR">CBR</option>
+                                                            <option value="CBT">CBT</option>
+                                                            <option value="CKR">CKR</option>
+                                                            <option value="CKRB">CKRB</option>
+                                                            <option value="JKTA">JKTA</option>
+                                                            <option value="JKTB">JKTB</option>
+                                                            <option value="KRWA">KRWA</option>
+                                                            <option value="KRWA">KRWB</option>
+                                             
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="">Label 1</label>
+                                                        <select class="form-control" name="LABEL_1" id="LABEL_1" onclick="changeLabel2()">
+                                                            <option value=" " disabled selected>Choose Label 1</option>
+                                                            <option value="LAB">LAB</option>
+                                                            <option value="FG">FG</option>
+                                                            <option value="RCV">RCV</option>
+                                                            <option value="LOTO">LOTO</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="">Label 2</label>
+                                                         <select class="form-control" name="LABEL_2" id="LABEL_2" >
+                                                             <option value=" " disabled selected>Choose Label 2</option>
+                                                            <option value="LAB">LAB</option>
+                                                            <option value="FG">FG</option>
+                                                            <option value="RCV">RCV</option>
+                                                            <option value="LOTO">LOTO</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="">Label 3</label>
+                                                        <input type="text" name="LABEL_3" value="@item.LABEL_3" class="form-control">
+                                                    </div>
+
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            }
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3" style="display: none;">
+        <div class="card">
+            <div class="card-body" style=" font-family: Arial black!important" id="id_card_body">
+
+                <div class="id_card" id="id_card" style="margin: auto;  font-family: Arial Black !important">
+                    <img src="~/Content/Images/Label/Mattel_logo.png"  margin-left: 2px;" width="60 " height="60 " alt=" ">
+
+                    @foreach (var item in Model)
+                    {
+                        @* Genarate Barcode  *@
+
+                        <span style="display: none;" id="generate__barcode">@item.EMEMP</span>
+
+
+                        @* Genarate id card for Staff Only  *@
+                        if (@item.EMPAYT == "M")
+                        {
+                            <div class="card-body">
+                                <center style="margin-right: -70px; margin-top: -50px; font-family: Arial !important">
+                                    @* Header *@
+                                    <h3>KPK<br> MATTEL INDONESIA</h3>
+
+
+
+                                    @* Section LABEL Staff *@
+                                    @* if the total label is 4 *@
+
+
+
+                                    @* @if ( item.LABEL_1 != null && item.LABEL_1 != "" && item.LABEL_2 != null && item.LABEL_2 != "" &&  item.LABEL_3 != null && item.LABEL_3 != "")
+                                    {
+                                       
+                                        <div class="" style="margin-left: -270px;  margin-top:-15px; font-size: 26px; font-weight: normal;">
+                                            <image width="47" height="40" src="~/Content/images/Label/@(item.LABEL_1 +".jpg")">
+                                        </div>
+                                     
+
+                                     
+
+                                        <div class="" style="margin-left: -270px;  margin-top:15px; font-size: 26px; font-weight: normal;">
+                                            <image width="47" height="40" src="~/Content/images/Label/@(item.LABEL_2 +".jpg")">
+                                        </div>
+
+
+                                      
+
+                                          <div class="" style="margin-left: -270px;  margin-top:15px; font-size: 26px; font-weight: normal; position: relative;
+                                            text-align: center;
+                                        ">
+                                                    <image width="47" height="40" src="~/Content/images/Label/LABEL3.png"><p style="position: absolute;
+                                                    top: 50%;
+                                                    left: 50%;
+                                                    font-size: 18px;
+                                                    color:white !important;
+                                                    font-weight:bold;
+                                                    transform: translate(-50%, -125%); ">2020</p>
+                                                </div>
+                                     } *@
+
+
+
+
+                                   
+                                       @* BUS ROUTE *@
+                                       @if(item.EMBUSR != null && item.EMBUSR != "")
+                                       {
+                                           <div class="" style="margin-left: -270px;  margin-top:-15px; font-size: 26px; font-weight: normal;">
+                                             <image width="47" height="35" src="~/Content/images/Label/@(item.EMBUSR +".png")">
+                                            </div>
+                                       }else
+                                       {
+                                           <div class="" style="margin-left: -270px;  margin-top:-15px; font-size: 26px; font-weight: normal;">
+                                            <image width="47" height="35" src="~/Content/images/Label/DEFAULT.png">
+                                           </div>
+                                       }
+                                     
+
+                                         @* LABEL 1 *@
+                                        @if(item.LABEL_1 != null && item.LABEL_2 != "")
+                                        {
+                                             <div class="" style="margin-left: -270px;  margin-top:5px; font-size: 26px; font-weight: normal;">
+                                                <image width="47" height="35" src="~/Content/images/Label/@(item.LABEL_1+".jpg")">
+                                             </div>
+                                        }
+                                        else
+                                        {
+                                             <div class="" style="margin-left: -270px;  margin-top:5px; font-size: 26px; font-weight: normal;">
+                                                <image width="47" height="35" src="~/Content/images/Label/DEFAULT.png">
+                                            </div>
+                                        }
+                                       
+
+                                           @* LABEL 2 *@
+                                        @if(item.LABEL_2 != null && item.LABEL_2 != "")
+                                        {
+                                             <div class="" style="margin-left: -270px;  margin-top:5px; font-size: 26px; font-weight: normal;">
+                                                <image width="47" height="35" src="~/Content/images/Label/@(item.LABEL_2 +".jpg")">
+                                            </div>
+                                        }else
+                                        {
+                                             <div class="" style="margin-left: -270px;  margin-top:5px; font-size: 26px; font-weight: normal;">
+                                                <image width="47" height="35" src="~/Content/images/Label/DEFAULT.png">
+                                            </div>
+                                        }
+                                    
+                                       
+
+
+                                         @* LABEL 3 *@
+                                        @if(item.LABEL_3 != null && item.LABEL_3 != "")
+                                        {
+                                            <div class="" style="margin-left: -270px;  margin-top:5px; font-size: 26px; font-weight: normal; position: relative;
+                                                text-align: center; ">
+                                            <image width="47" height="35"src="~/Content/images/Label/LABEL3.png"><p style="position: absolute;
+                                                        top: 50%;
+                                                        left: 50%;
+                                                        font-size: 18px;
+                                                        color:white !important;
+                                                        font-weight:bold;
+                                                        transform: translate(-50%, -130%); ">@DateTime.Now.Year</p>
+                                            </div>
+                                        }else
+                                        {
+                                            <div class="" style="margin-left: -270px;  margin-top:5px; font-size: 26px; font-weight: normal; position: relative;
+                                                text-align: center; ">
+                                            <image width="47" height="35" src="~/Content/images/Label/DEFAULT.png"><p style="position: absolute;
+                                                        top: 50%;
+                                                        left: 50%;
+                                                        font-size: 18px;
+                                                        color:white !important;
+                                                        font-weight:bold;
+                                                        transform: translate(-50%, -130%); ">@DateTime.Now.Year</p>
+                                            </div>
+                                        }
+                                          
+                               
+
+
+
+
+
+
+
+
+
+
+                                    <div class="container-image">
+                                     
+                                      
+                                            <img src="//apckranefa01pv/HR/Photos/I00148.jpg")" class="img-card-id" style="margin-top: -158px; border:solid;display: inline-block;" alt="" width="120" height="155" alt="...">
+                                             <p style="font-size: 24px; margin-top: -1px;font-family: Arial  !important; font-weight: bold; " id="FIRST_NAME">@item.FIRST_NAME</p>
+                                                @* check last name *@
+                                                @if(@item.LAST_NAME != "" )
+                                                {
+                                                @* check last name *@
+                                                if(@item.LAST_NAME != "" )
+                                                {
+                                                       <p style="font-size: 15px; margin-top: -25px; font-family: Arial  !important ;font-weight: bold;" id="LAST_NAME">@item.LAST_NAME</p>
+                                                }
+                                                else
+                                                {
+                                                       <p style="font-size: 15px; margin-top: -15px; font-family: Arial  !important ;font-weight: bold; " id="LAST_NAME">Testing</p>
+                                                }
+                                             
+                                             
+                                                @* end check last name *@
+                                                }
+                                                else
+                                                {
+                                                       <p style="font-size: 15px; margin-top: -15px; font-family: Arial  !important ;font-weight: bold; " id="LAST_NAME">Testing</p>
+                                                }
+                                                @* end check last name *@
+                                                <p style="font-size: 16px;   margin-top: -15px; font-family: Arial  !important;font-weight: bold;">@item.EMEMP</p>
+                                                <p style="font-size: 14px;  margin-top: -15px; margin-bottom: 10px; font-family: Arial  !important;font-weight: bold;">PS ID : @item.PSID</p>
+                                                <svg id="employee_staff" style="margin-top: -50px!important"></svg>
+
+                                                @if(item.EMCOMM != null)
+                                                {
+                                                        if(item.EMCOMM.Length == 8)
+                                                        {
+                                                            <p style="font-size: 10px; font-family: Arial  !important ; font-weight: bold;"> @(item.EMCOMM.Substring(6,2))-@item.EMCOMM.Substring(4,2)-@item.EMCOMM.Substring(0,4)</p>
+
+                                                        }
+                                                        else if(item.EMCOMM.Length == 9)
+                                                        {
+                                                            <p style="font-size: 10px; font-family: Arial  !important ; font-weight: bold;"> @item.EMCOMM.Substring(2,2)-@(item.EMCOMM.Substring(0,1))-@item.EMCOMM.Substring(4,4)</p>
+                                                        }
+                                                }
+                                  
+                                      
+                                </center>
+                                 @* Section END Section IMAGE Staff *@
+                            </div>
+                        }
+                        @* Genarate id card Non-Staff   *@
+                        else if (@item.EMPAYT == "D")
+                        {
+                            <div class="card-body">
+                                <center style="margin-right: -70px; margin-top: -50px; font-family: Arial !important">
+                                 @* Header *@
+                                    <h3>KPK<br> MATTEL INDONESIA</h3>
+
+                                    @* Section LABEL Staff *@
+                                     @* BUS ROUTE *@
+                                       @if(item.EMBUSR != null && item.EMBUSR != "")
+                                       {
+                                           <div class="" style="margin-left: -270px;  margin-top:-15px; font-size: 26px; font-weight: normal;">
+                                             <image width="47" height="35" src="~/Content/images/Label/@(item.EMBUSR)@(item.EMBUSS +".png")">
+                                            </div>
+                                       }else
+                                       {
+                                           <div class="" style="margin-left: -270px;  margin-top:-15px; font-size: 26px; font-weight: normal;">
+                                            <image width="47" height="35" src="~/Content/images/Label/DEFAULT.png">
+                                           </div>
+                                       }
+                                     
+
+                                         @* LABEL 1 *@
+                                        @if(item.LABEL_1 != null && item.LABEL_2 != "")
+                                        {
+                                             <div class="" style="margin-left: -270px;  margin-top:5px; font-size: 26px; font-weight: normal;">
+                                                <image width="47" height="35" src="~/Content/images/Label/@(item.LABEL_1+".jpg")">
+                                             </div>
+                                        }
+                                        else
+                                        {
+                                             <div class="" style="margin-left: -270px;  margin-top:5px; font-size: 26px; font-weight: normal;">
+                                                <image width="47" height="35" src="~/Content/images/Label/DEFAULT.png">
+                                            </div>
+                                        }
+                                       
+
+                                           @* LABEL 2 *@
+                                        @if(item.LABEL_2 != null && item.LABEL_2 != "")
+                                        {
+                                             <div class="" style="margin-left: -270px;  margin-top:5px; font-size: 26px; font-weight: normal;">
+                                                <image width="47" height="35" src="~/Content/images/Label/@(item.LABEL_2 +".jpg")">
+                                            </div>
+                                        }else
+                                        {
+                                             <div class="" style="margin-left: -270px;  margin-top:5px; font-size: 26px; font-weight: normal;">
+                                                <image width="47" height="35" src="~/Content/images/Label/DEFAULT.png">
+                                            </div>
+                                        }
+                                    
+                                       
+
+
+                                         @* LABEL 3 *@
+                                        @if(item.LABEL_3 != null && item.LABEL_3 != "")
+                                        {
+                                            <div class="" style="margin-left: -270px;  margin-top:5px; font-size: 26px; font-weight: normal; position: relative;
+                                                text-align: center; ">
+                                            <image width="47" height="35"src="~/Content/images/Label/LABEL3.png"><p style="position: absolute;
+                                                        top: 50%;
+                                                        left: 50%;
+                                                        font-size: 18px;
+                                                        color:white !important;
+                                                        font-weight:bold;
+                                                        transform: translate(-50%, -130%); ">@DateTime.Now.Year</p>
+                                            </div>
+                                        }else
+                                        {
+                                            <div class="" style="margin-left: -270px;  margin-top:5px; font-size: 26px; font-weight: normal; position: relative;
+                                                text-align: center; ">
+                                            <image width="47" height="35" src="~/Content/images/Label/DEFAULT.png"><p style="position: absolute;
+                                                        top: 50%;
+                                                        left: 50%;
+                                                        font-size: 18px;
+                                                        color:white !important;
+                                                        font-weight:bold;
+                                                        transform: translate(-50%, -130%); ">@DateTime.Now.Year</p>
+                                            </div>
+                                        }
+                                          
+                               
+
+
+
+
+
+
+
+
+
+
+                                    <div class="container-image">
+                                            <img src="~/Content/images/Employee/@(item.EMEMP +".jpg")" class="img-card-id" style="margin-top: -158px; border:solid;display: inline-block;" alt="" width="120" height="155" alt="...">
+                                             <p style="font-size: 24px; margin-top: -1px;font-family: Arial  !important; font-weight: bold; " id="FIRST_NAME">@item.FIRST_NAME</p>
+                                                @* check last name *@
+                                                @if(@item.LAST_NAME != "" )
+                                                {
+                                                       <p style="font-size: 15px; margin-top: -25px; font-family: Arial  !important ;font-weight: bold;" id="LAST_NAME">@item.LAST_NAME</p>
+                                                }
+                                                else
+                                                {
+                                                       <p style="font-size: 15px; margin-top: -25px; font-family: Arial  !important ;font-weight: bold; color:white;" id="LAST_NAME">Testing</p>
+                                                }
+                                                <svg id="employee_staff" ></svg>
+                                                @if(item.EMCOMM != null)
+                                                {
+                                                        if(item.EMCOMM.Length == 21)
+                                                        {
+                                                            <p style="font-size: 10px; font-family: Arial  !important  ; font-weight: bold;"> @item.EMCOMM.Substring(2,2)-@("0" + item.EMCOMM.Substring(0,1))-@item.EMCOMM.Substring(5,4)</p>
+
+                                                        }
+                                                        else if(item.EMCOMM.Length == 22)
+                                                        {
+                                                                <p style="font-size: 10px; font-family: Arial  !important;   font-weight: bold;"> @item.EMCOMM.Substring(3,2)-@(item.EMCOMM.Substring(0,2))-@item.EMCOMM.Substring(6,4)</p>
+                                                        }else if(item.EMCOMM.Length == 20)
+                                                        {
+                                                            <p style="font-size: 10px; font-family: Arial  !important  ; font-weight: bold;"> @("0" +item.EMCOMM.Substring(0,1))-@("0" + item.EMCOMM.Substring(0,1))-@item.EMCOMM.Substring(5,4)</p>
+                                                        }
+                                                    
+                                                }
+                                        
+                                        
+                                </center>
+                            </div>
+                        }
+                        @* Genarate id card internship  *@
+
+                    }
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    @* layout for inter *@
+</div>
+<script>
+    // to check font size FIRST NAME AND LAST NAME
+    var getFirstName = document.getElementById('FIRST_NAME');
+    var getLengthF = getFirstName.innerHTML.length;
+    console.log(getLengthF)
+    if (getLengthF  >= 12) {
+
+        getFirstName.style.fontSize = "19px";
+        getFirstName.style.marginBottom = "25px";
+       
+    }
+    
+    var getLastName = document.getElementById('LAST_NAME');
+    var getLength = getLastName.innerHTML.length;
+    if (getLength > 15) {
+
+        getLastName.style.fontSize = "15px";
+        console.log(getLastName.style.fontSize)
+    }
+    else {
+        getLastName.style.fontSize = "15px";
+    }
+    function printDiv() {
+        // dinamis change based on type on employee
+        var divContents = document.getElementById("id_card").innerHTML;
+
+        var a = window.open('', '', '');
+
+        // wait until all resources loaded
+        a.document.write('<html>');
+
+        a.document.write(divContents);
+        a.document.write('</body></html>');
+
+        setTimeout(function () {
+            a.document.close();
+            a.print();
+        }, 250);
+
+
+    }
+</script>

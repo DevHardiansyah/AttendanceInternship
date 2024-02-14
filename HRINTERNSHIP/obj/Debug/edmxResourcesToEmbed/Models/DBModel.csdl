@@ -1,0 +1,973 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModels" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Departement">
+    <Key>
+      <PropertyRef Name="DEPT_CODE" />
+    </Key>
+    <Property Name="DEPT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DEPT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EMEMP" />
+    </Key>
+    <Property Name="EMCMPY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMEMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMSEXT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMCOMM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ENDCONT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OLDOCONT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMEMST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMJOBA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMDEPT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMLOC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMJOBD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMSUP_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SUPNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMBIRT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMMRST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMRELI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMGRAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMHTLC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMBUSR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMBUSS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMBUSL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMASN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMWKHR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMITST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMBEDU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMPAYT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMADD1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMADD2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMADD3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMEMAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMUNIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMUSID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMITAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMSTAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMTERM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMTREF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TOTALHOURS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TOTALYEARS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DETAILWORKEXPERIENCE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PSID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BUS_ROUTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EOC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LABEL_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LABEL_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LABEL_3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BPJS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BPJS_Ketenagakerjaan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EKTP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Intern_Activity">
+    <Key>
+      <PropertyRef Name="Activity_ID" />
+    </Key>
+    <Property Name="KPK" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Activity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Activity_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Intern_Attendance">
+    <Key>
+      <PropertyRef Name="Attendance_id" />
+    </Key>
+    <Property Name="Cardholder_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KPK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Clock" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Card" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Date_Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Exit_Clock" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Exit_Card" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Exit_Date_Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Time_Worked" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StatusATN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StatusABS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Attendance_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Intern_AttendanceApproval">
+    <Key>
+      <PropertyRef Name="Approval_ID" />
+    </Key>
+    <Property Name="KPK" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ApprovalMentor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ApprovalManager" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateApprovedMentor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateApprovedManager" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateSend" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StatusApproval" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StatusAttendance" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FilePatch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Periode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Approval_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Intern_MasterData">
+    <Key>
+      <PropertyRef Name="IDINTERN" />
+    </Key>
+    <Property Name="KPK" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="INTERNNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BUDGET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SECTION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PERSONALMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OFFICEMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UNIVERSITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAJOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJECT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MENTOR" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JOINDATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ENDDATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EXTEND" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SALARY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NIM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NIK" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GENDER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IDINTERN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Intern_Periode">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateFrom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateTo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="JOB_CODE" />
+    </Key>
+    <Property Name="JOB_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="permission">
+    <Key>
+      <PropertyRef Name="permission_id" />
+    </Key>
+    <Property Name="permission_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="permission_mod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="permission_description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Public_Holidays">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date_public_holidays" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date_description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date_mandatory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Type_mandatory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Id_mandatory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Section">
+    <Key>
+      <PropertyRef Name="SECT_CODE" />
+    </Key>
+    <Property Name="SECT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SECT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Departement_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SelfService_EmailService">
+    <Key>
+      <PropertyRef Name="KPK" />
+    </Key>
+    <Property Name="KPK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Updated_at" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_at" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email_from" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Temp_AttendanceIntern">
+    <Key>
+      <PropertyRef Name="Attendance_id" />
+    </Key>
+    <Property Name="Cardholder_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KPK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Clock" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Card" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Date_Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Exit_Clock" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Exit_Card" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Exit_Date_Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Time_Worked" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StatusATN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StatusABS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Attendance_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Temp_AttendanceInternIn">
+    <Key>
+      <PropertyRef Name="Attendance_id" />
+    </Key>
+    <Property Name="Cardholder_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KPK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Clock" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Card" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Date_Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Exit_Clock" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Exit_Card" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Exit_Date_Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Time_Worked" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Attendance_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Temp_AttendanceInternOut">
+    <Key>
+      <PropertyRef Name="Attendance_id" />
+    </Key>
+    <Property Name="Cardholder_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KPK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Clock" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Card" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Date_Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Exit_Clock" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Exit_Card" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Exit_Date_Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Time_Worked" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Attendance_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Temp_InternActivity">
+    <Key>
+      <PropertyRef Name="Activity_ID" />
+    </Key>
+    <Property Name="KPK" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Activity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Activity_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="roles_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="status_update_password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="nbr">
+    <Key>
+      <PropertyRef Name="nbr1" />
+    </Key>
+    <Property Name="nbr1" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role_permissions">
+    <Key>
+      <PropertyRef Name="unique_value" />
+    </Key>
+    <Property Name="role_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="permission_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="permission_mod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="unique_value" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="All_employee">
+    <Key>
+      <PropertyRef Name="EMCMPY" />
+      <PropertyRef Name="EMEMP" />
+    </Key>
+    <Property Name="EMCMPY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMEMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMDEPT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMLOC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMJOBD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMJOBA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMADD1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMADD2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMADD3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMASN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMBEDU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMBIRT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMBUSL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMBUSR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMBUSS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SUPNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMPAYT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMRELI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMSEXT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SECT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SECT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOB_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMITAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMUSID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMUNIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMITST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMWKHR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMHTLC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMGRAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMMRST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMSUP_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OLDOCONT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMEMST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ENDCONT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMCOMM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMTERM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMTREF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMSTAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TOTALHOURS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TOTALYEARS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DETAILWORKEXPERIENCE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LABEL_3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LABEL_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LABEL_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EOC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BUS_ROUTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PSID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BPJS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BPJS_Ketenagakerjaan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EKTP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMEMAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ListUser">
+    <Key>
+      <PropertyRef Name="EMEMP" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="role_id" />
+      <PropertyRef Name="EMCMPY" />
+    </Key>
+    <Property Name="EMEMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="roles_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMDEPT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMLOC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMJOBD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMJOBA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="role_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMPAYT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMSEXT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMCMPY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoleList">
+    <Key>
+      <PropertyRef Name="username" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Expr1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="roles_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Expr2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="role_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RolePermission">
+    <Key>
+      <PropertyRef Name="unique_value" />
+    </Key>
+    <Property Name="role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="unique_value" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="permission_description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="permission_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="role_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VwIntern_AbsLate">
+    <Key>
+      <PropertyRef Name="Attendance_id" />
+    </Key>
+    <Property Name="KPK" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Cardholder_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MENTOR" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ClockIn" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="DateClockIn" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Date_Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClockOut" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="DateClockOut" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Out" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_hour" Type="Int32" />
+    <Property Name="Attendance_id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" />
+    <Property Name="Date_public_holidays" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date_description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date_mandatory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Type_mandatory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Activity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Activity_ID" Type="Int32" />
+    <Property Name="Date" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="DBModel" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Departements" EntityType="Self.Departement" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Intern_Activity" EntityType="Self.Intern_Activity" />
+    <EntitySet Name="Intern_Attendance" EntityType="Self.Intern_Attendance" />
+    <EntitySet Name="Intern_AttendanceApproval" EntityType="Self.Intern_AttendanceApproval" />
+    <EntitySet Name="Intern_MasterData" EntityType="Self.Intern_MasterData" />
+    <EntitySet Name="Intern_Periode" EntityType="Self.Intern_Periode" />
+    <EntitySet Name="Jobs" EntityType="Self.Job" />
+    <EntitySet Name="permissions" EntityType="Self.permission" />
+    <EntitySet Name="Public_Holidays" EntityType="Self.Public_Holidays" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="Sections" EntityType="Self.Section" />
+    <EntitySet Name="SelfService_EmailService" EntityType="Self.SelfService_EmailService" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Temp_AttendanceIntern" EntityType="Self.Temp_AttendanceIntern" />
+    <EntitySet Name="Temp_AttendanceInternIn" EntityType="Self.Temp_AttendanceInternIn" />
+    <EntitySet Name="Temp_AttendanceInternOut" EntityType="Self.Temp_AttendanceInternOut" />
+    <EntitySet Name="Temp_InternActivity" EntityType="Self.Temp_InternActivity" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="nbrs" EntityType="Self.nbr" />
+    <EntitySet Name="Role_permissions" EntityType="Self.Role_permissions" />
+    <EntitySet Name="All_employee" EntityType="Self.All_employee" />
+    <EntitySet Name="ListUsers" EntityType="Self.ListUser" />
+    <EntitySet Name="RoleLists" EntityType="Self.RoleList" />
+    <EntitySet Name="RolePermissions" EntityType="Self.RolePermission" />
+    <EntitySet Name="VwIntern_AbsLate" EntityType="Self.VwIntern_AbsLate" />
+    <FunctionImport Name="Intern_ListAttendance" ReturnType="Collection(DBModels.Intern_ListAttendance_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="String" />
+      <Parameter Name="EndDate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Intern_ListAttendanceIntern" ReturnType="Collection(DBModels.Intern_ListAttendanceIntern_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="String" />
+      <Parameter Name="EndDate" Mode="In" Type="String" />
+      <Parameter Name="KPK" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Intern_ListAttendanceInternAll" ReturnType="Collection(DBModels.Intern_ListAttendanceInternAll_Result)">
+      <Parameter Name="KPK" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Intern_ListReportAttendanceForIntern" ReturnType="Collection(DBModels.Intern_ListReportAttendanceForIntern_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="String" />
+      <Parameter Name="EndDate" Mode="In" Type="String" />
+      <Parameter Name="KPK" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Intern_ListReportAttendanceIntern" ReturnType="Collection(DBModels.Intern_ListReportAttendanceIntern_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="String" />
+      <Parameter Name="EndDate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Intern_MonitorIntern" ReturnType="Collection(DBModels.Intern_MonitorIntern_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="String" />
+      <Parameter Name="EndDate" Mode="In" Type="String" />
+      <Parameter Name="MENTOR" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="VwIntern_MasterDataIntern" EntityType="DBModels.VwIntern_MasterDataIntern" />
+    <EntitySet Name="VwIntern_ReportPayment" EntityType="DBModels.VwIntern_ReportPayment" />
+    <EntitySet Name="Intern_DetailContract" EntityType="DBModels.Intern_DetailContract" />
+    <EntitySet Name="Historical_employee" EntityType="DBModels.Historical_employee" />
+    <EntitySet Name="Emergency_employee" EntityType="DBModels.Emergency_employee" />
+    <EntitySet Name="Intern_ListUsers" EntityType="DBModels.Intern_ListUsers" />
+    <EntitySet Name="NewCalendarEvents" EntityType="DBModels.NewCalendarEvent" />
+    <EntitySet Name="VwIntern_DashboardActLastWeek" EntityType="DBModels.VwIntern_DashboardActLastWeek" />
+    <EntitySet Name="EmployeeDresses" EntityType="DBModels.EmployeeDress" />
+    <EntitySet Name="GradeViews" EntityType="DBModels.GradeView" />
+    <EntitySet Name="SALARies" EntityType="DBModels.SALARY" />
+    <EntitySet Name="TotalHours" EntityType="DBModels.TotalHour" />
+    <EntitySet Name="Intern_AttendanceNew" EntityType="DBModels.Intern_AttendanceNew" />
+    <EntitySet Name="Report_UmurEmployee" EntityType="DBModels.Report_UmurEmployee" />
+  </EntityContainer>
+  <ComplexType Name="Intern_ListAttendance_Result">
+    <Property Type="String" Name="test" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="nbr" Nullable="false" />
+    <Property Type="String" Name="KPK" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Cardholder_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MENTOR" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MANAGER" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ClockIn" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="DateClockIn" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="Entry_Date_Time" Nullable="true" />
+    <Property Type="String" Name="ClockOut" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="DateClockOut" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="Entry_Out" Nullable="true" />
+    <Property Type="Int32" Name="total_hour" Nullable="true" />
+    <Property Type="Int32" Name="Attendance_id" Nullable="true" />
+    <Property Type="Int32" Name="id" Nullable="true" />
+    <Property Type="String" Name="Date_public_holidays" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Date_description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Date_mandatory" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Type_mandatory" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Activity" Nullable="true" />
+    <Property Type="Int32" Name="Activity_ID" Nullable="true" />
+    <Property Type="String" Name="Date" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="STATUS" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="Intern_ListAttendanceIntern_Result">
+    <Property Type="String" Name="test" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="nbr" Nullable="false" />
+    <Property Type="String" Name="KPK" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Cardholder_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MENTOR" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MANAGER" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ClockIn" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="DateClockIn" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="Entry_Date_Time" Nullable="true" />
+    <Property Type="String" Name="ClockOut" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="DateClockOut" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="Entry_Out" Nullable="true" />
+    <Property Type="Int32" Name="total_hour" Nullable="true" />
+    <Property Type="Int32" Name="Attendance_id" Nullable="true" />
+    <Property Type="Int32" Name="id" Nullable="true" />
+    <Property Type="String" Name="Date_public_holidays" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Date_description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Date_mandatory" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Type_mandatory" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Activity" Nullable="true" />
+    <Property Type="Int32" Name="Activity_ID" Nullable="true" />
+    <Property Type="String" Name="Date" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="STATUS" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="Intern_ListAttendanceInternAll_Result">
+    <Property Type="String" Name="KPK" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Cardholder_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MENTOR" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MANAGER" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ClockIn" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="DateClockIn" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="Entry_Date_Time" Nullable="true" />
+    <Property Type="String" Name="ClockOut" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="DateClockOut" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="Entry_Out" Nullable="true" />
+    <Property Type="Int32" Name="total_hour" Nullable="true" />
+    <Property Type="Int32" Name="Attendance_id" Nullable="false" />
+    <Property Type="Int32" Name="id" Nullable="true" />
+    <Property Type="String" Name="Date_public_holidays" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Date_description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Date_mandatory" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Type_mandatory" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Activity" Nullable="true" />
+    <Property Type="Int32" Name="Activity_ID" Nullable="true" />
+    <Property Type="String" Name="Date" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="STATUS" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="Intern_ListReportAttendanceForIntern_Result">
+    <Property Type="String" Name="test" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="nbr" Nullable="false" />
+    <Property Type="String" Name="KPK" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="INTERNNAME" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BUDGET" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DEPT" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="SECTION" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="DOB" Nullable="true" />
+    <Property Type="String" Name="PHONE" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="PERSONALMAIL" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="OFFICEMAIL" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="UNIVERSITY" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MAJOR" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PROJECT" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MENTOR" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MANAGER" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JOINDATE" Nullable="true" />
+    <Property Type="String" Name="ENDDATE" Nullable="true" />
+    <Property Type="String" Name="EXTEND" Nullable="true" />
+    <Property Type="String" Name="SALARY" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NIM" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="NIK" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ADDRESS" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="GENDER" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="IDINTERN" Nullable="false" />
+    <Property Type="String" Name="NAMEMENTOR" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DEPT_NAME" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SECT_NAME" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EMAILMENTOR" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="YOS" Nullable="true" />
+    <Property Type="Int32" Name="EOC" Nullable="true" />
+    <Property Type="String" Name="NAMEMANAGER" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EMAILMANAGER" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="STATUS" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ApprovalMentor" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DateApprovedMentor" Nullable="true" />
+    <Property Type="String" Name="ApprovalManager" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DateApprovedManager" Nullable="true" />
+    <Property Type="String" Name="DateSend" Nullable="true" />
+    <Property Type="String" Name="StatusApproval" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FilePatch" Nullable="true" />
+    <Property Type="String" Name="Periode" Nullable="true" />
+    <Property Type="Int32" Name="Approval_ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Intern_ListReportAttendanceIntern_Result">
+    <Property Type="String" Name="test" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="nbr" Nullable="false" />
+    <Property Type="String" Name="KPK" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="INTERNNAME" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BUDGET" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DEPT" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="SECTION" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="DOB" Nullable="true" />
+    <Property Type="String" Name="PHONE" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="PERSONALMAIL" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="OFFICEMAIL" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="UNIVERSITY" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MAJOR" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PROJECT" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MENTOR" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MANAGER" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JOINDATE" Nullable="true" />
+    <Property Type="String" Name="ENDDATE" Nullable="true" />
+    <Property Type="String" Name="EXTEND" Nullable="true" />
+    <Property Type="String" Name="SALARY" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NIM" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="NIK" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ADDRESS" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="GENDER" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="IDINTERN" Nullable="false" />
+    <Property Type="String" Name="NAMEMENTOR" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DEPT_NAME" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SECT_NAME" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EMAILMENTOR" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="YOS" Nullable="true" />
+    <Property Type="Int32" Name="EOC" Nullable="true" />
+    <Property Type="String" Name="NAMEMANAGER" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EMAILMANAGER" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="STATUS" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ApprovalMentor" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DateApprovedMentor" Nullable="true" />
+    <Property Type="String" Name="ApprovalManager" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DateApprovedManager" Nullable="true" />
+    <Property Type="String" Name="DateSend" Nullable="true" />
+    <Property Type="String" Name="StatusApproval" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FilePatch" Nullable="true" />
+    <Property Type="String" Name="Periode" Nullable="true" />
+    <Property Type="Int32" Name="Approval_ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Intern_MonitorIntern_Result">
+    <Property Type="String" Name="test" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="nbr" Nullable="false" />
+    <Property Type="String" Name="KPK" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Cardholder_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MENTOR" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MANAGER" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ClockIn" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="DateClockIn" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="Entry_Date_Time" Nullable="true" />
+    <Property Type="String" Name="ClockOut" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="DateClockOut" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="Entry_Out" Nullable="true" />
+    <Property Type="Int32" Name="total_hour" Nullable="true" />
+    <Property Type="Int32" Name="Attendance_id" Nullable="true" />
+    <Property Type="Int32" Name="id" Nullable="true" />
+    <Property Type="String" Name="Date_public_holidays" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Date_description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Date_mandatory" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Type_mandatory" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Activity" Nullable="true" />
+    <Property Type="Int32" Name="Activity_ID" Nullable="true" />
+    <Property Type="String" Name="Date" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="STATUS" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <EntityType Name="VwIntern_MasterDataIntern">
+    <Key>
+      <PropertyRef Name="IDINTERN" />
+    </Key>
+    <Property Name="KPK" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="INTERNNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BUDGET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SECTION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PERSONALMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OFFICEMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UNIVERSITY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MAJOR" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="PROJECT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MENTOR" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JOINDATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ENDDATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EXTEND" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SALARY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NIM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NIK" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GENDER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IDINTERN" Type="Int32" Nullable="false" />
+    <Property Name="NAMEMENTOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SECT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAILMENTOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YOS" Type="Int32" />
+    <Property Name="EOC" Type="Int32" />
+    <Property Name="NAMEMANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAILMANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VwIntern_ReportPayment">
+    <Key>
+      <PropertyRef Name="Report_ID" />
+    </Key>
+    <Property Name="KPK" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="INTERNNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BUDGET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SECT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SALARY" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Report_ID" Type="Int32" Nullable="false" />
+    <Property Name="TAtn" Type="Int32" />
+    <Property Name="TAbs" Type="Int32" />
+    <Property Name="HalfWorkHour" Type="Int32" />
+    <Property Name="TDay" Type="Int32" />
+    <Property Name="DatePeriod" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Allowance" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Intern_DetailContract">
+    <Key>
+      <PropertyRef Name="ID_Contract" />
+    </Key>
+    <Property Name="ID_Contract" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KPK" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DJoinDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DEndDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DExtend" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Historical_employee">
+    <Key>
+      <PropertyRef Name="id_historical" />
+    </Key>
+    <Property Name="employee_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="employee_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="plant" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="section" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="job_title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="updated_at" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="id_historical" Type="Int32" Nullable="false" />
+    <Property Name="plant_after" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="department_after" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="section_after" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="job_title_after" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Emergency_employee">
+    <Key>
+      <PropertyRef Name="Employee_code" />
+    </Key>
+    <Property Name="Employee_code" Type="Int32" Nullable="false" />
+    <Property Name="Emergency_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emergency_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emergency_relation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emergency_name_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emergency_contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Intern_ListUsers">
+    <Key>
+      <PropertyRef Name="IDINTERN" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="INTERNNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BUDGET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SECTION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PERSONALMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OFFICEMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UNIVERSITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAJOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROJECT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MENTOR" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JOINDATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ENDDATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EXTEND" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SALARY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NIM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NIK" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GENDER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IDINTERN" Type="Int32" Nullable="false" />
+    <Property Name="NAMEMENTOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SECT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAILMENTOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YOS" Type="Int32" />
+    <Property Name="EOC" Type="Int32" />
+    <Property Name="NAMEMANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAILMANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="KPK" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="roles_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="user_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="role_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMEMP" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="EMNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NewCalendarEvent">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="start" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="end" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="className" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="Intern_DashboardAVGIN_Result">
+    <Property Type="String" Name="KPK" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="nmonth" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="AvgIn" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="Intern_DashboardAVGOUT_Result">
+    <Property Type="String" Name="KPK" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="nmonth" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="AvgOut" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="Intern_DashboardHalfDay_Result">
+    <Property Type="Int32" Name="thalf" Nullable="true" />
+    <Property Type="String" Name="KPK" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="nmonth" Nullable="true" MaxLength="4000" />
+  </ComplexType>
+  <ComplexType Name="Intern_DashboardLate_Result">
+    <Property Type="Int32" Name="tlate" Nullable="true" />
+    <Property Type="String" Name="KPK" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="nmonth" Nullable="true" MaxLength="4000" />
+  </ComplexType>
+  <EntityType Name="VwIntern_DashboardActLastWeek">
+    <Key>
+      <PropertyRef Name="Attendance_id" />
+    </Key>
+    <Property Name="test" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="KPK" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Cardholder_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MENTOR" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ClockIn" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="DateClockIn" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Date_Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClockOut" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="DateClockOut" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Out" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_hour" Type="Int32" />
+    <Property Name="Attendance_id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" />
+    <Property Name="Date_public_holidays" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date_description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date_mandatory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Type_mandatory" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Activity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Activity_ID" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EmployeeDress">
+    <Key>
+      <PropertyRef Name="EMEMP" />
+    </Key>
+    <Property Name="EMEMP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Grade_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Grade_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dress_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Exception" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Expr1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Expr2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Expr3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Expr4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMGRAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GradeView">
+    <Key>
+      <PropertyRef Name="EMEMP" />
+    </Key>
+    <Property Name="grade_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="date_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="date_value" Type="Int32" />
+    <Property Name="grade_value" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMEMP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SALARY">
+    <Key>
+      <PropertyRef Name="EMEMP" />
+    </Key>
+    <Property Name="EMEMP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="salary1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TotalHour">
+    <Key>
+      <PropertyRef Name="EMEMP" />
+    </Key>
+    <Property Name="EMEMP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="periode_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Masa_kerja_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Masa_kerja_value" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Intern_AttendanceNew">
+    <Key>
+      <PropertyRef Name="Attendance_id" />
+    </Key>
+    <Property Name="test" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="KPK" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Cardholder_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MENTOR" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ClockIn" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="DateClockIn" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Date_Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClockOut" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="DateClockOut" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Out" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="total_hour" Type="Int32" />
+    <Property Name="Attendance_id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" />
+    <Property Name="Date_public_holidays" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date_description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date_mandatory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Type_mandatory" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Activity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Activity_ID" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Report_UmurEmployee">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="umur" Type="Int32" />
+    <Property Name="total" Type="Int32" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,443 @@
+﻿
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HR Portal</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSRF Token -->
+    <meta name="_token" content="r0jm9Q0QbgITp1DcHcjKFqH5SWUojoCavOOjQpPs">
+    <link rel="shortcut icon" href="">
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/Content/css/app.css">
+    <link rel="stylesheet" href="~/Content/plugins/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="~/Content/fonts/feather-font/css/iconfont.css">
+    <link rel="stylesheet" href="~/Content/plugins/fullcalendar/fullcalendar.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+    <style>
+        table-attendance-api .red {
+            color: #ff2a00
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .dot-safe {
+            height: 15px;
+            width: 15px;
+            background-color: #34cb34;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot-warning {
+            height: 15px;
+            width: 15px;
+            background-color: #cccc00;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot-danger {
+            height: 15px;
+            width: 15px;
+            background-color: #ff3300;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .activeLi {
+            background-color: #FFE1E1;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .notif-anchor {
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
+
+        .notif-list {
+            list-style: none;
+            border-bottom: 1px solid #E9E7E7;
+            margin-top: 5px;
+        }
+
+        #notificationList {
+            padding-left: 3px;
+            width: 310px;
+        }
+
+        .count-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 18px;
+            height: 18px;
+            background: #F47272;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .itemRowDisabled {
+            background-color: #ffe6b3;
+        }
+
+        /* When the body has the loading class, we turn
+        the scrollbar off with overflow:hidden */
+        body.loading {
+            overflow: hidden;
+        }
+
+            /* Anytime the body has the loading class, our
+        modal element will be visible */
+            body.loading .loader {
+                display: block;
+            }
+
+        .loader {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba( 255, 255, 255, .8 ) url('/images/ajax-loader.gif') 50% 50% no-repeat;
+        }
+
+        <!-- Make table border more bold -->
+        table.table-bordered {
+            border: 1px solid black;
+        }
+
+        table.table-bordered > thead > tr > th {
+            border: 1px solid black;
+        }
+
+        table.table-bordered > tbody > tr > td {
+            border: 1px solid black;
+        }
+
+        .clickable-row {
+            cursor: pointer;
+        }
+
+        #tab1 {
+            background-color: #bc5090;
+        }
+
+        #tab2 {
+            background-color: #ff6361;
+        }
+
+        #tab3 {
+            background-color: #ffa600;
+        }
+    </style>
+</head>
+
+<body data-base-url="" class="loaded">
+    <script src="/Scripts/js/spinner.js"></script>
+    <div class="main-wrapper" id="app">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="sidebar-brand">
+                    <img src="~/Content/images/Mattel_logo.png" alt="" width="45" height="45">
+                </a>
+                <div class="sidebar-toggler not-active">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="sidebar-body">
+                <ul class="nav">
+                    <li class="nav-item nav-category">Main</li>
+                    <li class="nav-item ">
+                        <a href="@Url.Action("Dashboard", "Employee" )" class="nav-link">
+                            <i class="link-icon" data-feather="grid"></i>
+                            <span class="link-title">Dashboard</span>
+                        </a>
+                    </li>
+                    @if (Session["permission_1"] != null && Session["permission_2"] != null)
+                    {
+                        <li class="nav-item nav-category">Public Holiday</li>
+                    }
+                    <li class="nav-item ">
+                        @if (Session["permission_2"] != null)
+                        {
+                        <li class="nav-item ">
+                            <a href="@Url.Action("Index" ,"PublicHoliday" )" class="nav-link">
+                                <i class="link-icon" data-feather="calendar"></i>
+                                <span class="link-title">Calendar</span>
+                            </a>
+                        </li>
+                    }
+                        </li>
+
+
+                        @if (Session["permission_30"] != null || Session["user_role"] == "1836" && Session["username"] == "918116")
+                        {
+                            <li class="nav-item nav-category">Admin Area</li>
+                            <li class="nav-item">
+                                <a href="@Url.Action("DataIntern", "Intern")" class="nav-link">
+                                    <i class="link-icon" data-feather="database"></i>
+                                    <span class="link-title">Database Intern</span>
+                                </a>
+                            </li>
+                            <div class="nav-item ">
+                                <a href="@Url.Action("ReportStructure", "Intern" )" class="nav-link">
+                                    <i class="link-icon" data-feather="git-pull-request"></i>
+                                    <span class="link-title">Hierarchy</span>
+                                </a>
+                            </div>
+                            <li class="nav-item">
+                                <a href="@Url.Action("Index", "Intern" )" class="nav-link ">
+                                    <i class="link-icon" data-feather="printer"></i>
+                                    <span class="link-title"> KPK Internship</span>
+                                </a>
+                            </li>
+                        }
+                        @if (Session["permission_31"] != null || Session["user_role"] == "1836" && Session["username"] == "918116")
+                        {
+                            <li class="nav-item nav-category">Intern Report</li>
+                            <li class="nav-item">
+                                <a href="@Url.Action("MasterAttendanceIntern", "Intern")" class="nav-link">
+                                    <i class="link-icon" data-feather="calendar"></i>
+                                    <span class="link-title">Master Attendance Intern</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="@Url.Action("DownloadReport", "Intern")" class="nav-link">
+                                    <i class="link-icon" data-feather="archive"></i>
+                                    <span class="link-title">Attendance Intern Report</span>
+                                </a>
+                            </li>
+                        }
+                        @if (Session["haveintern"] != null)
+                        {
+                            <li class="nav-item">
+                                <a href="@Url.Action("AttendanceIntern", "Intern")" class="nav-link">
+                                    <i class="link-icon" data-feather="monitor"></i>
+                                    <span class="link-title">Monitoring Intern</span>
+                                </a>
+                            </li>
+                        }
+                        @if (Session["permission_29"] != null)
+                        {
+                            <li class="nav-item nav-category">Attendance Intern</li>
+                            <li class="nav-item">
+                                <a href="@Url.Action("AttendanceIntern", "Intern")" class="nav-link">
+                                    <i class="link-icon" data-feather="calendar"></i>
+                                    <span class="link-title">Attendance</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="@Url.Action("DownloadReportIntern", "Intern")" class="nav-link">
+                                    <i class="link-icon" data-feather="archive"></i>
+                                    <span class="link-title">Attendance Report</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="@Url.Action("ProfileIntern", "Intern")" class="nav-link ">
+                                    <i class="link-icon" data-feather="users"></i>
+                                    <span class="link-title"> Intern Profile</span>
+                                </a>
+                            </li>
+                        }
+                        @if (Session["permission_9"] != null && Session["permission_11"] != null && Session["permission_13"] != null && Session["permission_12"] != null)
+                        {
+                            <li class="nav-item nav-category">DMS</li>
+                        }
+                        <li class="nav-item ">
+                            @if (Session["permission_9"] != null)
+                            {
+                            <li class="nav-item">
+                                <a href="@Url.Action("Allemployee", "Admin" )" class="nav-link ">
+                                    <i class="link-icon" data-feather="database"></i>
+                                    <span class="link-title"> Master Data</span>
+                                </a>
+                            </li>
+                        }
+                            @if (Session["permission_11"] != null)
+                            {
+                                <li class="nav-item ">
+                                    <a href="@Url.Action("Index", "Employees")" class="nav-link">
+                                        <i class="link-icon" data-feather="edit-3"></i>
+                                        <span class="link-title">Management Staff</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Details", "Admin" )?q=@Session["username"].ToString()" class="nav-link ">
+                                        <i class="link-icon" data-feather="users"></i>
+                                        <span class="link-title"> Employee Profile</span>
+                                    </a>
+                                </li>
+                            }
+                            @if (Session["permission_13"] != null)
+                            {
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Index", "Departements" )" class="nav-link">
+                                        <i class="link-icon" data-feather="grid"></i>
+                                        <span class="link-title">
+                                            Organizational Management
+                                        </span>
+                                    </a>
+                                </li>
+                            }
+                            </li>
+
+
+                            <li class="nav-item nav-category">
+
+                                @if (Session["permission_14"] != null)
+                                {
+                                    <p>Setting</p>
+                                <li class="nav-item">
+                                    <a href="/Role/Index" class="nav-link ">
+                                        <i class="link-icon" data-feather="layers"></i>
+                                        <span class="link-title">Role Management</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/SelfService/Index" class="nav-link ">
+                                        <i class="link-icon" data-feather="mail"></i>
+                                        <span class="link-title">Mail Setting</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/SelfService/ManagementPassword" class="nav-link ">
+                                        <i class="link-icon" data-feather="mail"></i>
+                                        <span class="link-title">Password Management</span>
+                                    </a>
+                                </li>
+
+                            }
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <nav class="settings-sidebar">
+                        <div class="sidebar-body">
+                            <a href="#" class="settings-sidebar-toggler">
+                                <i data-feather="settings"></i>
+                            </a>
+                            <h6 class="text-muted">Sidebar:</h6>
+                            <div class="form-group border-bottom">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="sidebarThemeSettings" id="sidebarLight" value="sidebar-light" checked>
+                                        Light
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="sidebarThemeSettings" id="sidebarDark" value="sidebar-dark">
+                                        Dark
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="page-wrapper">
+                        <nav class="navbar">
+                            <a href="#" class="sidebar-toggler">
+                                <i data-feather="menu"></i>
+                            </a>
+                            <div class="navbar-content">
+                                @if (@ViewBag.getKPK != null)
+                                {
+                                    <form class="search-form" id="hidediv">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <i data-feather="search"></i>
+                                                </div>
+                                            </div>
+                                            <select class="form-select form-control navbarForm" name="q" style="font-size: 12px;" placeholder="type kpk or name to search..." data-url="DetailShow" aria-label="Default select example" id="navbarForm">
+                                            </select>
+                                        </div>
+                                        <input type="hidden" id="getStatusEmployeeNavbarForm" name="getStatusEmployeeNavbarForm">
+                                    </form>
+                                }
+                                else
+                                {
+                                    <form class="search-form" id="hidediv">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <i data-feather="search"></i>
+                                                </div>
+                                            </div>
+                                            <select class="form-select form-control navbarForm" name="q" style="font-size: 12px;" placeholder="type kpk or name to search..." data-url="DetailShow" aria-label="Default select example" id="navbarForm">
+                                            </select>
+                                        </div>
+                                        <input type="hidden" id="getStatusEmployeeNavbarForm" name="getStatusEmployeeNavbarForm">
+                                    </form>
+                                }
+                                <ul class="navbar-nav">
+
+
+                                    <li class="nav-item dropdown nav-profile">
+                                        <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img src="~/Content/images/Employee/@(Session["username"].ToString()).jpg" alt="profile">
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="profileDropdown">
+                                            <div class="dropdown-header d-flex flex-column align-items-center">
+                                                <div class="figure mb-3">
+                                                    <img src="~/Content/images/Employee/@(Session["username"].ToString()).jpg" alt="">
+                                                </div>
+                                                <div class="info text-center">
+                                                    <p class="name font-weight-bold mb-0">@Session["user"].ToString()</p>
+                                                    <p class="email text-muted mb-3">@Session["username"].ToString()</p>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown-body">
+                                                <ul class="profile-nav p-0 pt-3">
+                                                    <li class="nav-item">
+                                                        <a href="@Url.Action("Details", "Admin" )?q=@Session["username"].ToString()" class="nav-link">
+                                                            <i data-feather="user"></i>
+                                                            <span>Profile</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="@Url.Action("ChangePassoword", "Admin" )?kpk=@Session["username"].ToString()" class="nav-link">
+                                                            <i data-feather="edit"></i>
+                                                            <span>Change Password</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="@Url.Action("Logout","Employee")" class="nav-link">
+                                                            <i data-feather="log-out"></i>
+                                                            <span>Log Out</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <div class="page-content">
+                            @RenderBody()
+                            <p class="" style="display: none;" id="hiddenSession">@Session["username"]</p>
+                        </div>
+                    </div>
+                </div>
+ </body>
+</html>           

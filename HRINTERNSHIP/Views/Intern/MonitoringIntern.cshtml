@@ -1,0 +1,996 @@
+﻿@{
+    ViewBag.Title = "Attendance Intern"; Layout = "~/Views/Shared/_DashboardIntern.cshtml";
+}
+<!--begin::Toolbar-->
+<div class="toolbar" id="kt_toolbar">
+    <!--begin::Container-->
+    <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+        <!--begin::Page title-->
+        <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
+             data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
+             class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+            <!--begin::Title-->
+            <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">
+                Dashboard
+                <!--begin::Separator-->
+                <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
+                <!--end::Separator-->
+                <!--begin::Description-->
+                <small class="text-muted fs-7 fw-bold my-1 ms-1">@ViewBag.title</small>
+                <!--end::Description-->
+            </h1>
+            <!--end::Title-->
+        </div>
+        <!--end::Page title-->
+    </div>
+    <!--end::Container-->
+</div>
+<!--end::Toolbar-->
+<!--begin::Post-->
+<div class="post d-flex flex-column-fluid" id="kt_post">
+    <!--begin::Container-->
+    <div id="kt_content_container" class="container-xxl">
+        <form action="#">
+            <!--begin::Card-->
+            <div class="card mb-7">
+                <!--begin::Card body-->
+                <div class="card-body">
+                    <!--begin::Compact form-->
+                    <div class="d-flex align-items-center">
+                        <!--begin::Input group-->
+                        <div class="position-relative w-md-400px me-md-2">
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                            <span class="svg-icon svg-icon-3 svg-icon-gray-500 position-absolute top-50 translate-middle ms-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="currentColor" />
+                                    <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="currentColor" />
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->
+                            <input type="text" id="kpkintern" value="" name="kpk" maxlength="6"
+                                   oninput="javascript: if(this.value.length > this.max.length) this.value = this.value.slice(0, this.maxLength);"
+                                   min="5" class="form-control form-control-solid ps-10" placeholder="Type KPK" />
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin:Action-->
+                        <div class="d-flex align-items-center">
+                            <button type="button" class="btn btn-primary me-5" id="btnSearch">Search</button>
+                            <a id="kt_horizontal_search_advanced_link" class="btn btn-link" data-bs-toggle="collapse" href="#kt_advanced_search_form">Advanced Search</a>
+                        </div>
+                        <!--end:Action-->
+                    </div>
+                    <!--end::Compact form-->
+                    <!--begin::Advance form-->
+                    <div class="collapse" id="kt_advanced_search_form">
+                        <!--begin::Separator-->
+                        <div class="separator separator-dashed mt-9 mb-6"></div>
+                        <!--end::Separator-->
+                        <!--begin::Row-->
+                        <div class="row g-8 mb-8">
+                            <!--begin::Col-->
+                            <div class="col-xxl-4">
+                                <label class="fs-6 form-label fw-bolder text-dark">Intern Name</label>
+                                <input type="text" id="internname" value="" name="internname" min="5"
+                                       class="form-control" placeholder="Type Intern Name"
+                                       autocomplete="off" oninput="this.value = this.value.toUpperCase()">
+                            </div>
+                            <div class="col-lg-3">
+                                <label class="fs-6 form-label fw-bolder text-dark">Start Date</label>
+                                <input type="date" name="FromDate" id="FromDate" class="form-control" value="" required />
+                            </div>
+                            <div class="col-lg-3">
+                                <label class="fs-6 form-label fw-bolder text-dark">End Date</label>
+                                <input type="date" name="ToDate" id="ToDate" class="form-control"
+                                       value="" required />
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="fs-6 form-label fw-bolder text-dark">Status</label>
+                                <select name="status_filter" id="status_filter" class="form-select">
+                                    <option value="">All</option>
+                                    <option value="Active">Active</option>
+                                    <option value="EOC">Non-Active</option>
+                                </select>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                    </div>
+                    <!--end::Advance form-->
+                </div>
+                <!--end::Card body-->
+            </div>
+            <!--end::Card-->
+        </form>
+        <div class="row profile-body">
+            <div class="col-xl-8 col-xl-12 middle-wrapper mt-3">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header bg-header">
+                                <div class="card-title text-white bg-header text-center mb-0">
+                                    <h4>Attendance Intern</h4>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button class="btn btn-success mb-4" id="download_attendance">
+                                            <i class="las la-cloud-download-alt me-2 fs-2"></i>Download Attendance
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-lg-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered" id="MasterAttendanceIntern">
+                                                <thead>
+                                                    <tr>
+                                                        <th rowspan="2" class="text-center" width="30px">
+                                                            <i data-feather="settings"></i>
+                                                        </th>
+                                                        <th rowspan="2" class="text-center">
+                                                            <i data-feather="calendar"></i>
+                                                        </th>
+                                                        <th class="text-center" rowspan="2">
+                                                            KPK
+                                                        </th>
+                                                        <th class="text-center" rowspan="2">
+                                                            NAME
+                                                        </th>
+                                                        <th class="text-center" colspan="2">
+                                                            Clock
+                                                        </th>
+                                                        <th class="text-center" rowspan="2">Work Hours</th>
+                                                        <th class="text-center" rowspan="2">Status</th>
+                                                        <th class="d-none" rowspan="2">Status</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">IN</td>
+                                                        <td class="text-center">Out</td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end::Container-->
+</div>
+<!--end::Post-->
+
+<!-- Modal Activity-->
+<div class="modal fade" id="modalActivity" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-navy">
+                <h5 class="modal-title" id="exampleModalLabel">
+                </h5>
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                    <span class="svg-icon svg-icon-2x">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path opacity="0.3" d="M6.7 19.4L5.3 18C4.9 17.6 4.9 17 5.3 16.6L16.6 5.3C17 4.9 17.6 4.9 18 5.3L19.4 6.7C19.8 7.1 19.8 7.7 19.4 8.1L8.1 19.4C7.8 19.8 7.1 19.8 6.7 19.4Z" fill="currentColor" />
+                            <path d="M19.5 18L18.1 19.4C17.7 19.8 17.1 19.8 16.7 19.4L5.40001 8.1C5.00001 7.7 5.00001 7.1 5.40001 6.7L6.80001 5.3C7.20001 4.9 7.80001 4.9 8.20001 5.3L19.5 16.6C19.9 16.9 19.9 17.6 19.5 18Z" fill="currentColor" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body input">
+                <form id="formId" action="" method="POST">
+                    <div class="row">
+                        <div class="hide">
+                            <input type="hidden" required class="form-control" name="Activity_ID" id="Activity_ID"
+                                   value="" readonly>
+                            <input type="hidden" required class="form-control" name="KPK" id="KPK" value="" readonly>
+                            <input type="hidden" required class="form-control" name="Date" id="Date" value="" readonly>>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="">Activity</label>
+                                <textarea class="form-control" rows="10" name="Activity" id="Activity"
+                                          readonly></textarea>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn alert-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+            </form>
+        </div>
+        <div class="modal-body hapus h5">
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+
+        var min_date = $("#FromDate").val();
+        var max_date = $("#ToDate").val();
+        var kpkintern = $("#kpkintern").val();
+        var internname = $("#internname").val();
+
+        var t = $("#MasterAttendanceIntern").DataTable({
+            searching: true,
+            processing: true,
+            scrollY: 670,
+            scrollX: true,
+            autoWidth: false,
+            scrollCollapse: false,
+            paging: false,
+            order: false,
+            dom: 'Bfrtip',
+            buttons: [{
+                extend: 'excelHtml5',
+                customize: function (xlsx) {
+                    var sheet = xlsx.xl.worksheets['sheet1.xml'];
+                    $('row', sheet).each(function (x) {
+                        if ($('c[r=G' + x + '] t', sheet).text() === 'ABS') {
+                            $('row:nth-child(' + x + ') c', sheet).attr('s', '19');
+                        }
+                        else if ($('c[r=G' + x + '] t', sheet).text() === 'Public Holiday') {
+                            $('row:nth-child(' + x + ') c', sheet).attr('s', '19');
+                        }
+                        else if ($('c[r=G' + x + '] t', sheet).text() === 'TIMEOFF') {
+                            $('row:nth-child(' + x + ') c', sheet).attr('s', '35');
+                        }
+                    });
+                }
+
+            }],
+            initComplete: function () {
+                var btns = $('.dt-button');
+                btns.addClass('btn  alert-primary d-none');
+                btns.removeClass('dt-button');
+                btns.text('Download Report')
+            },
+        });
+        $("#download_attendance").click(function () {
+            $("#MasterAttendanceIntern").table2excel({
+                exclude: ".d-none",
+                name: "Worksheet Name",
+                filename: "Master Attendance",
+                fileext: ".xlsx",
+                preserveColors: true,
+                exclude_img: true
+            });
+        });
+        t.columns.adjust().draw();
+        loadData(min_date, max_date, kpkintern, internname);
+
+        // function to load data
+        function loadData(min_date, max_date, kpkintern, internname) {
+            t.columns(8).search("Active").draw();
+            return $.ajax({
+                url: "/Intern/ListAttendanceInternMonitor?min_date=" + min_date + "&max_date=" + max_date + "&kpkintern=" + kpkintern + "&internname=" + internname,
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //swal("Success", 'You have sucessfully...', "success");
+                    var html = '';
+                    var counter = 1;
+
+                    // delete existing row if any
+                    t.clear().draw();
+
+                    $.each(data, function (key, item) {
+                        var day = item.test;
+                        var strday = day.substring(0, 3);
+                        var today = new Date();
+                        var dd = String(today.getDate()).padStart(2, '0');
+                        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                        var yyyy = today.getFullYear();
+                        var today = mm + '/' + dd + '/' + yyyy;
+
+                        var currdate = new Date(today)
+                        var cmpdate = new Date(item.Date)
+
+                        if (strday == "Sat") {
+                            html += '<tr class="itemRow text-black bg-grey">';
+                            if (item.ClockIn == null || item.ClockOut == null) {
+                                html += '<td class="text-center"><button type="button" class="btn btn-rounded btn-sm btn-danger" >Activity</button>';
+                            }
+                            else {
+                                html += '<td class="text-center"><button type="button" class="btn btn-rounded btn-sm btn-primary btn_editRow" data-bs-toggle="modal" data-bs-target="#modalActivity">Activity</button>';
+                            }
+                            html += '<td>' + item.test + '</td>';
+                            html += '<td class="text-center">' + item.KPK + '</td>';
+                            html += '<input type="hidden" class="KPKValue" name="KPKValue" value="' + item.KPK + '" />'
+                            html += '<td>' + item.Cardholder_Name + '</td>';
+                            html += '<input type="hidden" class="Cardholder_Name" name="Cardholder_Name" value="' + item.Cardholder_Name + '" />'
+                            if (item.ClockIn == null) {
+                                html += '<td class="text-center"></td>';
+                                html += '<input type="hidden" class="ClockInValue" name="ClockInValue" value="" />'
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.ClockIn + '</td>';
+                                html += '<input type="hidden" class="ClockInValue" name="ClockInValue" value="' + item.ClockIn + '" />'
+                            }
+                            if (item.ClockOut == null) {
+                                html += '<td class="text-center"></td>';
+                                html += '<input type="hidden" class="ClockOutValue" name="ClockOutValue" value="" />'
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.ClockOut + '</td>';
+                                html += '<input type="hidden" class="ClockOutValue" name="ClockOutValue" value="' + item.ClockOut + '" />'
+                            }
+                            if (item.total_hour == null) {
+                                html += '<td class="text-center"></td>';
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.total_hour + ' Hours</td>';
+                            }
+                            if (item.Entry_Date_Time == null && item.Entry_Out != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">No Clock IN</span></td>';
+                            }
+                            else if (item.Entry_Date_Time != null && item.Entry_Out == null) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">No Clock Out</span></td>';
+                            }
+                            else if (item.Entry_Date_Time == null && item.Entry_Out == null && item.Date_public_holidays != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-warning">Public Holiday</span></td>';
+                            }
+                            else if (item.Entry_Date_Time != null && item.Entry_Out != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-success">ATN</span></td>';
+                            }
+                            else {
+                                html += '<td class="text-center text-bold">REST DAY</td>';
+                            }
+                            html += '<input type="hidden" class="KPKValue" name="KPKValue" value="' + item.KPK + '" />'
+                            html += '<input type="hidden" class="DateValue" name="DateValue" value="' + item.Date + '" />'
+                            if (item.Activity_ID == null) {
+                                html += '<input type="hidden" class="ActivityIdValue" name="ActivityIdValue" value="" />'
+                            }
+                            else {
+                                html += '<input type="hidden" class="ActivityIdValue" name="ActivityIdValue" value="' + item.Activity_ID + '" />'
+                            }
+                            if (item.Activity == null) {
+                                html += '<input type="hidden" class="ActivityValue" name="ActivityValue" value="" />'
+                            }
+                            else {
+                                html += '<input type="hidden" class="ActivityValue" name="ActivityValue" value="' + item.Activity + '" />'
+                            }
+                            if (item.STATUS == "Active") {
+                                html += '<td class="d-none">' + item.STATUS + '</td>';
+                            }
+                            else {
+                                html += '<td class="d-none">EOC</td>';
+                            }
+                            html += '</tr>';
+                            counter++;
+                        }
+                        else if (strday == "Sun") {
+                            html += '<tr class="itemRow bg-grey text-black">';
+                            if (item.ClockIn == null || item.ClockOut == null) {
+                                html += '<td class="text-center"><button type="button" class="btn btn-rounded btn-sm btn-danger" >Activity</button>';
+                            }
+                            else {
+                                html += '<td class="text-center"><button type="button" class="btn btn-rounded btn-sm btn-primary btn_editRow" data-bs-toggle="modal" data-bs-target="#modalActivity">Activity</button>';
+                            }
+                            html += '<td>' + item.test + '</td>';
+                            html += '<td class="text-center">' + item.KPK + '</td>';
+                            html += '<input type="hidden" class="KPKValue" name="KPKValue" value="' + item.KPK + '" />'
+                            html += '<td>' + item.Cardholder_Name + '</td>';
+                            html += '<input type="hidden" class="Cardholder_Name" name="Cardholder_Name" value="' + item.Cardholder_Name + '" />'
+                            if (item.ClockIn == null) {
+                                html += '<td class="text-center"></td>';
+                                html += '<input type="hidden" class="ClockInValue" name="ClockInValue" value="" />'
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.ClockIn + '</td>';
+                                html += '<input type="hidden" class="ClockInValue" name="ClockInValue" value="' + item.ClockIn + '" />'
+                            }
+                            if (item.ClockOut == null) {
+                                html += '<td class="text-center"></td>';
+                                html += '<input type="hidden" class="ClockOutValue" name="ClockOutValue" value="" />'
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.ClockOut + '</td>';
+                                html += '<input type="hidden" class="ClockOutValue" name="ClockOutValue" value="' + item.ClockOut + '" />'
+                            }
+                            if (item.total_hour == null) {
+                                html += '<td class="text-center"></td>';
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.total_hour + ' Hours</td>';
+                            }
+                            if (item.Entry_Date_Time == null && item.Entry_Out != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">No Clock IN</span></td>';
+                            }
+                            else if (item.Entry_Date_Time != null && item.Entry_Out == null) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">No Clock Out</span></td>';
+                            }
+                            else if (item.Entry_Date_Time == null && item.Entry_Out == null && item.Date_public_holidays != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-warning">Public Holiday</span></td>';
+                            }
+                            else if (item.Entry_Date_Time != null && item.Entry_Out != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-success">ATN</span></td>';
+                            }
+                            else {
+                                html += '<td class="text-center text-bold">REST DAY</td>';
+                            }
+                            html += '<input type="hidden" class="KPKValue" name="KPKValue" value="' + item.KPK + '" />'
+                            html += '<input type="hidden" class="DateValue" name="DateValue" value="' + item.Date + '" />'
+                            if (item.Activity_ID == null) {
+                                html += '<input type="hidden" class="ActivityIdValue" name="ActivityIdValue" value="" />'
+                            }
+                            else {
+                                html += '<input type="hidden" class="ActivityIdValue" name="ActivityIdValue" value="' + item.Activity_ID + '" />'
+                            }
+                            if (item.Activity == null) {
+                                html += '<input type="hidden" class="ActivityValue" name="ActivityValue" value="" />'
+                            }
+                            else {
+                                html += '<input type="hidden" class="ActivityValue" name="ActivityValue" value="' + item.Activity + '" />'
+                            }
+                            if (item.STATUS == "Active") {
+                                html += '<td class="d-none">' + item.STATUS + '</td>';
+                            }
+                            else {
+                                html += '<td class="d-none">EOC</td>';
+                            }
+                            html += '</tr>';
+                            counter++;
+                        }
+                        else if (item.ClockIn == null || item.ClockIn == null) {
+                            html += '<tr class="itemRow">';
+                            if (item.ClockIn == null || item.ClockOut == null) {
+                                html += '<td class="text-center"><button type="button" class="btn btn-rounded btn-sm btn-danger" ">Activity</button>';
+                            }
+                            else {
+                                html += '<td class="text-center"><button type="button" class="btn btn-rounded btn-sm btn-primary btn_editRow" data-bs-toggle="modal" data-bs-target="#modalActivity">Activity</button>';
+                            }
+                            html += '<td>' + item.test + '</td>';
+                            html += '<td class="text-center">' + item.KPK + '</td>';
+                            html += '<input type="hidden" class="KPKValue" name="KPKValue" value="' + item.KPK + '" />'
+                            html += '<td>' + item.Cardholder_Name + '</td>';
+                            html += '<input type="hidden" class="Cardholder_Name" name="Cardholder_Name" value="' + item.Cardholder_Name + '" />'
+                            if (item.ClockIn == null) {
+                                html += '<td class="text-center"></td>';
+                                html += '<input type="hidden" class="ClockInValue" name="ClockInValue" value="" />'
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.ClockIn + '</td>';
+                                html += '<input type="hidden" class="ClockInValue" name="ClockInValue" value="' + item.ClockIn + '" />'
+                            }
+                            if (item.ClockOut == null) {
+                                html += '<td class="text-center"></td>';
+                                html += '<input type="hidden" class="ClockOutValue" name="ClockOutValue" value="" />'
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.ClockOut + '</td>';
+                                html += '<input type="hidden" class="ClockOutValue" name="ClockOutValue" value="' + item.ClockOut + '" />'
+                            }
+                            if (item.total_hour == null) {
+                                html += '<td class="text-center"></td>';
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.total_hour + ' Hours</td>';
+                            }
+                            if (item.Entry_Date_Time == null && item.Entry_Out != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">No Clock IN</span></td>';
+                            }
+                            else if (item.Entry_Date_Time != null && item.Entry_Out == null) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">No Clock Out</span></td>';
+                            }
+                            else if (item.Entry_Date_Time == null && item.Entry_Out == null && item.Date_public_holidays == null && cmpdate <= currdate) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">ABS</span></td>';
+                            }
+                            else if (item.Entry_Date_Time == null && item.Entry_Out == null && item.Date_public_holidays != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-warning">Public Holiday</span></td>';
+                            }
+                            else {
+                                html += '<td class="text-center "></td>';
+                            }
+                            html += '<input type="hidden" class="KPKValue" name="KPKValue" value="' + item.KPK + '" />'
+                            html += '<input type="hidden" class="DateValue" name="DateValue" value="' + item.Date + '" />'
+                            if (item.Activity_ID == null) {
+                                html += '<input type="hidden" class="ActivityIdValue" name="ActivityIdValue" value="" />'
+                            }
+                            else {
+                                html += '<input type="hidden" class="ActivityIdValue" name="ActivityIdValue" value="' + item.Activity_ID + '" />'
+                            }
+                            if (item.Activity == null) {
+                                html += '<input type="hidden" class="ActivityValue" name="ActivityValue" value="" />'
+                            }
+                            else {
+                                html += '<input type="hidden" class="ActivityValue" name="ActivityValue" value="' + item.Activity + '" />'
+                            }
+                            if (item.STATUS == "Active") {
+                                html += '<td class="d-none">' + item.STATUS + '</td>';
+                            }
+                            else {
+                                html += '<td class="d-none">EOC</td>';
+                            }
+                            html += '</tr>';
+                            counter++;
+                        }
+                        else {
+                            html += '<tr class="itemRow text-black">';
+                            if (item.ClockIn == null || item.ClockOut == null) {
+                                html += '<td class="text-center"><button type="button" class="btn btn-rounded btn-sm btn-danger" >Activity</button>';
+                            }
+                            else {
+                                html += '<td class="text-center"><button type="button" class="btn btn-rounded btn-sm btn-primary btn_editRow" data-bs-toggle="modal" data-bs-target="#modalActivity">Activity</button>';
+                            }
+                            html += '<td>' + item.test + '</td>';
+                            html += '<td class="text-center">' + item.KPK + '</td>';
+                            html += '<input type="hidden" class="KPKValue" name="KPKValue" value="' + item.KPK + '" />'
+                            html += '<td>' + item.Cardholder_Name + '</td>';
+                            html += '<input type="hidden" class="Cardholder_Name" name="Cardholder_Name" value="' + item.Cardholder_Name + '" />'
+                            if (item.ClockIn == null) {
+                                html += '<td class="text-center"></td>';
+                                html += '<input type="hidden" class="ClockInValue" name="ClockInValue" value="" />'
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.ClockIn + '</td>';
+                                html += '<input type="hidden" class="ClockInValue" name="ClockInValue" value="' + item.ClockIn + '" />'
+                            }
+                            if (item.ClockOut == null) {
+                                html += '<td class="text-center"></td>';
+                                html += '<input type="hidden" class="ClockOutValue" name="ClockOutValue" value="" />'
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.ClockOut + '</td>';
+                                html += '<input type="hidden" class="ClockOutValue" name="ClockOutValue" value="' + item.ClockOut + '" />'
+                            }
+                            if (item.total_hour == null) {
+                                html += '<td class="text-center"></td>';
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.total_hour + ' Hours</td>';
+                            }
+                            if (item.Entry_Date_Time == null && item.Entry_Out != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">No Clock IN</span></td>';
+                            }
+                            else if (item.Entry_Date_Time != null && item.Entry_Out == null) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">No Clock Out</span></td>';
+                            }
+                            else {
+                                html += '<td class="text-center "><span class="badge badge-light-success">ATN</span></td>';
+                            }
+                            html += '<input type="hidden" class="KPKValue" name="KPKValue" value="' + item.KPK + '" />'
+                            html += '<input type="hidden" class="DateValue" name="DateValue" value="' + item.Date + '" />'
+                            if (item.Activity_ID == null) {
+                                html += '<input type="hidden" class="ActivityIdValue" name="ActivityIdValue" value="" />'
+                            }
+                            else {
+                                html += '<input type="hidden" class="ActivityIdValue" name="ActivityIdValue" value="' + item.Activity_ID + '" />'
+                            }
+                            if (item.Activity == null) {
+                                html += '<input type="hidden" class="ActivityValue" name="ActivityValue" value="" />'
+                            }
+                            else {
+                                html += '<input type="hidden" class="ActivityValue" name="ActivityValue" value="' + item.Activity + '" />'
+                            }
+                            if (item.STATUS == "Active") {
+                                html += '<td class="d-none">' + item.STATUS + '</td>';
+                            }
+                            else {
+                                html += '<td class="d-none">EOC</td>';
+                            }
+                            html += '</tr>';
+                            counter++;
+                        }
+                    });
+
+                    t.rows.add($(html)).draw();
+                    t.columns.adjust().draw();
+                },
+                error: function (textStatus, status) {
+                    console.log(textStatus);
+                    console.log(status);
+                }
+            });
+        }
+
+        // Display value for selected item to be edited
+        $(document).on("click", ".btn_editRow", function (e) {
+            $('#modalActivity').modal({
+                backdrop: false,
+                keyboard: false
+            });
+            $('.modal-title').html('Daily Activity');
+            e.preventDefault();
+
+            var self = $(this);
+            var kpkvalue = self.closest("tr").find("input[name='KPKValue']").val();
+            var datevalue = self.closest("tr").find("input[name='DateValue']").val();
+            var activityidvalue = self.closest("tr").find("input[name='ActivityIdValue']").val();
+            var activityvalue = self.closest("tr").find("input[name='ActivityValue']").val();
+
+            // assigning object value to the field
+            $("#KPK").val(kpkvalue);
+            $("#Date").val(datevalue);
+            $("#Activity_ID").val(activityidvalue);
+            $("#Activity").val(activityvalue);
+
+            $('.modal-dialog').addClass('modal-sm');
+            $('.modal-dialog').removeClass('modal-sm');
+            $('#btnactivity').html('Save');
+            $('.hapus').addClass('d-none');
+            $('.input').removeClass('d-none');
+
+            $('#btnactivity').click(function () {
+                $("#modalActivity").modal('hide');
+                swal("Success", 'You have sucessfully update activity', "success");
+                var kpkupdate = $("#KPK").val();
+                var dateupdate = $("#Date").val();
+                var activityidupdate = $("#Activity_ID").val();
+                var activityupdate = $("#Activity").val();
+            });
+        });
+        $("#kpkintern").keyup(function () {
+            t.columns(2).search(this.value).draw();
+        });
+        $("#internname").keyup(function () {
+            t.columns(3).search(this.value).draw();
+        });
+        $('#status_filter').on('change', function () {
+            t.columns(8).search(this.value).draw();
+        });
+        $('#btnSearch').click(function () {
+            var min_date = $("#FromDate").val();
+            var max_date = $("#ToDate").val();
+            return $.ajax({
+                url: "/Intern/ListAttendanceInternMentorDate?min_date=" + min_date + "&max_date=" + max_date,
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //swal("Success", 'You have sucessfully...', "success");
+                    var html = '';
+                    var counter = 1;
+
+                    // delete existing row if any
+                    t.clear().draw();
+
+                    $.each(data, function (key, item) {
+                        var day = item.test;
+                        var strday = day.substring(0, 3);
+                        var today = new Date();
+                        var dd = String(today.getDate()).padStart(2, '0');
+                        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                        var yyyy = today.getFullYear();
+                        var today = mm + '/' + dd + '/' + yyyy;
+
+                        var currdate = new Date(today)
+                        var cmpdate = new Date(item.Date)
+
+                        if (strday == "Sat") {
+                            html += '<tr class="itemRow alert-primary text-black">';
+                            if (item.ClockIn == null || item.ClockOut == null) {
+                                html += '<td class="text-center"><button type="button" class="btn btn-rounded btn-sm btn-danger" >Activity</button>';
+                            }
+                            else {
+                                html += '<td class="text-center"><button type="button" class="btn btn-rounded btn-sm btn-primary btn_editRow" data-bs-toggle="modal" data-bs-target="#modalActivity">Activity</button>';
+                            }
+                            html += '<td>' + item.test + '</td>';
+                            html += '<td class="text-center">' + item.KPK + '</td>';
+                            html += '<input type="hidden" class="KPKValue" name="KPKValue" value="' + item.KPK + '" />'
+                            html += '<td>' + item.Cardholder_Name + '</td>';
+                            html += '<input type="hidden" class="Cardholder_Name" name="Cardholder_Name" value="' + item.Cardholder_Name + '" />'
+                            if (item.ClockIn == null) {
+                                html += '<td class="text-center"></td>';
+                                html += '<input type="hidden" class="ClockInValue" name="ClockInValue" value="" />'
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.ClockIn + '</td>';
+                                html += '<input type="hidden" class="ClockInValue" name="ClockInValue" value="' + item.ClockIn + '" />'
+                            }
+                            if (item.ClockOut == null) {
+                                html += '<td class="text-center"></td>';
+                                html += '<input type="hidden" class="ClockOutValue" name="ClockOutValue" value="" />'
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.ClockOut + '</td>';
+                                html += '<input type="hidden" class="ClockOutValue" name="ClockOutValue" value="' + item.ClockOut + '" />'
+                            }
+                            if (item.total_hour == null) {
+                                html += '<td class="text-center"></td>';
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.total_hour + ' Hours</td>';
+                            }
+                            if (item.Entry_Date_Time == null && item.Entry_Out != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">No Clock IN</span></td>';
+                            }
+                            else if (item.Entry_Date_Time != null && item.Entry_Out == null) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">No Clock Out</span></td>';
+                            }
+                            else if (item.Entry_Date_Time == null && item.Entry_Out == null && item.Date_public_holidays != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-warning">Public Holiday</span></td>';
+                            }
+                            else if (item.Entry_Date_Time != null && item.Entry_Out != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-success">ATN</span></td>';
+                            }
+                            else {
+                                html += '<td class="text-center text-bold">REST DAY</td>';
+                            }
+                            html += '<input type="hidden" class="KPKValue" name="KPKValue" value="' + item.KPK + '" />'
+                            html += '<input type="hidden" class="DateValue" name="DateValue" value="' + item.Date + '" />'
+                            if (item.Activity_ID == null) {
+                                html += '<input type="hidden" class="ActivityIdValue" name="ActivityIdValue" value="" />'
+                            }
+                            else {
+                                html += '<input type="hidden" class="ActivityIdValue" name="ActivityIdValue" value="' + item.Activity_ID + '" />'
+                            }
+                            if (item.Activity == null) {
+                                html += '<input type="hidden" class="ActivityValue" name="ActivityValue" value="" />'
+                            }
+                            else {
+                                html += '<input type="hidden" class="ActivityValue" name="ActivityValue" value="' + item.Activity + '" />'
+                            }
+                            if (item.STATUS == "Active") {
+                                html += '<td class="d-none">' + item.STATUS + '</td>';
+                            }
+                            else {
+                                html += '<td class="d-none">EOC</td>';
+                            }
+                            html += '</tr>';
+                            counter++;
+                        }
+                        else if (strday == "Sun") {
+                            html += '<tr class="itemRow alert-primary text-black">';
+                            if (item.ClockIn == null || item.ClockOut == null) {
+                                html += '<td class="text-center"><button type="button" class="btn btn-rounded btn-sm btn-danger" >Activity</button>';
+                            }
+                            else {
+                                html += '<td class="text-center"><button type="button" class="btn btn-rounded btn-sm btn-primary btn_editRow" data-bs-toggle="modal" data-bs-target="#modalActivity">Activity</button>';
+                            }
+                            html += '<td>' + item.test + '</td>';
+                            html += '<td class="text-center">' + item.KPK + '</td>';
+                            html += '<input type="hidden" class="KPKValue" name="KPKValue" value="' + item.KPK + '" />'
+                            html += '<td>' + item.Cardholder_Name + '</td>';
+                            html += '<input type="hidden" class="Cardholder_Name" name="Cardholder_Name" value="' + item.Cardholder_Name + '" />'
+                            if (item.ClockIn == null) {
+                                html += '<td class="text-center"></td>';
+                                html += '<input type="hidden" class="ClockInValue" name="ClockInValue" value="" />'
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.ClockIn + '</td>';
+                                html += '<input type="hidden" class="ClockInValue" name="ClockInValue" value="' + item.ClockIn + '" />'
+                            }
+                            if (item.ClockOut == null) {
+                                html += '<td class="text-center"></td>';
+                                html += '<input type="hidden" class="ClockOutValue" name="ClockOutValue" value="" />'
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.ClockOut + '</td>';
+                                html += '<input type="hidden" class="ClockOutValue" name="ClockOutValue" value="' + item.ClockOut + '" />'
+                            }
+                            if (item.total_hour == null) {
+                                html += '<td class="text-center"></td>';
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.total_hour + ' Hours</td>';
+                            }
+                            if (item.Entry_Date_Time == null && item.Entry_Out != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">No Clock IN</span></td>';
+                            }
+                            else if (item.Entry_Date_Time != null && item.Entry_Out == null) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">No Clock Out</span></td>';
+                            }
+                            else if (item.Entry_Date_Time == null && item.Entry_Out == null && item.Date_public_holidays != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-warning">Public Holiday</span></td>';
+                            }
+                            else if (item.Entry_Date_Time != null && item.Entry_Out != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-success">ATN</span></td>';
+                            }
+                            else {
+                                html += '<td class="text-center text-bold">REST DAY</td>';
+                            }
+                            html += '<input type="hidden" class="KPKValue" name="KPKValue" value="' + item.KPK + '" />'
+                            html += '<input type="hidden" class="DateValue" name="DateValue" value="' + item.Date + '" />'
+                            if (item.Activity_ID == null) {
+                                html += '<input type="hidden" class="ActivityIdValue" name="ActivityIdValue" value="" />'
+                            }
+                            else {
+                                html += '<input type="hidden" class="ActivityIdValue" name="ActivityIdValue" value="' + item.Activity_ID + '" />'
+                            }
+                            if (item.Activity == null) {
+                                html += '<input type="hidden" class="ActivityValue" name="ActivityValue" value="" />'
+                            }
+                            else {
+                                html += '<input type="hidden" class="ActivityValue" name="ActivityValue" value="' + item.Activity + '" />'
+                            }
+                            if (item.STATUS == "Active") {
+                                html += '<td class="d-none">' + item.STATUS + '</td>';
+                            }
+                            else {
+                                html += '<td class="d-none">EOC</td>';
+                            }
+                            html += '</tr>';
+                            counter++;
+                        }
+                        else if (item.ClockIn == null || item.ClockIn == null) {
+                            html += '<tr class="itemRow">';
+                            if (item.ClockIn == null || item.ClockOut == null) {
+                                html += '<td class="text-center"><button type="button" class="btn btn-rounded btn-sm btn-danger" >Activity</button>';
+                            }
+                            else {
+                                html += '<td class="text-center"><button type="button" class="btn btn-rounded btn-sm btn-primary btn_editRow" data-bs-toggle="modal" data-bs-target="#modalActivity">Activity</button>';
+                            }
+                            html += '<td>' + item.test + '</td>';
+                            html += '<td class="text-center">' + item.KPK + '</td>';
+                            html += '<input type="hidden" class="KPKValue" name="KPKValue" value="' + item.KPK + '" />'
+                            html += '<td>' + item.Cardholder_Name + '</td>';
+                            html += '<input type="hidden" class="Cardholder_Name" name="Cardholder_Name" value="' + item.Cardholder_Name + '" />'
+                            if (item.ClockIn == null) {
+                                html += '<td class="text-center"></td>';
+                                html += '<input type="hidden" class="ClockInValue" name="ClockInValue" value="" />'
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.ClockIn + '</td>';
+                                html += '<input type="hidden" class="ClockInValue" name="ClockInValue" value="' + item.ClockIn + '" />'
+                            }
+                            if (item.ClockOut == null) {
+                                html += '<td class="text-center"></td>';
+                                html += '<input type="hidden" class="ClockOutValue" name="ClockOutValue" value="" />'
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.ClockOut + '</td>';
+                                html += '<input type="hidden" class="ClockOutValue" name="ClockOutValue" value="' + item.ClockOut + '" />'
+                            }
+                            if (item.total_hour == null) {
+                                html += '<td class="text-center"></td>';
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.total_hour + ' Hours</td>';
+                            }
+                            if (item.Entry_Date_Time == null && item.Entry_Out != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">No Clock IN</span></td>';
+                            }
+                            else if (item.Entry_Date_Time != null && item.Entry_Out == null) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">No Clock Out</span></td>';
+                            }
+                            else if (item.Entry_Date_Time == null && item.Entry_Out == null && item.Date_public_holidays == null && cmpdate <= currdate) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">ABS</span></td>';
+                            }
+                            else if (item.Entry_Date_Time == null && item.Entry_Out == null && item.Date_public_holidays != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-warning">Public Holiday</span></td>';
+                            }
+                            else {
+                                html += '<td class="text-center "></td>';
+                            }
+                            html += '<input type="hidden" class="KPKValue" name="KPKValue" value="' + item.KPK + '" />'
+                            html += '<input type="hidden" class="DateValue" name="DateValue" value="' + item.Date + '" />'
+                            if (item.Activity_ID == null) {
+                                html += '<input type="hidden" class="ActivityIdValue" name="ActivityIdValue" value="" />'
+                            }
+                            else {
+                                html += '<input type="hidden" class="ActivityIdValue" name="ActivityIdValue" value="' + item.Activity_ID + '" />'
+                            }
+                            if (item.Activity == null) {
+                                html += '<input type="hidden" class="ActivityValue" name="ActivityValue" value="" />'
+                            }
+                            else {
+                                html += '<input type="hidden" class="ActivityValue" name="ActivityValue" value="' + item.Activity + '" />'
+                            }
+                            if (item.STATUS == "Active") {
+                                html += '<td class="d-none">' + item.STATUS + '</td>';
+                            }
+                            else {
+                                html += '<td class="d-none">EOC</td>';
+                            }
+                            html += '</tr>';
+                            counter++;
+                        }
+                        else {
+                            html += '<tr class="itemRow text-black">';
+                            if (item.ClockIn == null || item.ClockOut == null) {
+                                html += '<td class="text-center"><button type="button" class="btn btn-rounded btn-sm btn-danger" >Activity</button>';
+                            }
+                            else {
+                                html += '<td class="text-center"><button type="button" class="btn btn-rounded btn-sm btn-primary btn_editRow" data-bs-toggle="modal" data-bs-target="#modalActivity">Activity</button>';
+                            }
+                            html += '<td>' + item.test + '</td>';
+                            html += '<td class="text-center">' + item.KPK + '</td>';
+                            html += '<input type="hidden" class="KPKValue" name="KPKValue" value="' + item.KPK + '" />'
+                            html += '<td>' + item.Cardholder_Name + '</td>';
+                            html += '<input type="hidden" class="Cardholder_Name" name="Cardholder_Name" value="' + item.Cardholder_Name + '" />'
+                            if (item.ClockIn == null) {
+                                html += '<td class="text-center"></td>';
+                                html += '<input type="hidden" class="ClockInValue" name="ClockInValue" value="" />'
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.ClockIn + '</td>';
+                                html += '<input type="hidden" class="ClockInValue" name="ClockInValue" value="' + item.ClockIn + '" />'
+                            }
+                            if (item.ClockOut == null) {
+                                html += '<td class="text-center"></td>';
+                                html += '<input type="hidden" class="ClockOutValue" name="ClockOutValue" value="" />'
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.ClockOut + '</td>';
+                                html += '<input type="hidden" class="ClockOutValue" name="ClockOutValue" value="' + item.ClockOut + '" />'
+                            }
+                            if (item.total_hour == null) {
+                                html += '<td class="text-center"></td>';
+                            }
+                            else {
+                                html += '<td class="text-center">' + item.total_hour + ' Hours</td>';
+                            }
+                            if (item.Entry_Date_Time == null && item.Entry_Out != null) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">No Clock IN</span></td>';
+                            }
+                            else if (item.Entry_Date_Time != null && item.Entry_Out == null) {
+                                html += '<td class="text-center "><span class="badge badge-light-danger">No Clock Out</span></td>';
+                            }
+                            else {
+                                html += '<td class="text-center "><span class="badge badge-light-success">ATN</span></td>';
+                            }
+                            html += '<input type="hidden" class="KPKValue" name="KPKValue" value="' + item.KPK + '" />'
+                            html += '<input type="hidden" class="DateValue" name="DateValue" value="' + item.Date + '" />'
+                            if (item.Activity_ID == null) {
+                                html += '<input type="hidden" class="ActivityIdValue" name="ActivityIdValue" value="" />'
+                            }
+                            else {
+                                html += '<input type="hidden" class="ActivityIdValue" name="ActivityIdValue" value="' + item.Activity_ID + '" />'
+                            }
+                            if (item.Activity == null) {
+                                html += '<input type="hidden" class="ActivityValue" name="ActivityValue" value="" />'
+                            }
+                            else {
+                                html += '<input type="hidden" class="ActivityValue" name="ActivityValue" value="' + item.Activity + '" />'
+                            }
+                            if (item.STATUS == "Active") {
+                                html += '<td class="d-none">' + item.STATUS + '</td>';
+                            }
+                            else {
+                                html += '<td class="d-none">EOC</td>';
+                            }
+                            html += '</tr>';
+                            counter++;
+                        }
+                    });
+
+                    t.rows.add($(html)).draw();
+                    t.columns.adjust().draw();
+                },
+                error: function (textStatus, status) {
+                    console.log(textStatus);
+                    console.log(status);
+                }
+            });
+        });
+    });
+    function create(Activity) {
+        $('#exampleModal').modal({
+            backdrop: false,
+            keyboard: false
+        });
+        $('.modal-title').html('Activity');
+
+        $('[name="Activity"]').val(Activity);
+
+        $('[name="Activity"]').attr("readonly", "readonly");
+
+        $('.modal-dialog').addClass('modal-sm');
+        $('.modal-dialog').removeClass('modal-sm');
+        $('#btnactivity').html('Save');
+        $('.hapus').addClass('d-none');
+        $('.input').removeClass('d-none');
+        $('#btnactivity').click(function () {
+            swal({
+                title: "Loading...",
+                text: "Please wait",
+                icon: "/Content/images/icon/loading2.gif",
+                button: false,
+                showConfirmButton: false,
+                allowOutsideClick: false
+            });
+        });
+    }
+</script>
+<!--  Page end  end-->

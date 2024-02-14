@@ -1,0 +1,1150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModels.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Departement">
+    <Key>
+      <PropertyRef Name="DEPT_CODE" />
+    </Key>
+    <Property Name="DEPT_CODE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DEPT_NAME" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.Emergency_employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Emergency_employee">
+    <Key>
+      <PropertyRef Name="Employee_code" />
+    </Key>
+    <Property Name="Employee_code" Type="int" Nullable="false" />
+    <Property Name="Emergency_name" Type="varchar" MaxLength="50" />
+    <Property Name="Emergency_address" Type="varchar" MaxLength="50" />
+    <Property Name="Emergency_relation" Type="varchar" MaxLength="50" />
+    <Property Name="Emergency_name_2" Type="varchar" MaxLength="50" />
+    <Property Name="Emergency_contact" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EMEMP" />
+    </Key>
+    <Property Name="EMCMPY" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMEMP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMNAME" Type="varchar" MaxLength="50" />
+    <Property Name="EMSEXT" Type="varchar" MaxLength="50" />
+    <Property Name="EMCOMM" Type="varchar" MaxLength="50" />
+    <Property Name="ENDCONT" Type="varchar" MaxLength="50" />
+    <Property Name="OLDOCONT" Type="varchar" MaxLength="50" />
+    <Property Name="EMEMST" Type="varchar" MaxLength="50" />
+    <Property Name="EMJOBA" Type="varchar" MaxLength="50" />
+    <Property Name="EMDEPT" Type="varchar" MaxLength="50" />
+    <Property Name="EMLOC" Type="varchar" MaxLength="50" />
+    <Property Name="EMJOBD" Type="varchar" MaxLength="50" />
+    <Property Name="EMSUP#" Type="varchar" MaxLength="50" />
+    <Property Name="SUPNAME" Type="varchar" MaxLength="50" />
+    <Property Name="EMBIRT" Type="varchar" MaxLength="50" />
+    <Property Name="EMMRST" Type="varchar" MaxLength="50" />
+    <Property Name="EMRELI" Type="varchar" MaxLength="50" />
+    <Property Name="EMGRAD" Type="varchar" MaxLength="50" />
+    <Property Name="EMHTLC" Type="varchar" MaxLength="50" />
+    <Property Name="EMBUSR" Type="varchar" MaxLength="50" />
+    <Property Name="EMBUSS" Type="varchar" MaxLength="50" />
+    <Property Name="EMBUSL" Type="varchar" MaxLength="50" />
+    <Property Name="EMASN" Type="varchar" MaxLength="50" />
+    <Property Name="EMWKHR" Type="varchar" MaxLength="50" />
+    <Property Name="EMITST" Type="varchar" MaxLength="50" />
+    <Property Name="EMBEDU" Type="varchar" MaxLength="50" />
+    <Property Name="EMPAYT" Type="varchar" MaxLength="50" />
+    <Property Name="EMADD1" Type="varchar" MaxLength="50" />
+    <Property Name="EMADD2" Type="varchar" MaxLength="50" />
+    <Property Name="EMADD3" Type="varchar" MaxLength="50" />
+    <Property Name="EMEMAD" Type="varchar" MaxLength="50" />
+    <Property Name="EMUNIO" Type="varchar" MaxLength="50" />
+    <Property Name="EMUSID" Type="varchar" MaxLength="50" />
+    <Property Name="EMITAX" Type="varchar" MaxLength="50" />
+    <Property Name="EMSTAT" Type="varchar" MaxLength="50" />
+    <Property Name="EMTERM" Type="varchar" MaxLength="50" />
+    <Property Name="EMTREF" Type="varchar" MaxLength="50" />
+    <Property Name="PHONE" Type="varchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="50" />
+    <Property Name="TOTALHOURS" Type="varchar" MaxLength="50" />
+    <Property Name="TOTALYEARS" Type="varchar" MaxLength="50" />
+    <Property Name="DETAILWORKEXPERIENCE" Type="varchar" MaxLength="50" />
+    <Property Name="FIRST_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="LAST_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="PSID" Type="varchar" MaxLength="50" />
+    <Property Name="BUS_ROUTE" Type="varchar" MaxLength="50" />
+    <Property Name="EOC" Type="varchar" MaxLength="50" />
+    <Property Name="LABEL_1" Type="varchar" MaxLength="50" />
+    <Property Name="LABEL_2" Type="varchar" MaxLength="50" />
+    <Property Name="LABEL_3" Type="varchar" MaxLength="50" />
+    <Property Name="BPJS" Type="varchar" MaxLength="50" />
+    <Property Name="BPJS_Ketenagakerjaan" Type="varchar" MaxLength="50" />
+    <Property Name="EKTP" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.Historical_employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Historical_employee">
+    <Key>
+      <PropertyRef Name="id_historical" />
+    </Key>
+    <Property Name="employee_code" Type="varchar" MaxLength="50" />
+    <Property Name="employee_name" Type="varchar" MaxLength="50" />
+    <Property Name="plant" Type="varchar" MaxLength="50" />
+    <Property Name="department" Type="varchar" MaxLength="50" />
+    <Property Name="section" Type="varchar" MaxLength="50" />
+    <Property Name="job_title" Type="varchar" MaxLength="50" />
+    <Property Name="updated_at" Type="varchar" MaxLength="50" />
+    <Property Name="id_historical" Type="int" Nullable="false" />
+    <Property Name="plant_after" Type="varchar" MaxLength="50" />
+    <Property Name="department_after" Type="varchar" MaxLength="50" />
+    <Property Name="section_after" Type="varchar" MaxLength="50" />
+    <Property Name="job_title_after" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Intern_Activity">
+    <Key>
+      <PropertyRef Name="Activity_ID" />
+    </Key>
+    <Property Name="KPK" Type="nvarchar" MaxLength="10" />
+    <Property Name="Date" Type="nvarchar(max)" />
+    <Property Name="Activity" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Activity_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Intern_Attendance">
+    <Key>
+      <PropertyRef Name="Attendance_id" />
+    </Key>
+    <Property Name="Cardholder Name" Type="nvarchar(max)" />
+    <Property Name="KPK" Type="nvarchar(max)" />
+    <Property Name="Entry Clock" Type="nvarchar(max)" />
+    <Property Name="Entry Card" Type="nvarchar(max)" />
+    <Property Name="Entry Date/Time" Type="nvarchar(max)" />
+    <Property Name="Exit Clock" Type="nvarchar(max)" />
+    <Property Name="Exit Card" Type="nvarchar(max)" />
+    <Property Name="Exit Date/Time" Type="nvarchar(max)" />
+    <Property Name="Time Worked" Type="nvarchar(max)" />
+    <Property Name="Date" Type="nvarchar(max)" />
+    <Property Name="StatusATN" Type="nvarchar" MaxLength="50" />
+    <Property Name="StatusABS" Type="nvarchar" MaxLength="50" />
+    <Property Name="Attendance_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Intern_AttendanceApproval">
+    <Key>
+      <PropertyRef Name="Approval_ID" />
+    </Key>
+    <Property Name="KPK" Type="nvarchar" MaxLength="10" />
+    <Property Name="ApprovalMentor" Type="nvarchar" MaxLength="50" />
+    <Property Name="ApprovalManager" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateApprovedMentor" Type="nvarchar(max)" />
+    <Property Name="DateApprovedManager" Type="nvarchar(max)" />
+    <Property Name="DateSend" Type="nvarchar(max)" />
+    <Property Name="StatusApproval" Type="nvarchar" MaxLength="50" />
+    <Property Name="StatusAttendance" Type="nvarchar" MaxLength="50" />
+    <Property Name="FilePatch" Type="nvarchar(max)" />
+    <Property Name="Periode" Type="nvarchar(max)" />
+    <Property Name="Approval_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.Intern_AttendanceNew' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Intern_AttendanceNew">
+    <Key>
+      <PropertyRef Name="Attendance_id" />
+    </Key>
+    <Property Name="test" Type="nvarchar" MaxLength="4000" />
+    <Property Name="KPK" Type="nvarchar" MaxLength="10" />
+    <Property Name="Cardholder_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="MENTOR" Type="nvarchar" MaxLength="30" />
+    <Property Name="MANAGER" Type="nvarchar" MaxLength="50" />
+    <Property Name="ClockIn" Type="nvarchar" MaxLength="4000" />
+    <Property Name="DateClockIn" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Entry Date/Time" Type="nvarchar(max)" />
+    <Property Name="ClockOut" Type="nvarchar" MaxLength="4000" />
+    <Property Name="DateClockOut" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Entry_Out" Type="nvarchar(max)" />
+    <Property Name="total_hour" Type="int" />
+    <Property Name="Attendance_id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" />
+    <Property Name="Date_public_holidays" Type="varchar" MaxLength="50" />
+    <Property Name="Date_description" Type="varchar" MaxLength="50" />
+    <Property Name="Date_mandatory" Type="varchar" MaxLength="50" />
+    <Property Name="Type_mandatory" Type="nchar" MaxLength="10" />
+    <Property Name="Activity" Type="nvarchar(max)" />
+    <Property Name="Activity_ID" Type="int" />
+    <Property Name="Date" Type="smalldatetime" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.Intern_DetailContract' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Intern_DetailContract">
+    <Key>
+      <PropertyRef Name="ID_Contract" />
+    </Key>
+    <Property Name="ID_Contract" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KPK" Type="nvarchar" MaxLength="10" />
+    <Property Name="DJoinDate" Type="nvarchar(max)" />
+    <Property Name="DEndDate" Type="nvarchar(max)" />
+    <Property Name="DExtend" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Intern_MasterData">
+    <Key>
+      <PropertyRef Name="IDINTERN" />
+    </Key>
+    <Property Name="KPK" Type="nvarchar" MaxLength="10" />
+    <Property Name="INTERNNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="BUDGET" Type="nvarchar" MaxLength="50" />
+    <Property Name="DEPT" Type="nvarchar" MaxLength="20" />
+    <Property Name="SECTION" Type="nvarchar" MaxLength="20" />
+    <Property Name="DOB" Type="nvarchar(max)" />
+    <Property Name="PHONE" Type="nvarchar" MaxLength="20" />
+    <Property Name="PERSONALMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="OFFICEMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="UNIVERSITY" Type="nvarchar" MaxLength="50" />
+    <Property Name="MAJOR" Type="nvarchar" MaxLength="50" />
+    <Property Name="PROJECT" Type="nvarchar(max)" />
+    <Property Name="MENTOR" Type="nvarchar" MaxLength="30" />
+    <Property Name="MANAGER" Type="nvarchar" MaxLength="50" />
+    <Property Name="JOINDATE" Type="nvarchar(max)" />
+    <Property Name="ENDDATE" Type="nvarchar(max)" />
+    <Property Name="EXTEND" Type="nvarchar(max)" />
+    <Property Name="SALARY" Type="nvarchar" MaxLength="50" />
+    <Property Name="NIM" Type="nvarchar" MaxLength="20" />
+    <Property Name="NIK" Type="nvarchar" MaxLength="20" />
+    <Property Name="ADDRESS" Type="text" />
+    <Property Name="GENDER" Type="nvarchar" MaxLength="20" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="20" />
+    <Property Name="IDINTERN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Intern_Periode">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="DateFrom" Type="nvarchar(max)" />
+    <Property Name="DateTo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="JOB_CODE" />
+    </Key>
+    <Property Name="JOB_CODE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.nbrs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="nbrs">
+    <Key>
+      <PropertyRef Name="nbr" />
+    </Key>
+    <Property Name="nbr" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewCalendarEvent">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="start" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+    <Property Name="end" Type="nvarchar" MaxLength="50" />
+    <Property Name="className" Type="nvarchar" MaxLength="50" />
+    <Property Name="location" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="permission">
+    <Key>
+      <PropertyRef Name="permission_id" />
+    </Key>
+    <Property Name="permission_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="permission_mod" Type="varchar" MaxLength="50" />
+    <Property Name="permission_description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Public_Holidays">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date_public_holidays" Type="varchar" MaxLength="50" />
+    <Property Name="Date_description" Type="varchar" MaxLength="50" />
+    <Property Name="Date_mandatory" Type="varchar" MaxLength="50" />
+    <Property Name="Type_mandatory" Type="nvarchar" MaxLength="50" />
+    <Property Name="Id_mandatory" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Report_UmurEmployee">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="umur" Type="int" />
+    <Property Name="total" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.Role_permissions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Role_permissions">
+    <Key>
+      <PropertyRef Name="unique_value" />
+    </Key>
+    <Property Name="role_id" Type="varchar" MaxLength="50" />
+    <Property Name="permission_id" Type="varchar" MaxLength="50" />
+    <Property Name="permission_mod" Type="varchar" MaxLength="50" />
+    <Property Name="unique_value" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="role_name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Section">
+    <Key>
+      <PropertyRef Name="SECT_CODE" />
+    </Key>
+    <Property Name="SECT_CODE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SECT_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="Departement_code" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SelfService_EmailService">
+    <Key>
+      <PropertyRef Name="KPK" />
+    </Key>
+    <Property Name="KPK" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="500" />
+    <Property Name="Updated_at" Type="varchar" MaxLength="50" />
+    <Property Name="Created_at" Type="varchar" MaxLength="50" />
+    <Property Name="Email_from" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Temp_AttendanceIntern">
+    <Key>
+      <PropertyRef Name="Attendance_id" />
+    </Key>
+    <Property Name="Cardholder Name" Type="nvarchar(max)" />
+    <Property Name="KPK" Type="nvarchar(max)" />
+    <Property Name="Entry Clock" Type="nvarchar(max)" />
+    <Property Name="Entry Card" Type="nvarchar(max)" />
+    <Property Name="Entry Date/Time" Type="nvarchar(max)" />
+    <Property Name="Exit Clock" Type="nvarchar(max)" />
+    <Property Name="Exit Card" Type="nvarchar(max)" />
+    <Property Name="Exit Date/Time" Type="nvarchar(max)" />
+    <Property Name="Time Worked" Type="nvarchar(max)" />
+    <Property Name="Date" Type="nvarchar(max)" />
+    <Property Name="StatusATN" Type="nvarchar" MaxLength="50" />
+    <Property Name="StatusABS" Type="nvarchar" MaxLength="50" />
+    <Property Name="Attendance_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Temp_AttendanceInternIn">
+    <Key>
+      <PropertyRef Name="Attendance_id" />
+    </Key>
+    <Property Name="Cardholder Name" Type="nvarchar(max)" />
+    <Property Name="KPK" Type="nvarchar(max)" />
+    <Property Name="Entry Clock" Type="nvarchar(max)" />
+    <Property Name="Entry Card" Type="nvarchar(max)" />
+    <Property Name="Entry Date/Time" Type="nvarchar(max)" />
+    <Property Name="Exit Clock" Type="nvarchar(max)" />
+    <Property Name="Exit Card" Type="nvarchar(max)" />
+    <Property Name="Exit Date/Time" Type="nvarchar(max)" />
+    <Property Name="Time Worked" Type="nvarchar(max)" />
+    <Property Name="Date" Type="nvarchar(max)" />
+    <Property Name="Attendance_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Temp_AttendanceInternOut">
+    <Key>
+      <PropertyRef Name="Attendance_id" />
+    </Key>
+    <Property Name="Cardholder Name" Type="nvarchar(max)" />
+    <Property Name="KPK" Type="nvarchar(max)" />
+    <Property Name="Entry Clock" Type="nvarchar(max)" />
+    <Property Name="Entry Card" Type="nvarchar(max)" />
+    <Property Name="Entry Date/Time" Type="nvarchar(max)" />
+    <Property Name="Exit Clock" Type="nvarchar(max)" />
+    <Property Name="Exit Card" Type="nvarchar(max)" />
+    <Property Name="Exit Date/Time" Type="nvarchar(max)" />
+    <Property Name="Time Worked" Type="nvarchar(max)" />
+    <Property Name="Date" Type="nvarchar(max)" />
+    <Property Name="Attendance_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Temp_InternActivity">
+    <Key>
+      <PropertyRef Name="Activity_ID" />
+    </Key>
+    <Property Name="KPK" Type="nvarchar" MaxLength="10" />
+    <Property Name="Date" Type="nvarchar(max)" />
+    <Property Name="Activity" Type="nvarchar(max)" />
+    <Property Name="Activity_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="roles_id" Type="varchar" MaxLength="50" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="status_update_password" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.All_employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="All_employee">
+    <Key>
+      <PropertyRef Name="EMCMPY" />
+      <PropertyRef Name="EMEMP" />
+    </Key>
+    <Property Name="EMCMPY" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMEMP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMNAME" Type="varchar" MaxLength="50" />
+    <Property Name="EMDEPT" Type="varchar" MaxLength="50" />
+    <Property Name="EMLOC" Type="varchar" MaxLength="50" />
+    <Property Name="EMJOBD" Type="varchar" MaxLength="50" />
+    <Property Name="EMJOBA" Type="varchar" MaxLength="50" />
+    <Property Name="EMADD1" Type="varchar" MaxLength="50" />
+    <Property Name="EMADD2" Type="varchar" MaxLength="50" />
+    <Property Name="EMADD3" Type="varchar" MaxLength="50" />
+    <Property Name="EMASN" Type="varchar" MaxLength="50" />
+    <Property Name="EMBEDU" Type="varchar" MaxLength="50" />
+    <Property Name="EMBIRT" Type="varchar" MaxLength="50" />
+    <Property Name="EMBUSL" Type="varchar" MaxLength="50" />
+    <Property Name="EMBUSR" Type="varchar" MaxLength="50" />
+    <Property Name="EMBUSS" Type="varchar" MaxLength="50" />
+    <Property Name="SUPNAME" Type="varchar" MaxLength="50" />
+    <Property Name="EMPAYT" Type="varchar" MaxLength="50" />
+    <Property Name="EMRELI" Type="varchar" MaxLength="50" />
+    <Property Name="EMSEXT" Type="varchar" MaxLength="50" />
+    <Property Name="DEPT_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="DEPT_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="SECT_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="SECT_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="JOB_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="EMITAX" Type="varchar" MaxLength="50" />
+    <Property Name="EMUSID" Type="varchar" MaxLength="50" />
+    <Property Name="EMUNIO" Type="varchar" MaxLength="50" />
+    <Property Name="EMITST" Type="varchar" MaxLength="50" />
+    <Property Name="EMWKHR" Type="varchar" MaxLength="50" />
+    <Property Name="EMHTLC" Type="varchar" MaxLength="50" />
+    <Property Name="EMGRAD" Type="varchar" MaxLength="50" />
+    <Property Name="EMMRST" Type="varchar" MaxLength="50" />
+    <Property Name="EMSUP#" Type="varchar" MaxLength="50" />
+    <Property Name="OLDOCONT" Type="varchar" MaxLength="50" />
+    <Property Name="EMEMST" Type="varchar" MaxLength="50" />
+    <Property Name="ENDCONT" Type="varchar" MaxLength="50" />
+    <Property Name="EMCOMM" Type="varchar" MaxLength="50" />
+    <Property Name="EMTERM" Type="varchar" MaxLength="50" />
+    <Property Name="EMTREF" Type="varchar" MaxLength="50" />
+    <Property Name="EMSTAT" Type="varchar" MaxLength="50" />
+    <Property Name="PHONE" Type="varchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="50" />
+    <Property Name="TOTALHOURS" Type="varchar" MaxLength="50" />
+    <Property Name="TOTALYEARS" Type="varchar" MaxLength="50" />
+    <Property Name="DETAILWORKEXPERIENCE" Type="varchar" MaxLength="50" />
+    <Property Name="LABEL_3" Type="varchar" MaxLength="50" />
+    <Property Name="LABEL_2" Type="varchar" MaxLength="50" />
+    <Property Name="LABEL_1" Type="varchar" MaxLength="50" />
+    <Property Name="EOC" Type="varchar" MaxLength="50" />
+    <Property Name="BUS_ROUTE" Type="varchar" MaxLength="50" />
+    <Property Name="PSID" Type="varchar" MaxLength="50" />
+    <Property Name="LAST_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="FIRST_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="BPJS" Type="varchar" MaxLength="50" />
+    <Property Name="BPJS_Ketenagakerjaan" Type="varchar" MaxLength="50" />
+    <Property Name="EKTP" Type="varchar" MaxLength="50" />
+    <Property Name="EMEMAD" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.EmployeeDress' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="EmployeeDress">
+    <Key>
+      <PropertyRef Name="EMEMP" />
+    </Key>
+    <Property Name="EMEMP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Grade_code" Type="varchar" MaxLength="50" />
+    <Property Name="Grade_name" Type="varchar" MaxLength="50" />
+    <Property Name="Dress_name" Type="varchar" MaxLength="50" />
+    <Property Name="Exception" Type="varchar" MaxLength="50" />
+    <Property Name="Expr1" Type="varchar" MaxLength="50" />
+    <Property Name="Expr2" Type="varchar" MaxLength="50" />
+    <Property Name="Expr3" Type="varchar" MaxLength="50" />
+    <Property Name="Expr4" Type="varchar" MaxLength="50" />
+    <Property Name="EMNAME" Type="varchar" MaxLength="50" />
+    <Property Name="EMGRAD" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.GradeView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="GradeView">
+    <Key>
+      <PropertyRef Name="EMEMP" />
+    </Key>
+    <Property Name="grade_code" Type="varchar" MaxLength="50" />
+    <Property Name="date_code" Type="varchar" MaxLength="50" />
+    <Property Name="date_value" Type="int" />
+    <Property Name="grade_value" Type="varchar" MaxLength="50" />
+    <Property Name="EMEMP" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.Intern_ListUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Intern_ListUsers">
+    <Key>
+      <PropertyRef Name="IDINTERN" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="INTERNNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="BUDGET" Type="nvarchar" MaxLength="50" />
+    <Property Name="DEPT" Type="nvarchar" MaxLength="20" />
+    <Property Name="SECTION" Type="nvarchar" MaxLength="20" />
+    <Property Name="DOB" Type="nvarchar(max)" />
+    <Property Name="PHONE" Type="nvarchar" MaxLength="20" />
+    <Property Name="PERSONALMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="OFFICEMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="UNIVERSITY" Type="nvarchar" MaxLength="50" />
+    <Property Name="MAJOR" Type="nvarchar" MaxLength="50" />
+    <Property Name="PROJECT" Type="nvarchar(max)" />
+    <Property Name="MENTOR" Type="nvarchar" MaxLength="30" />
+    <Property Name="MANAGER" Type="nvarchar" MaxLength="50" />
+    <Property Name="JOINDATE" Type="nvarchar(max)" />
+    <Property Name="ENDDATE" Type="nvarchar(max)" />
+    <Property Name="EXTEND" Type="nvarchar(max)" />
+    <Property Name="SALARY" Type="nvarchar" MaxLength="50" />
+    <Property Name="NIM" Type="nvarchar" MaxLength="20" />
+    <Property Name="NIK" Type="nvarchar" MaxLength="20" />
+    <Property Name="ADDRESS" Type="text" />
+    <Property Name="GENDER" Type="nvarchar" MaxLength="20" />
+    <Property Name="IDINTERN" Type="int" Nullable="false" />
+    <Property Name="NAMEMENTOR" Type="varchar" MaxLength="50" />
+    <Property Name="DEPT_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="SECT_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="EMAILMENTOR" Type="varchar" MaxLength="50" />
+    <Property Name="YOS" Type="int" />
+    <Property Name="EOC" Type="int" />
+    <Property Name="NAMEMANAGER" Type="varchar" MaxLength="50" />
+    <Property Name="EMAILMANAGER" Type="varchar" MaxLength="50" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="20" />
+    <Property Name="KPK" Type="nvarchar" MaxLength="10" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="roles_id" Type="varchar" MaxLength="50" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="role_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="role_name" Type="varchar" MaxLength="50" />
+    <Property Name="EMEMP" Type="varchar" MaxLength="5" />
+    <Property Name="EMNAME" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.ListUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ListUsers">
+    <Key>
+      <PropertyRef Name="EMEMP" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="role_id" />
+      <PropertyRef Name="EMCMPY" />
+    </Key>
+    <Property Name="EMEMP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="roles_id" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMNAME" Type="varchar" MaxLength="50" />
+    <Property Name="EMDEPT" Type="varchar" MaxLength="50" />
+    <Property Name="EMLOC" Type="varchar" MaxLength="50" />
+    <Property Name="EMJOBD" Type="varchar" MaxLength="50" />
+    <Property Name="EMJOBA" Type="varchar" MaxLength="50" />
+    <Property Name="role_name" Type="varchar" MaxLength="50" />
+    <Property Name="role_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMPAYT" Type="varchar" MaxLength="50" />
+    <Property Name="EMSEXT" Type="varchar" MaxLength="50" />
+    <Property Name="EMCMPY" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.RoleList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RoleList">
+    <Key>
+      <PropertyRef Name="username" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Expr1" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="roles_id" Type="varchar" MaxLength="50" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" />
+    <Property Name="Expr2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="role_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="role_name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.RolePermission' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RolePermission">
+    <Key>
+      <PropertyRef Name="unique_value" />
+    </Key>
+    <Property Name="role_name" Type="varchar" MaxLength="50" />
+    <Property Name="unique_value" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="permission_description" Type="varchar" MaxLength="50" />
+    <Property Name="permission_id" Type="varchar" MaxLength="50" />
+    <Property Name="role_id" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.SALARY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SALARY">
+    <Key>
+      <PropertyRef Name="EMEMP" />
+    </Key>
+    <Property Name="EMEMP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="salary" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.TotalHours' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TotalHours">
+    <Key>
+      <PropertyRef Name="EMEMP" />
+    </Key>
+    <Property Name="EMEMP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="periode_id" Type="varchar" MaxLength="50" />
+    <Property Name="Masa_kerja_date" Type="varchar" MaxLength="50" />
+    <Property Name="Masa_kerja_value" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.VwIntern_AbsLate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VwIntern_AbsLate">
+    <Key>
+      <PropertyRef Name="Attendance_id" />
+    </Key>
+    <Property Name="KPK" Type="nvarchar" MaxLength="10" />
+    <Property Name="Cardholder_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="MENTOR" Type="nvarchar" MaxLength="30" />
+    <Property Name="MANAGER" Type="nvarchar" MaxLength="50" />
+    <Property Name="ClockIn" Type="nvarchar" MaxLength="4000" />
+    <Property Name="DateClockIn" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Entry Date/Time" Type="nvarchar(max)" />
+    <Property Name="ClockOut" Type="nvarchar" MaxLength="4000" />
+    <Property Name="DateClockOut" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Entry_Out" Type="nvarchar(max)" />
+    <Property Name="total_hour" Type="int" />
+    <Property Name="Attendance_id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" />
+    <Property Name="Date_public_holidays" Type="varchar" MaxLength="50" />
+    <Property Name="Date_description" Type="varchar" MaxLength="50" />
+    <Property Name="Date_mandatory" Type="varchar" MaxLength="50" />
+    <Property Name="Type_mandatory" Type="nvarchar" MaxLength="50" />
+    <Property Name="Activity" Type="nvarchar(max)" />
+    <Property Name="Activity_ID" Type="int" />
+    <Property Name="Date" Type="nvarchar" MaxLength="4000" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.VwIntern_DashboardActLastWeek' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VwIntern_DashboardActLastWeek">
+    <Key>
+      <PropertyRef Name="Attendance_id" />
+    </Key>
+    <Property Name="test" Type="nvarchar" MaxLength="4000" />
+    <Property Name="KPK" Type="nvarchar" MaxLength="10" />
+    <Property Name="Cardholder_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="MENTOR" Type="nvarchar" MaxLength="30" />
+    <Property Name="MANAGER" Type="nvarchar" MaxLength="50" />
+    <Property Name="ClockIn" Type="nvarchar" MaxLength="4000" />
+    <Property Name="DateClockIn" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Entry Date/Time" Type="nvarchar(max)" />
+    <Property Name="ClockOut" Type="nvarchar" MaxLength="4000" />
+    <Property Name="DateClockOut" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Entry_Out" Type="nvarchar(max)" />
+    <Property Name="total_hour" Type="int" />
+    <Property Name="Attendance_id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" />
+    <Property Name="Date_public_holidays" Type="varchar" MaxLength="50" />
+    <Property Name="Date_description" Type="varchar" MaxLength="50" />
+    <Property Name="Date_mandatory" Type="varchar" MaxLength="50" />
+    <Property Name="Type_mandatory" Type="nchar" MaxLength="10" />
+    <Property Name="Activity" Type="nvarchar(max)" />
+    <Property Name="Activity_ID" Type="int" />
+    <Property Name="Date" Type="smalldatetime" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.VwIntern_MasterDataIntern' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VwIntern_MasterDataIntern">
+    <Key>
+      <PropertyRef Name="IDINTERN" />
+    </Key>
+    <Property Name="KPK" Type="nvarchar" MaxLength="10" />
+    <Property Name="INTERNNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="BUDGET" Type="nvarchar" MaxLength="50" />
+    <Property Name="DEPT" Type="nvarchar" MaxLength="20" />
+    <Property Name="SECTION" Type="nvarchar" MaxLength="20" />
+    <Property Name="DOB" Type="nvarchar(max)" />
+    <Property Name="PHONE" Type="nvarchar" MaxLength="20" />
+    <Property Name="PERSONALMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="OFFICEMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="UNIVERSITY" Type="nvarchar" MaxLength="30" />
+    <Property Name="MAJOR" Type="nvarchar" MaxLength="30" />
+    <Property Name="PROJECT" Type="nvarchar(max)" />
+    <Property Name="MENTOR" Type="nvarchar" MaxLength="30" />
+    <Property Name="MANAGER" Type="nvarchar" MaxLength="50" />
+    <Property Name="JOINDATE" Type="nvarchar(max)" />
+    <Property Name="ENDDATE" Type="nvarchar(max)" />
+    <Property Name="EXTEND" Type="nvarchar(max)" />
+    <Property Name="SALARY" Type="nvarchar" MaxLength="50" />
+    <Property Name="NIM" Type="nvarchar" MaxLength="20" />
+    <Property Name="NIK" Type="nvarchar" MaxLength="20" />
+    <Property Name="ADDRESS" Type="text" />
+    <Property Name="GENDER" Type="nvarchar" MaxLength="20" />
+    <Property Name="IDINTERN" Type="int" Nullable="false" />
+    <Property Name="NAMEMENTOR" Type="varchar" MaxLength="50" />
+    <Property Name="DEPT_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="SECT_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="EMAILMENTOR" Type="varchar" MaxLength="50" />
+    <Property Name="YOS" Type="int" />
+    <Property Name="EOC" Type="int" />
+    <Property Name="NAMEMANAGER" Type="varchar" MaxLength="50" />
+    <Property Name="EMAILMANAGER" Type="varchar" MaxLength="50" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRINTERNSHIP.dbo.VwIntern_ReportPayment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VwIntern_ReportPayment">
+    <Key>
+      <PropertyRef Name="Report_ID" />
+    </Key>
+    <Property Name="KPK" Type="nvarchar" MaxLength="10" />
+    <Property Name="INTERNNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="BUDGET" Type="nvarchar" MaxLength="50" />
+    <Property Name="DEPT_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="SECT_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="SALARY" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Report_ID" Type="int" Nullable="false" />
+    <Property Name="TAtn" Type="int" />
+    <Property Name="TAbs" Type="int" />
+    <Property Name="HalfWorkHour" Type="int" />
+    <Property Name="TDay" Type="int" />
+    <Property Name="DatePeriod" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Allowance" Type="nvarchar" MaxLength="4000" />
+  </EntityType>
+  <Function Name="Intern_ListAttendance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="EndDate" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Intern_ListAttendanceIntern" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="EndDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="KPK" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Intern_ListAttendanceInternAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KPK" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Intern_ListReportAttendanceForIntern" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="EndDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="KPK" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Intern_ListReportAttendanceIntern" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="EndDate" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Intern_MonitorIntern" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="EndDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="MENTOR" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="DBModelsStoreContainer">
+    <EntitySet Name="Departement" EntityType="Self.Departement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Intern_Activity" EntityType="Self.Intern_Activity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Intern_Attendance" EntityType="Self.Intern_Attendance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Intern_AttendanceApproval" EntityType="Self.Intern_AttendanceApproval" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Intern_MasterData" EntityType="Self.Intern_MasterData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Intern_Periode" EntityType="Self.Intern_Periode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Job" EntityType="Self.Job" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewCalendarEvent" EntityType="Self.NewCalendarEvent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="permission" EntityType="Self.permission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Public_Holidays" EntityType="Self.Public_Holidays" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Report_UmurEmployee" EntityType="Self.Report_UmurEmployee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Section" EntityType="Self.Section" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SelfService_EmailService" EntityType="Self.SelfService_EmailService" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Temp_AttendanceIntern" EntityType="Self.Temp_AttendanceIntern" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Temp_AttendanceInternIn" EntityType="Self.Temp_AttendanceInternIn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Temp_AttendanceInternOut" EntityType="Self.Temp_AttendanceInternOut" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Temp_InternActivity" EntityType="Self.Temp_InternActivity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Emergency_employee" EntityType="Self.Emergency_employee" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Emergency_employee].[Employee_code] AS [Employee_code], 
+    [Emergency_employee].[Emergency_name] AS [Emergency_name], 
+    [Emergency_employee].[Emergency_address] AS [Emergency_address], 
+    [Emergency_employee].[Emergency_relation] AS [Emergency_relation], 
+    [Emergency_employee].[Emergency_name_2] AS [Emergency_name_2], 
+    [Emergency_employee].[Emergency_contact] AS [Emergency_contact]
+    FROM [dbo].[Emergency_employee] AS [Emergency_employee]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Historical_employee" EntityType="Self.Historical_employee" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Historical_employee].[employee_code] AS [employee_code], 
+    [Historical_employee].[employee_name] AS [employee_name], 
+    [Historical_employee].[plant] AS [plant], 
+    [Historical_employee].[department] AS [department], 
+    [Historical_employee].[section] AS [section], 
+    [Historical_employee].[job_title] AS [job_title], 
+    [Historical_employee].[updated_at] AS [updated_at], 
+    [Historical_employee].[id_historical] AS [id_historical], 
+    [Historical_employee].[plant_after] AS [plant_after], 
+    [Historical_employee].[department_after] AS [department_after], 
+    [Historical_employee].[section_after] AS [section_after], 
+    [Historical_employee].[job_title_after] AS [job_title_after], 
+    [Historical_employee].[status] AS [status]
+    FROM [dbo].[Historical_employee] AS [Historical_employee]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Intern_AttendanceNew" EntityType="Self.Intern_AttendanceNew" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Intern_AttendanceNew].[test] AS [test], 
+    [Intern_AttendanceNew].[KPK] AS [KPK], 
+    [Intern_AttendanceNew].[Cardholder_Name] AS [Cardholder_Name], 
+    [Intern_AttendanceNew].[MENTOR] AS [MENTOR], 
+    [Intern_AttendanceNew].[MANAGER] AS [MANAGER], 
+    [Intern_AttendanceNew].[ClockIn] AS [ClockIn], 
+    [Intern_AttendanceNew].[DateClockIn] AS [DateClockIn], 
+    [Intern_AttendanceNew].[Entry Date/Time] AS [Entry Date/Time], 
+    [Intern_AttendanceNew].[ClockOut] AS [ClockOut], 
+    [Intern_AttendanceNew].[DateClockOut] AS [DateClockOut], 
+    [Intern_AttendanceNew].[Entry_Out] AS [Entry_Out], 
+    [Intern_AttendanceNew].[total_hour] AS [total_hour], 
+    [Intern_AttendanceNew].[Attendance_id] AS [Attendance_id], 
+    [Intern_AttendanceNew].[id] AS [id], 
+    [Intern_AttendanceNew].[Date_public_holidays] AS [Date_public_holidays], 
+    [Intern_AttendanceNew].[Date_description] AS [Date_description], 
+    [Intern_AttendanceNew].[Date_mandatory] AS [Date_mandatory], 
+    [Intern_AttendanceNew].[Type_mandatory] AS [Type_mandatory], 
+    [Intern_AttendanceNew].[Activity] AS [Activity], 
+    [Intern_AttendanceNew].[Activity_ID] AS [Activity_ID], 
+    [Intern_AttendanceNew].[Date] AS [Date], 
+    [Intern_AttendanceNew].[STATUS] AS [STATUS]
+    FROM [dbo].[Intern_AttendanceNew] AS [Intern_AttendanceNew]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Intern_DetailContract" EntityType="Self.Intern_DetailContract" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Intern_DetailContract].[ID_Contract] AS [ID_Contract], 
+    [Intern_DetailContract].[KPK] AS [KPK], 
+    [Intern_DetailContract].[DJoinDate] AS [DJoinDate], 
+    [Intern_DetailContract].[DEndDate] AS [DEndDate], 
+    [Intern_DetailContract].[DExtend] AS [DExtend]
+    FROM [dbo].[Intern_DetailContract] AS [Intern_DetailContract]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="nbrs" EntityType="Self.nbrs" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [nbrs].[nbr] AS [nbr]
+    FROM [dbo].[nbrs] AS [nbrs]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Role_permissions" EntityType="Self.Role_permissions" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Role_permissions].[role_id] AS [role_id], 
+    [Role_permissions].[permission_id] AS [permission_id], 
+    [Role_permissions].[permission_mod] AS [permission_mod], 
+    [Role_permissions].[unique_value] AS [unique_value], 
+    [Role_permissions].[status] AS [status]
+    FROM [dbo].[Role_permissions] AS [Role_permissions]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="All_employee" EntityType="Self.All_employee" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [All_employee].[EMCMPY] AS [EMCMPY], 
+    [All_employee].[EMEMP] AS [EMEMP], 
+    [All_employee].[EMNAME] AS [EMNAME], 
+    [All_employee].[EMDEPT] AS [EMDEPT], 
+    [All_employee].[EMLOC] AS [EMLOC], 
+    [All_employee].[EMJOBD] AS [EMJOBD], 
+    [All_employee].[EMJOBA] AS [EMJOBA], 
+    [All_employee].[EMADD1] AS [EMADD1], 
+    [All_employee].[EMADD2] AS [EMADD2], 
+    [All_employee].[EMADD3] AS [EMADD3], 
+    [All_employee].[EMASN] AS [EMASN], 
+    [All_employee].[EMBEDU] AS [EMBEDU], 
+    [All_employee].[EMBIRT] AS [EMBIRT], 
+    [All_employee].[EMBUSL] AS [EMBUSL], 
+    [All_employee].[EMBUSR] AS [EMBUSR], 
+    [All_employee].[EMBUSS] AS [EMBUSS], 
+    [All_employee].[SUPNAME] AS [SUPNAME], 
+    [All_employee].[EMPAYT] AS [EMPAYT], 
+    [All_employee].[EMRELI] AS [EMRELI], 
+    [All_employee].[EMSEXT] AS [EMSEXT], 
+    [All_employee].[DEPT_CODE] AS [DEPT_CODE], 
+    [All_employee].[DEPT_NAME] AS [DEPT_NAME], 
+    [All_employee].[SECT_CODE] AS [SECT_CODE], 
+    [All_employee].[SECT_NAME] AS [SECT_NAME], 
+    [All_employee].[JOB_CODE] AS [JOB_CODE], 
+    [All_employee].[Description] AS [Description], 
+    [All_employee].[EMITAX] AS [EMITAX], 
+    [All_employee].[EMUSID] AS [EMUSID], 
+    [All_employee].[EMUNIO] AS [EMUNIO], 
+    [All_employee].[EMITST] AS [EMITST], 
+    [All_employee].[EMWKHR] AS [EMWKHR], 
+    [All_employee].[EMHTLC] AS [EMHTLC], 
+    [All_employee].[EMGRAD] AS [EMGRAD], 
+    [All_employee].[EMMRST] AS [EMMRST], 
+    [All_employee].[EMSUP#] AS [EMSUP#], 
+    [All_employee].[OLDOCONT] AS [OLDOCONT], 
+    [All_employee].[EMEMST] AS [EMEMST], 
+    [All_employee].[ENDCONT] AS [ENDCONT], 
+    [All_employee].[EMCOMM] AS [EMCOMM], 
+    [All_employee].[EMTERM] AS [EMTERM], 
+    [All_employee].[EMTREF] AS [EMTREF], 
+    [All_employee].[EMSTAT] AS [EMSTAT], 
+    [All_employee].[PHONE] AS [PHONE], 
+    [All_employee].[EMAIL] AS [EMAIL], 
+    [All_employee].[TOTALHOURS] AS [TOTALHOURS], 
+    [All_employee].[TOTALYEARS] AS [TOTALYEARS], 
+    [All_employee].[DETAILWORKEXPERIENCE] AS [DETAILWORKEXPERIENCE], 
+    [All_employee].[LABEL_3] AS [LABEL_3], 
+    [All_employee].[LABEL_2] AS [LABEL_2], 
+    [All_employee].[LABEL_1] AS [LABEL_1], 
+    [All_employee].[EOC] AS [EOC], 
+    [All_employee].[BUS_ROUTE] AS [BUS_ROUTE], 
+    [All_employee].[PSID] AS [PSID], 
+    [All_employee].[LAST_NAME] AS [LAST_NAME], 
+    [All_employee].[FIRST_NAME] AS [FIRST_NAME], 
+    [All_employee].[BPJS] AS [BPJS], 
+    [All_employee].[BPJS_Ketenagakerjaan] AS [BPJS_Ketenagakerjaan], 
+    [All_employee].[EKTP] AS [EKTP], 
+    [All_employee].[EMEMAD] AS [EMEMAD]
+    FROM [dbo].[All_employee] AS [All_employee]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="EmployeeDress" EntityType="Self.EmployeeDress" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [EmployeeDress].[EMEMP] AS [EMEMP], 
+    [EmployeeDress].[Grade_code] AS [Grade_code], 
+    [EmployeeDress].[Grade_name] AS [Grade_name], 
+    [EmployeeDress].[Dress_name] AS [Dress_name], 
+    [EmployeeDress].[Exception] AS [Exception], 
+    [EmployeeDress].[Expr1] AS [Expr1], 
+    [EmployeeDress].[Expr2] AS [Expr2], 
+    [EmployeeDress].[Expr3] AS [Expr3], 
+    [EmployeeDress].[Expr4] AS [Expr4], 
+    [EmployeeDress].[EMNAME] AS [EMNAME], 
+    [EmployeeDress].[EMGRAD] AS [EMGRAD]
+    FROM [dbo].[EmployeeDress] AS [EmployeeDress]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GradeView" EntityType="Self.GradeView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [GradeView].[grade_code] AS [grade_code], 
+    [GradeView].[date_code] AS [date_code], 
+    [GradeView].[date_value] AS [date_value], 
+    [GradeView].[grade_value] AS [grade_value], 
+    [GradeView].[EMEMP] AS [EMEMP]
+    FROM [dbo].[GradeView] AS [GradeView]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Intern_ListUsers" EntityType="Self.Intern_ListUsers" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Intern_ListUsers].[INTERNNAME] AS [INTERNNAME], 
+    [Intern_ListUsers].[BUDGET] AS [BUDGET], 
+    [Intern_ListUsers].[DEPT] AS [DEPT], 
+    [Intern_ListUsers].[SECTION] AS [SECTION], 
+    [Intern_ListUsers].[DOB] AS [DOB], 
+    [Intern_ListUsers].[PHONE] AS [PHONE], 
+    [Intern_ListUsers].[PERSONALMAIL] AS [PERSONALMAIL], 
+    [Intern_ListUsers].[OFFICEMAIL] AS [OFFICEMAIL], 
+    [Intern_ListUsers].[UNIVERSITY] AS [UNIVERSITY], 
+    [Intern_ListUsers].[MAJOR] AS [MAJOR], 
+    [Intern_ListUsers].[PROJECT] AS [PROJECT], 
+    [Intern_ListUsers].[MENTOR] AS [MENTOR], 
+    [Intern_ListUsers].[MANAGER] AS [MANAGER], 
+    [Intern_ListUsers].[JOINDATE] AS [JOINDATE], 
+    [Intern_ListUsers].[ENDDATE] AS [ENDDATE], 
+    [Intern_ListUsers].[EXTEND] AS [EXTEND], 
+    [Intern_ListUsers].[SALARY] AS [SALARY], 
+    [Intern_ListUsers].[NIM] AS [NIM], 
+    [Intern_ListUsers].[NIK] AS [NIK], 
+    [Intern_ListUsers].[ADDRESS] AS [ADDRESS], 
+    [Intern_ListUsers].[GENDER] AS [GENDER], 
+    [Intern_ListUsers].[IDINTERN] AS [IDINTERN], 
+    [Intern_ListUsers].[NAMEMENTOR] AS [NAMEMENTOR], 
+    [Intern_ListUsers].[DEPT_NAME] AS [DEPT_NAME], 
+    [Intern_ListUsers].[SECT_NAME] AS [SECT_NAME], 
+    [Intern_ListUsers].[EMAILMENTOR] AS [EMAILMENTOR], 
+    [Intern_ListUsers].[YOS] AS [YOS], 
+    [Intern_ListUsers].[EOC] AS [EOC], 
+    [Intern_ListUsers].[NAMEMANAGER] AS [NAMEMANAGER], 
+    [Intern_ListUsers].[EMAILMANAGER] AS [EMAILMANAGER], 
+    [Intern_ListUsers].[STATUS] AS [STATUS], 
+    [Intern_ListUsers].[KPK] AS [KPK], 
+    [Intern_ListUsers].[username] AS [username], 
+    [Intern_ListUsers].[password] AS [password], 
+    [Intern_ListUsers].[roles_id] AS [roles_id], 
+    [Intern_ListUsers].[user_id] AS [user_id], 
+    [Intern_ListUsers].[role_id] AS [role_id], 
+    [Intern_ListUsers].[role_name] AS [role_name], 
+    [Intern_ListUsers].[EMEMP] AS [EMEMP], 
+    [Intern_ListUsers].[EMNAME] AS [EMNAME]
+    FROM [dbo].[Intern_ListUsers] AS [Intern_ListUsers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ListUsers" EntityType="Self.ListUsers" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ListUsers].[EMEMP] AS [EMEMP], 
+    [ListUsers].[roles_id] AS [roles_id], 
+    [ListUsers].[password] AS [password], 
+    [ListUsers].[user_id] AS [user_id], 
+    [ListUsers].[username] AS [username], 
+    [ListUsers].[EMNAME] AS [EMNAME], 
+    [ListUsers].[EMDEPT] AS [EMDEPT], 
+    [ListUsers].[EMLOC] AS [EMLOC], 
+    [ListUsers].[EMJOBD] AS [EMJOBD], 
+    [ListUsers].[EMJOBA] AS [EMJOBA], 
+    [ListUsers].[role_name] AS [role_name], 
+    [ListUsers].[role_id] AS [role_id], 
+    [ListUsers].[EMPAYT] AS [EMPAYT], 
+    [ListUsers].[EMSEXT] AS [EMSEXT], 
+    [ListUsers].[EMCMPY] AS [EMCMPY]
+    FROM [dbo].[ListUsers] AS [ListUsers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RoleList" EntityType="Self.RoleList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RoleList].[username] AS [username], 
+    [RoleList].[Expr1] AS [Expr1], 
+    [RoleList].[password] AS [password], 
+    [RoleList].[roles_id] AS [roles_id], 
+    [RoleList].[user_id] AS [user_id], 
+    [RoleList].[Expr2] AS [Expr2], 
+    [RoleList].[role_id] AS [role_id], 
+    [RoleList].[role_name] AS [role_name]
+    FROM [dbo].[RoleList] AS [RoleList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RolePermission" EntityType="Self.RolePermission" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RolePermission].[role_name] AS [role_name], 
+    [RolePermission].[unique_value] AS [unique_value], 
+    [RolePermission].[permission_description] AS [permission_description], 
+    [RolePermission].[permission_id] AS [permission_id], 
+    [RolePermission].[role_id] AS [role_id], 
+    [RolePermission].[status] AS [status]
+    FROM [dbo].[RolePermission] AS [RolePermission]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SALARY" EntityType="Self.SALARY" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SALARY].[EMEMP] AS [EMEMP], 
+    [SALARY].[salary] AS [salary]
+    FROM [dbo].[SALARY] AS [SALARY]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TotalHours" EntityType="Self.TotalHours" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TotalHours].[EMEMP] AS [EMEMP], 
+    [TotalHours].[periode_id] AS [periode_id], 
+    [TotalHours].[Masa_kerja_date] AS [Masa_kerja_date], 
+    [TotalHours].[Masa_kerja_value] AS [Masa_kerja_value]
+    FROM [dbo].[TotalHours] AS [TotalHours]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VwIntern_AbsLate" EntityType="Self.VwIntern_AbsLate" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VwIntern_AbsLate].[KPK] AS [KPK], 
+    [VwIntern_AbsLate].[Cardholder_Name] AS [Cardholder_Name], 
+    [VwIntern_AbsLate].[MENTOR] AS [MENTOR], 
+    [VwIntern_AbsLate].[MANAGER] AS [MANAGER], 
+    [VwIntern_AbsLate].[ClockIn] AS [ClockIn], 
+    [VwIntern_AbsLate].[DateClockIn] AS [DateClockIn], 
+    [VwIntern_AbsLate].[Entry Date/Time] AS [Entry Date/Time], 
+    [VwIntern_AbsLate].[ClockOut] AS [ClockOut], 
+    [VwIntern_AbsLate].[DateClockOut] AS [DateClockOut], 
+    [VwIntern_AbsLate].[Entry_Out] AS [Entry_Out], 
+    [VwIntern_AbsLate].[total_hour] AS [total_hour], 
+    [VwIntern_AbsLate].[Attendance_id] AS [Attendance_id], 
+    [VwIntern_AbsLate].[id] AS [id], 
+    [VwIntern_AbsLate].[Date_public_holidays] AS [Date_public_holidays], 
+    [VwIntern_AbsLate].[Date_description] AS [Date_description], 
+    [VwIntern_AbsLate].[Date_mandatory] AS [Date_mandatory], 
+    [VwIntern_AbsLate].[Type_mandatory] AS [Type_mandatory], 
+    [VwIntern_AbsLate].[Activity] AS [Activity], 
+    [VwIntern_AbsLate].[Activity_ID] AS [Activity_ID], 
+    [VwIntern_AbsLate].[Date] AS [Date], 
+    [VwIntern_AbsLate].[STATUS] AS [STATUS]
+    FROM [dbo].[VwIntern_AbsLate] AS [VwIntern_AbsLate]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VwIntern_DashboardActLastWeek" EntityType="Self.VwIntern_DashboardActLastWeek" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VwIntern_DashboardActLastWeek].[test] AS [test], 
+    [VwIntern_DashboardActLastWeek].[KPK] AS [KPK], 
+    [VwIntern_DashboardActLastWeek].[Cardholder_Name] AS [Cardholder_Name], 
+    [VwIntern_DashboardActLastWeek].[MENTOR] AS [MENTOR], 
+    [VwIntern_DashboardActLastWeek].[MANAGER] AS [MANAGER], 
+    [VwIntern_DashboardActLastWeek].[ClockIn] AS [ClockIn], 
+    [VwIntern_DashboardActLastWeek].[DateClockIn] AS [DateClockIn], 
+    [VwIntern_DashboardActLastWeek].[Entry Date/Time] AS [Entry Date/Time], 
+    [VwIntern_DashboardActLastWeek].[ClockOut] AS [ClockOut], 
+    [VwIntern_DashboardActLastWeek].[DateClockOut] AS [DateClockOut], 
+    [VwIntern_DashboardActLastWeek].[Entry_Out] AS [Entry_Out], 
+    [VwIntern_DashboardActLastWeek].[total_hour] AS [total_hour], 
+    [VwIntern_DashboardActLastWeek].[Attendance_id] AS [Attendance_id], 
+    [VwIntern_DashboardActLastWeek].[id] AS [id], 
+    [VwIntern_DashboardActLastWeek].[Date_public_holidays] AS [Date_public_holidays], 
+    [VwIntern_DashboardActLastWeek].[Date_description] AS [Date_description], 
+    [VwIntern_DashboardActLastWeek].[Date_mandatory] AS [Date_mandatory], 
+    [VwIntern_DashboardActLastWeek].[Type_mandatory] AS [Type_mandatory], 
+    [VwIntern_DashboardActLastWeek].[Activity] AS [Activity], 
+    [VwIntern_DashboardActLastWeek].[Activity_ID] AS [Activity_ID], 
+    [VwIntern_DashboardActLastWeek].[Date] AS [Date], 
+    [VwIntern_DashboardActLastWeek].[STATUS] AS [STATUS]
+    FROM [dbo].[VwIntern_DashboardActLastWeek] AS [VwIntern_DashboardActLastWeek]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VwIntern_MasterDataIntern" EntityType="Self.VwIntern_MasterDataIntern" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VwIntern_MasterDataIntern].[KPK] AS [KPK], 
+    [VwIntern_MasterDataIntern].[INTERNNAME] AS [INTERNNAME], 
+    [VwIntern_MasterDataIntern].[BUDGET] AS [BUDGET], 
+    [VwIntern_MasterDataIntern].[DEPT] AS [DEPT], 
+    [VwIntern_MasterDataIntern].[SECTION] AS [SECTION], 
+    [VwIntern_MasterDataIntern].[DOB] AS [DOB], 
+    [VwIntern_MasterDataIntern].[PHONE] AS [PHONE], 
+    [VwIntern_MasterDataIntern].[PERSONALMAIL] AS [PERSONALMAIL], 
+    [VwIntern_MasterDataIntern].[OFFICEMAIL] AS [OFFICEMAIL], 
+    [VwIntern_MasterDataIntern].[UNIVERSITY] AS [UNIVERSITY], 
+    [VwIntern_MasterDataIntern].[MAJOR] AS [MAJOR], 
+    [VwIntern_MasterDataIntern].[PROJECT] AS [PROJECT], 
+    [VwIntern_MasterDataIntern].[MENTOR] AS [MENTOR], 
+    [VwIntern_MasterDataIntern].[MANAGER] AS [MANAGER], 
+    [VwIntern_MasterDataIntern].[JOINDATE] AS [JOINDATE], 
+    [VwIntern_MasterDataIntern].[ENDDATE] AS [ENDDATE], 
+    [VwIntern_MasterDataIntern].[EXTEND] AS [EXTEND], 
+    [VwIntern_MasterDataIntern].[SALARY] AS [SALARY], 
+    [VwIntern_MasterDataIntern].[NIM] AS [NIM], 
+    [VwIntern_MasterDataIntern].[NIK] AS [NIK], 
+    [VwIntern_MasterDataIntern].[ADDRESS] AS [ADDRESS], 
+    [VwIntern_MasterDataIntern].[GENDER] AS [GENDER], 
+    [VwIntern_MasterDataIntern].[IDINTERN] AS [IDINTERN], 
+    [VwIntern_MasterDataIntern].[NAMEMENTOR] AS [NAMEMENTOR], 
+    [VwIntern_MasterDataIntern].[DEPT_NAME] AS [DEPT_NAME], 
+    [VwIntern_MasterDataIntern].[SECT_NAME] AS [SECT_NAME], 
+    [VwIntern_MasterDataIntern].[EMAILMENTOR] AS [EMAILMENTOR], 
+    [VwIntern_MasterDataIntern].[YOS] AS [YOS], 
+    [VwIntern_MasterDataIntern].[EOC] AS [EOC], 
+    [VwIntern_MasterDataIntern].[NAMEMANAGER] AS [NAMEMANAGER], 
+    [VwIntern_MasterDataIntern].[EMAILMANAGER] AS [EMAILMANAGER], 
+    [VwIntern_MasterDataIntern].[STATUS] AS [STATUS]
+    FROM [dbo].[VwIntern_MasterDataIntern] AS [VwIntern_MasterDataIntern]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VwIntern_ReportPayment" EntityType="Self.VwIntern_ReportPayment" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VwIntern_ReportPayment].[KPK] AS [KPK], 
+    [VwIntern_ReportPayment].[INTERNNAME] AS [INTERNNAME], 
+    [VwIntern_ReportPayment].[BUDGET] AS [BUDGET], 
+    [VwIntern_ReportPayment].[DEPT_NAME] AS [DEPT_NAME], 
+    [VwIntern_ReportPayment].[SECT_NAME] AS [SECT_NAME], 
+    [VwIntern_ReportPayment].[SALARY] AS [SALARY], 
+    [VwIntern_ReportPayment].[Report_ID] AS [Report_ID], 
+    [VwIntern_ReportPayment].[TAtn] AS [TAtn], 
+    [VwIntern_ReportPayment].[TAbs] AS [TAbs], 
+    [VwIntern_ReportPayment].[HalfWorkHour] AS [HalfWorkHour], 
+    [VwIntern_ReportPayment].[TDay] AS [TDay], 
+    [VwIntern_ReportPayment].[DatePeriod] AS [DatePeriod], 
+    [VwIntern_ReportPayment].[Allowance] AS [Allowance]
+    FROM [dbo].[VwIntern_ReportPayment] AS [VwIntern_ReportPayment]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

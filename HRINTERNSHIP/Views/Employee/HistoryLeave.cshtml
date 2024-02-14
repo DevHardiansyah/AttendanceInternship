@@ -1,0 +1,356 @@
+﻿@{
+    ViewBag.Title = "HistoryLeave";
+    Layout = "~/Views/Shared/_dashboard.cshtml";
+}
+<style>
+    /*left right modal*/
+    .modal.left_modal,
+    .modal.right_modal {
+        position: fixed;
+        z-index: 99999;
+    }
+
+    .modal.left_modal .modal-dialog,
+    .modal.right_modal .modal-dialog {
+        position: fixed;
+        margin: auto;
+        width: 32%;
+        height: 100%;
+        -webkit-transform: translate3d(0%, 0, 0);
+        -ms-transform: translate3d(0%, 0, 0);
+        -o-transform: translate3d(0%, 0, 0);
+        transform: translate3d(0%, 0, 0);
+    }
+
+    .modal-dialog {
+        /* max-width: 100%; */
+        margin: 1.75rem auto;
+    }
+
+
+    .right_modal .modal-dialog {
+        max-width: 100%;
+    }
+    }
+
+    .modal.left_modal .modal-content,
+    .modal.right_modal .modal-content {
+        /*overflow-y: auto;
+    overflow-x: hidden;*/
+        height: 100vh !important;
+    }
+
+    .modal.left_modal .modal-body,
+    .modal.right_modal .modal-body {
+        padding: 15px 15px 30px;
+    }
+
+    /*.modal.left_modal  {
+    pointer-events: none;
+    background: transparent;
+}*/
+
+    .modal-backdrop {
+        display: none;
+    }
+
+    /*Left*/
+    .modal.left_modal.fade .modal-dialog {
+        left: -50%;
+        -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+        -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+        -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+        transition: opacity 0.3s linear, left 0.3s ease-out;
+    }
+
+    .modal.left_modal.fade.show .modal-dialog {
+        left: 0;
+        box-shadow: 0px 0px 19px rgba(0, 0, 0, .5);
+    }
+
+    /*Right*/
+    .modal.right_modal.fade .modal-dialog {
+        right: -50%;
+        -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+        -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+        -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+        transition: opacity 0.3s linear, right 0.3s ease-out;
+    }
+
+
+
+    .modal.right_modal.fade.show .modal-dialog {
+        right: 0;
+        box-shadow: 0px 0px 19px rgba(0, 0, 0, .5);
+    }
+
+    /* ----- MODAL STYLE ----- */
+    .modal-content {
+        border-radius: 0;
+        border: none;
+    }
+
+
+
+    .modal-header.left_modal,
+    .modal-header.right_modal {
+
+        padding: 10px 15px;
+        border-bottom-color: #EEEEEE;
+        background-color: #FAFAFA;
+    }
+
+    .modal_outer .modal-body {
+        /*height:90%;*/
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 91vh;
+    }
+</style>
+
+<div class="row">
+    <div class="col-lg-12 ">
+        <div class="card">
+            <div class="card-header" style="background-color: #a11f1f;color: white;margin: 0;">
+                <div class="card-title" style="color: white; ">
+                    Leave Request
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="row mt-2">
+                    <div class="col-lg-12">
+                        <div class="card-title">
+                            <div class="button-group">
+                                <button type="button" id="modal_view_left" class="btn btn-icon-text" id="sendEmail"
+                                    style="background-color: #a11f1f;color: white;">
+                                    <i class="btn-icon-prepend" data-feather="folder-plus"></i>
+                                    New Leave Request
+                                </button>
+
+                            </div>
+
+                            <div class="modal modal_outer left_modal fade" id="information_modal_leave" tabindex="-1"
+                                role="dialog" aria-labelledby="myModalLabel2">
+                                <div class="modal-dialog" role="document">
+                                    <form method="post" id="get_quote_frm">
+                                        <div class="modal-content ">
+                                            <!-- <input type="hidden" name="email_e" value="admin@filmscafe.in"> -->
+                                            <div class="modal-header">
+                                                <h2 class="modal-title">Form Request:</h2>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body get_quote_view_modal_body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-borderless">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Jumlah cuti yang sudah dipakai</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>15</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                            </div>
+
+                                        </div><!-- modal-content -->
+                                    </form>
+                                </div><!-- modal-dialog -->
+                            </div><!-- modal -->
+
+                            <div class="modal modal_outer right_modal fade" id="information_modal" tabindex="-1"
+                                role="dialog" aria-labelledby="myModalLabel2">
+                                <div class="modal-dialog" role="document">
+                                    <form method="post" id="get_quote_frm">
+                                        <div class="modal-content ">
+                                            <!-- <input type="hidden" name="email_e" value="admin@filmscafe.in"> -->
+                                            <div class="modal-header" style="background-color: #a11f1f;color: white">
+                                                <h4 class="modal-title">Form Leave Request:</h4>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body get_quote_view_modal_body">
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <label for="">Action Code</label>
+                                                        <select name="" id="" class="form-control">
+                                                            <option value="">Annual Leave</option>
+                                                            <option value="">Unpaid Leave</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row mt-2">
+                                                    <div class="col">
+                                                        <label for="">start date</label>
+                                                        <input type="date" class="form-control"
+                                                            placeholder="Start date">
+                                                    </div>
+                                                    <div class="col">
+                                                        <label for="">end date</label>
+                                                        <input type="date" class="form-control" placeholder="End date">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row mt-2">
+                                                    <div class="col">
+                                                        <label for="">Address While on Leave</label>
+                                                        <textarea name="" id="" cols="30" rows="10"
+                                                            class="form-control">
+
+                                                            </textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row mt-2">
+                                                    <div class="col">
+                                                        <label for="">Reason</label>
+                                                        <textarea name="" id="" cols="30" rows="10"
+                                                            class="form-control">
+
+                                                            </textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row mt-2">
+
+                                                    <div class="col">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <label for="">Document (*Required)</label>
+                                                                <input type="file">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-row mt-2">
+                                                    <div class="col">
+                                                        <button type="button"
+                                                            style="background-color: #a11f1f;color: white"
+                                                            class="btn  btn-icon-text" id="sendEmail">
+                                                            <i class="btn-icon-prepend" data-feather="send"></i>
+                                                            Request
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div><!-- modal-content -->
+                                    </form>
+                                </div><!-- modal-dialog -->
+                            </div>
+
+                        </div>
+                        <hr>
+
+                        <div class="table-responsive">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group row ml-1 mr-1">
+                                        <label for="inputEmail3" class="col-sm-6 col-form-label">Personal Action
+                                            Code</label>
+                                        <div class="col-sm-6">
+                                            <select name="" id="" class="form-control" style="color: black;">
+                                                <option value="" disabled selected>PA-Code</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row ml-1 mr-1">
+                                        <label for="inputEmail3" class="col-sm-5 col-form-label">Status Approval</label>
+                                        <div class="col-sm-7">
+                                            <select name="" id="" class="form-control" style="color: black;">
+                                                <option value="" disabled selected>Status Approval</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row ml-1 mr-1">
+                                        <label for="inputEmail3" class="col-sm-3 col-form-label">Start date</label>
+                                        <div class="col-sm-8">
+                                            <input type="date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group ml-1 row  mr-1">
+                                        <label for="inputEmail3" class="col-sm-3 col-form-label">End date</label>
+                                        <div class="col-sm-8">
+                                            <input type="date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row ">
+                                        <div class="col-sm-12">
+                                            <button type="button" style="background-color: #a11f1f;color: white"
+                                                class="btn  btn-icon-text" id="sendEmail">
+                                                <i class="btn-icon-prepend" data-feather="search"></i>
+                                                Filter data
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <table class="table table-bordered" id="leave_request_table">
+                                <thead class="">
+                                    <tr>
+                                        <th class="text-center" rowspan="2">
+                                            Action
+                                        </th>
+                                        <th class="text-center" rowspan="2">Code</th>
+                                        <th class="text-center" rowspan="2">Code Name</th>
+                                        <th colspan="3" class="text-center">
+                                            Range
+                                        </th>
+                                        <th colspan="2" class="text-center">
+                                            Approval
+                                        </th>
+                                        <th class="text-center" rowspan="2">
+                                            Total Days
+                                        </th>
+                                        <th rowspan="2" class="text-center">
+                                            Description
+                                        </th>
+                                        <th rowspan="2" class="text-center">
+                                            Status
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-center">Start at</th>
+                                        <th class="text-center ">End at</th>
+                                        <th class="text-center">Duration</th>
+                                        <th class="text-center">N+1</th>
+                                        <th class="text-center ">N+2</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center "><button class="btn btn-icon btn-outline-primary"
+                                                data-swal-toast-template="#my-template">
+                                                <i data-feather="maximize-2"></i>
+                                            </button></td>
+                                        <td class="text-center">PA 32/ANN</td>
+                                        <td class="text-center">Annual Leave</td>
+                                        <td class="text-center ">09/09/2020</td>
+                                        <td class="text-center">09/09/2020</td>
+                                        <td class="text-center">3 Days</td>
+                                        <td class="text-center text-success"><i data-feather="check-circle"></i></td>
+                                        <td class="text-center text-success"><i data-feather="check-circle"></i></td>
+                                        <td class="text-center ">1 Day</td>
+                                        <td class="text-center">Personal Matters</td>
+                                        <td class="text-center ">Approved</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

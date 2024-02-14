@@ -1,0 +1,1509 @@
+﻿@{
+    ViewBag.Title = "Master Data Internship";
+    Layout = "~/Views/Shared/_DashboardIntern.cshtml";
+}
+<!--begin::Toolbar-->
+<div class="toolbar" id="kt_toolbar">
+    <!--begin::Container-->
+    <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+        <!--begin::Page title-->
+        <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
+             data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
+             class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+            <!--begin::Title-->
+            <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">
+                Dashboard
+                <!--begin::Separator-->
+                <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
+                <!--end::Separator-->
+                <!--begin::Description-->
+                <small class="text-muted fs-7 fw-bold my-1 ms-1">@ViewBag.title</small>
+                <!--end::Description-->
+            </h1>
+            <!--end::Title-->
+        </div>
+        <!--end::Page title-->
+        <!--begin::Actions-->
+        <div class="d-flex align-items-center py-1">
+            <!--begin::Wrapper-->
+            <div class="me-4">
+                <!--begin::Menu-->
+                <a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder"
+                   data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                    <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
+                    <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 24 24" fill="none">
+                            <path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z"
+                                  fill="black" />
+                        </svg>
+                    </span>
+                    <!--end::Svg Icon-->Filter
+                </a>
+                <!--begin::Menu 1-->
+                <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true"
+                     id="kt_menu_61484bf44d957">
+                    <!--begin::Header-->
+                    <div class="px-7 py-5">
+                        <div class="fs-5 text-dark fw-bolder">Filter Options</div>
+                    </div>
+                    <!--end::Header-->
+                    <!--begin::Menu separator-->
+                    <div class="separator border-gray-200"></div>
+                    <!--end::Menu separator-->
+                    <!--begin::Form-->
+                    <div class="px-7 py-5">
+                        <!--begin::Input group-->
+                        <div class="mb-10">
+                            <!--begin::Label-->
+                            <label class="form-label fw-bold">Status:</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <div>
+                                <select class="form-select form-select-solid" data-kt-select2="true"
+                                        data-placeholder="Select option"
+                                        data-dropdown-parent="#kt_menu_61484bf44d957"
+                                        data-allow-clear="true">
+                                    <option></option>
+                                    <option value="1">Approved</option>
+                                    <option value="2">Pending</option>
+                                    <option value="2">In Process</option>
+                                    <option value="2">Rejected</option>
+                                </select>
+                            </div>
+                            <!--end::Input-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="mb-10">
+                            <!--begin::Label-->
+                            <label class="form-label fw-bold">Member Type:</label>
+                            <!--end::Label-->
+                            <!--begin::Options-->
+                            <div class="d-flex">
+                                <!--begin::Options-->
+                                <label class="form-check form-check-sm form-check-custom form-check-solid me-5">
+                                    <input class="form-check-input" type="checkbox" value="1" />
+                                    <span class="form-check-label">Author</span>
+                                </label>
+                                <!--end::Options-->
+                                <!--begin::Options-->
+                                <label class="form-check form-check-sm form-check-custom form-check-solid">
+                                    <input class="form-check-input" type="checkbox" value="2"
+                                           checked="checked" />
+                                    <span class="form-check-label">Customer</span>
+                                </label>
+                                <!--end::Options-->
+                            </div>
+                            <!--end::Options-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="mb-10">
+                            <!--begin::Label-->
+                            <label class="form-label fw-bold">Notifications:</label>
+                            <!--end::Label-->
+                            <!--begin::Switch-->
+                            <div class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
+                                <input class="form-check-input" type="checkbox" value=""
+                                       name="notifications" checked="checked" />
+                                <label class="form-check-label">Enabled</label>
+                            </div>
+                            <!--end::Switch-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Actions-->
+                        <div class="d-flex justify-content-end">
+                            <button type="reset"
+                                    class="btn btn-sm btn-light btn-active-light-primary me-2"
+                                    data-kt-menu-dismiss="true">
+                                Reset
+                            </button>
+                            <button type="submit" class="btn btn-sm btn-primary"
+                                    data-kt-menu-dismiss="true">
+                                Apply
+                            </button>
+                        </div>
+                        <!--end::Actions-->
+                    </div>
+                    <!--end::Form-->
+                </div>
+                <!--end::Menu 1-->
+                <!--end::Menu-->
+            </div>
+            <!--end::Wrapper-->
+            <!--begin::Button-->
+            <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal"
+               data-bs-target="#kt_modal_create_app" id="kt_toolbar_primary_button">Create</a>
+            <!--end::Button-->
+        </div>
+        <!--end::Actions-->
+    </div>
+    <!--end::Container-->
+</div>
+<!--end::Toolbar-->
+<!--begin::Post-->
+<div class="post d-flex flex-column-fluid" id="kt_post">
+    <!--begin::Container-->
+    <div id="kt_content_container" class="container-xxl">
+        <form action="#">
+            <!--begin::Card-->
+            <div class="card mb-7">
+                <!--begin::Card body-->
+                <div class="card-body">
+                    <!--begin::Compact form-->
+                    <div class="d-flex align-items-center">
+                        <!--begin::Input group-->
+                        <div class="position-relative w-md-400px me-md-2">
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                            <span class="svg-icon svg-icon-3 svg-icon-gray-500 position-absolute top-50 translate-middle ms-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="currentColor" />
+                                    <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="currentColor" />
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->
+                            <input type="text" id="kpk_intern" value="" name="kpk" maxlength="6"
+                                   oninput="javascript: if(this.value.length > this.max.length) this.value = this.value.slice(0, this.maxLength);"
+                                   min="5" class="form-control form-control-solid ps-10" placeholder="Type KPK" />
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin:Action-->
+                        <div class="d-flex align-items-center">
+                            <button type="submit" class="btn btn-primary me-5">Search</button>
+                            <a id="kt_horizontal_search_advanced_link" class="btn btn-link" data-bs-toggle="collapse" href="#kt_advanced_search_form">Advanced Search</a>
+                        </div>
+                        <!--end:Action-->
+                    </div>
+                    <!--end::Compact form-->
+                    <!--begin::Advance form-->
+                    <div class="collapse" id="kt_advanced_search_form">
+                        <!--begin::Separator-->
+                        <div class="separator separator-dashed mt-9 mb-6"></div>
+                        <!--end::Separator-->
+                        <!--begin::Row-->
+                        <div class="row g-8 mb-8">
+                            <!--begin::Col-->
+                            <div class="col-xxl-4">
+                                <label class="fs-6 form-label fw-bolder text-dark">Intern Name</label>
+                                <input type="text" id="internname" value="" name="internname" min="5"
+                                       class="form-control" placeholder="Type Intern Name"
+                                       autocomplete="off" oninput="this.value = this.value.toUpperCase()">
+                            </div>
+                            <div class="col-lg-4">
+                                <label class="fs-6 form-label fw-bolder text-dark">Department</label>
+                                <select class="form-control form-control-sm js-example-basic-single w-240 mr-2"
+                                        style="width:230px;" id="dept_filter" name="dept_filter">
+                                    <option value="">--Select Department--</option>
+                                    @foreach (var item in ViewBag.Dept)
+                                    {
+                                        <option value="@item.DEPT_NAME">
+                                            @item.DEPT_NAME
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class="fs-6 form-label fw-bolder text-dark">Section</label>
+                                <select class="form-control form-control-sm js-example-basic-single w-240 mr-2"
+                                        style="width:230px;" id="sect_filter" name="sect_filter">
+                                    <option value="">--Select Section--</option>
+                                    @foreach (var item in ViewBag.Section)
+                                    {
+                                        <option value="@item.SECT_NAME">
+                                            @item.SECT_NAME
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+                            <!--end::Col-->
+                            <!--begin::Col-->
+                            <div class="col-xxl-12">
+                                <!--begin::Row-->
+                                <div class="row g-12">
+                                    <!--begin::Col-->
+                                    <div class="col-lg-5">
+                                        <label class="fs-6 form-label fw-bolder text-dark">Mentor</label>
+                                        <select class="form-control form-control-sm js-example-basic-single w-240 mr-2"
+                                                style="width:230px;" id="mentor_filter" name="mentor_filter">
+                                            <option value="">--Select Mentor--</option>
+                                            @foreach (var item in ViewBag.Mentor)
+                                            {
+                                                <option value="@item.EMNAME">
+                                                    @item.EMNAME
+                                                </option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <!--end::Col-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-5">
+                                        <label class="fs-6 form-label fw-bolder text-dark">Manager</label>
+                                        <select class="form-control form-control-sm js-example-basic-single w-240 mr-2"
+                                                style="width:230px;" id="manager_filter" name="manager_filter">
+                                            <option value="">--Select Manager--</option>
+                                            @foreach (var item in ViewBag.Mentor)
+                                            {
+                                                <option value="@item.EMNAME">
+                                                    @item.EMNAME
+                                                </option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <!--end::Col-->
+                                    <div class="col-lg-2">
+                                        <label class="fs-6 form-label fw-bolder text-dark">Status</label>
+                                        <select class="form-control form-control-sm js-example-basic-single w-240 mr-2"
+                                                style="width:230px;" id="status_filter" name="status_filter">
+                                            <option value="">All</option>
+                                            <option value="Active">Active</option>
+                                            <option value="EOC">EOC</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!--end::Row-->
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                    </div>
+                    <!--end::Advance form-->
+                </div>
+                <!--end::Card body-->
+            </div>
+            <!--end::Card-->
+        </form>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header bg-header">
+                        <div class="card-title bg-header text-white text-center mb-0">
+                            <h4>Master Data Intern</h4>
+                        </div>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <button type="button" class="btn btn-primary" onclick="return create('@ViewBag.ResultKPK')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <i class="las la-user-plus fs-2 me-2"></i> Add Internship
+                                </button>
+                                @*<button type="button" class="btn alert-success btn-sm" data-toggle="modal"
+                                    data-target="#exampleModal" data-backdrop="false">
+                                    <i data-feather="upload" class="icon-sm"></i> Upload Master
+                                    </button>*@
+                                <button type="button" class="btn btn-success" id="master_intern">
+                                    <i class="las la-cloud-download-alt fs-2 me-2"></i> Download Master
+                                </button>
+                            </div>
+
+                        </div>
+                        @if (TempData["AllertSuccess"] != null)
+                        {
+                            <script type="text/javascript">
+                                        window.onload = function () {
+                                            Swal.fire({
+                                                text: '@TempData["AllertSuccess"]',
+                                                icon: "success",
+                                                buttonsStyling: false,
+                                                confirmButtonText: "Ok, got it!",
+                                                customClass: {
+                                                    confirmButton: "btn btn-primary"
+                                                }
+                                            });
+                                        };
+                            </script>
+                        }
+                        @if (TempData["AllertError"] != null)
+                        {
+                            <script type="text/javascript">
+                                window.onload = function () {
+                                    Swal.fire({
+                                        text: '@TempData["AllertError"]',
+                                        icon: "error",
+                                        buttonsStyling: false,
+                                        confirmButtonText: "Ok, got it!",
+                                        customClass: {
+                                            confirmButton: "btn btn-danger"
+                                        }
+                                    });
+                                };
+                            </script>
+                        }
+                        <div class="row mt-5">
+                            <div class="card card-p-0 card-flush">
+                                <div class="col-lg-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="masterintern">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">
+                                                        <i class="las la-cogs fs-2 me-2"></i>
+                                                    </th>
+                                                    <th>KPK</th>
+                                                    <th>Name</th>
+                                                    <th class="hide">NIK</th>
+                                                    <th class="hide">NIM</th>
+                                                    <th class="hide">Gender</th>
+                                                    <th class="hide">DOB</th>
+                                                    <th class="hide">Phone Number</th>
+                                                    <th class="hide">Personal Mail</th>
+                                                    <th class="hide">Office Mail</th>
+                                                    <th class="hide">Major</th>
+                                                    <th class="hide">University</th>
+                                                    <th class="hide">Budget</th>
+                                                    <th class="hide">Dept</th>
+                                                    <th class="hide">Section</th>
+                                                    <th class="hide">Project</th>
+                                                    <th class="hide">Mentor</th>
+                                                    <th class="hide">Manager</th>
+                                                    <th>Join Date</th>
+                                                    <th>End Date</th>
+                                                    <th>Extend</th>
+                                                    <th class="hide">DOS</th>
+                                                    <th>Days To End</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in ViewBag.DataIntern)
+                                                {
+                                                    <tr>
+                                                        @if (item.STATUS == "Active")
+                                                        {
+                                                            <td class="text-end trs text-center">
+                                                                <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                                                    Actions
+                                                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
+                                                                    <span class="svg-icon svg-icon-5 m-0">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                            <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="currentColor"></path>
+                                                                        </svg>
+                                                                    </span>
+                                                                    <!--end::Svg Icon-->
+                                                                </a>
+                                                                <!--begin::Menu-->
+                                                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
+                                                                    @if (item.EXTEND != item.ENDDATE)
+                                                                    {
+                                                                        <div class="menu-item px-3">
+                                                                            <a class="menu-link px-3" data-bs-toggle="modal"
+                                                                               data-bs-target="#exampleModal2" title="Edit Data"
+                                                                               onclick="return haveextend('@item.NIK', '@item.NIM', '@item.INTERNNAME', '@item.GENDER', '@Convert.ToDateTime(item.DOB).ToString("yyyy-MM-dd")', '@item.PHONE', '@item.PERSONALMAIL', '@item.MAJOR', '@item.UNIVERSITY', '@item.ADDRESS', '@item.KPK', '@item.BUDGET', '@item.DEPT', '@item.SECTION', '@item.PROJECT', '@item.OFFICEMAIL', '@item.MENTOR', '@item.MANAGER', '@Convert.ToDateTime(item.JOINDATE).ToString("yyyy-MM-dd")', '@Convert.ToDateTime(item.ENDDATE).ToString("yyyy-MM-dd")', '@item.SALARY', '@Convert.ToDateTime(item.EXTEND).ToString("yyyy-MM-dd")', '@item.IDINTERN', '@item.NAMEMENTOR', '@item.NAMEMANAGER');">
+                                                                                Edit
+                                                                            </a>
+                                                                        </div>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <div class="menu-item px-3">
+                                                                            <a class="menu-link px-3" data-bs-toggle="modal"
+                                                                               data-bs-target="#exampleModal" title="Edit Data"
+                                                                               onclick="return edit('@item.NIK', '@item.NIM', '@item.INTERNNAME', '@item.GENDER', '@Convert.ToDateTime(item.DOB).ToString("yyyy-MM-dd")', '@item.PHONE', '@item.PERSONALMAIL', '@item.MAJOR', '@item.UNIVERSITY', '@item.ADDRESS', '@item.KPK', '@item.BUDGET', '@item.DEPT', '@item.SECTION', '@item.PROJECT', '@item.OFFICEMAIL', '@item.MENTOR', '@item.MANAGER', '@Convert.ToDateTime(item.JOINDATE).ToString("yyyy-MM-dd")', '@Convert.ToDateTime(item.ENDDATE).ToString("yyyy-MM-dd")', '@item.SALARY', '@item.EXTEND', '@item.IDINTERN', '@item.NAMEMENTOR', '@item.NAMEMANAGER');">
+                                                                                Edit
+                                                                            </a>
+                                                                        </div>
+                                                                    }
+                                                                    <div class="menu-item px-3">
+                                                                        <a class="menu-link px-3"
+                                                                           data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                                                           onclick="return deleteintern('@item.KPK', '@item.INTERNNAME')"
+                                                                           title="Delete Data">
+                                                                            Delete
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Menu-->
+                                                            </td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="trs text-center" style="border-right: 5px solid #ee4036">
+                                                                <a class="btn btn-sm btn-light btn-active-light-primary"
+                                                                   data-bs-toggle="modal" data-bs-target="#modalContract"
+                                                                   onclick="return newcontract('@item.KPK', '@item.INTERNNAME')"
+                                                                   title="New Contract">
+                                                                    New Contract
+                                                                </a>
+                                                            </td>
+                                                        }
+                                                        <td>@item.KPK</td>
+                                                        <td>@item.INTERNNAME.ToUpper()</td>
+                                                        <td class="xlText hide">@item.NIK</td>
+                                                        <td class="hide">@item.NIM</td>
+                                                        <td class="hide">@item.GENDER</td>
+                                                        <td class="hide">@item.DOB</td>
+                                                        <td class="hide">@item.PHONE</td>
+                                                        <td class="hide">@item.PERSONALMAIL</td>
+                                                        <td class="hide">@item.OFFICEMAIL</td>
+                                                        <td class="hide">@item.MAJOR</td>
+                                                        <td class="hide">@item.UNIVERSITY</td>
+                                                        <td class="hide">@item.BUDGET</td>
+                                                        <td class="hide">@item.DEPT_NAME</td>
+                                                        <td class="hide">@item.SECT_NAME</td>
+                                                        <td class="hide">@item.PROJECT</td>
+                                                        <td class="hide">@item.NAMEMENTOR</td>
+                                                        <td class="hide">@item.NAMEMANAGER</td>
+                                                        <td onclick="return newcontract('@item.KPK', '@item.INTERNNAME')" data-bs-toggle="modal" data-bs-target="modalContract">
+                                                            @item.JOINDATE
+                                                        </td>
+                                                        <td>@item.ENDDATE</td>
+                                                        @if (item.EXTEND == item.ENDDATE)
+                                                        {
+                                                            <td></td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td>@item.EXTEND</td>
+                                                        }
+                                                        <td class="hide">@item.YOS Days</td>
+                                                        <td>@item.EOC Days</td>
+                                                        @if (item.STATUS == "Active")
+                                                        {
+                                                            <td>
+                                                                <div class="badge badge-light-success">
+                                                                    @item.STATUS
+                                                                </div>
+                                                            </td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td>
+                                                                <div class="badge badge-light-danger">
+                                                                    EOC
+                                                                </div>
+                                                            </td>
+                                                        }
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end::Container-->
+    </div>
+    <!--end::Post-->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-white">
+                    <h5 class="modal-title" id="exampleModalLabel"> ADD INTERN</h5>
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <span class="svg-icon svg-icon-2x">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path opacity="0.3" d="M6.7 19.4L5.3 18C4.9 17.6 4.9 17 5.3 16.6L16.6 5.3C17 4.9 17.6 4.9 18 5.3L19.4 6.7C19.8 7.1 19.8 7.7 19.4 8.1L8.1 19.4C7.8 19.8 7.1 19.8 6.7 19.4Z" fill="currentColor" />
+                                <path d="M19.5 18L18.1 19.4C17.7 19.8 17.1 19.8 16.7 19.4L5.40001 8.1C5.00001 7.7 5.00001 7.1 5.40001 6.7L6.80001 5.3C7.20001 4.9 7.80001 4.9 8.20001 5.3L19.5 16.6C19.9 16.9 19.9 17.6 19.5 18Z" fill="currentColor" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="modal-body" id="frmInput2">
+                    <form action="" method="post" id="addInternForm2">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <h6 class="card-title">
+                                            <i class="las la-users-cog me-2 fs-2"></i> Personal Data
+                                        </h6>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">NIK</label>
+                                                    <input type="hidden" id="idintern" name="idintern">
+                                                    <input type="text"
+                                                           class="form-control form-control-sm" id="NIK"
+                                                           name="nik" autocomplete="off" placeholder="NIK">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">NIM</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm" id="NIM"
+                                                           name="nim" autocomplete="off" placeholder="NIM">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 mt-3">
+                                                <div class="form-group">
+                                                    <label for="">Name</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm" id="name"
+                                                           name="internname" autocomplete="off"
+                                                           placeholder="Intern Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-3">
+                                                <div class="form-group">
+                                                    <label for="">Gender</label>
+                                                    <select class="form-select form-select-sm" data-control="select2" data-dropdown-parent="#exampleModal2" id="gender" name="gender">
+                                                        <option>Select an option</option>
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-3">
+                                                <div class="form-group">
+                                                    <label for="">DOB</label>
+                                                    <input type="date"
+                                                           class="form-control form-control-sm" id="dob"
+                                                           name="dob" placeholder="Date Of Birthday">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-3">
+                                                <div class="form-group">
+                                                    <label for="">Phone Number</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm" id="phone"
+                                                           name="phone" placeholder="Phone Number"
+                                                           autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-3">
+                                                <div class="form-group">
+                                                    <label for="">Personal Mail</label>
+                                                    <input type="email"
+                                                           class="form-control form-control-sm"
+                                                           id="personalmail" name="personalmail"
+                                                           placeholder="Personal Mail" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-3">
+                                                <div class="form-group">
+                                                    <label for="">Major</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm" id="major"
+                                                           name="major" placeholder="Major"
+                                                           autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-3">
+                                                <div class="form-group">
+                                                    <label for="">University</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm"
+                                                           id="university" name="university"
+                                                           placeholder="University" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 mt-3">
+                                                <div class="form-group">
+                                                    <label for="">Address</label>
+                                                    <textarea name="address" id="address" cols="30"
+                                                              rows="6"
+                                                              class="form-control-sm form-control"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">
+                                            <i class="las la-file-invoice-dollar me-2 fs-2"></i> Cost Center
+                                        </h6>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">KPK</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm" id="kpk"
+                                                           name="kpk" autocomplete="off" placeholder="KPK">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Budget</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm" id="budget"
+                                                           name="budget" autocomplete="off"
+                                                           placeholder="Budget">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-3">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Department</label>
+                                                    <select class="form-select form-select-sm" data-control="select2" data-dropdown-parent="#exampleModal2" id="dept" name="dept">
+                                                        <option>Select an option</option>
+                                                        @foreach (var item in ViewBag.Dept)
+                                                        {
+                                                            <option value="@item.DEPT_CODE">
+                                                                @item.DEPT_NAME
+                                                            </option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-3">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Section</label>
+                                                    <select class="form-select form-select-sm" data-control="select2" data-dropdown-parent="#exampleModal2" id="section" name="section">
+                                                        <option>Select an option</option>
+                                                        @foreach (var item in ViewBag.Section)
+                                                        {
+                                                            <option value="@item.SECT_CODE">
+                                                                @item.SECT_NAME
+                                                            </option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-3">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Project</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm"
+                                                           id="project" name="project"
+                                                           placeholder="Project">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-3">
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">
+                                                        Office
+                                                        Mail
+                                                    </label>
+                                                    <input type="email"
+                                                           class="form-control form-control-sm"
+                                                           id="officemail" name="officemail"
+                                                           autocomplete="off" placeholder="Office Mail">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mt-5">
+                                            <h6 class="card-title">
+                                                <i class="las la-sitemap me-2 fs-2"></i> Hierarchy
+                                            </h6>
+                                            <hr>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">Mentor</label>
+                                                    <select class="form-select form-select-sm" data-control="select2" data-dropdown-parent="#exampleModal2" id="mentor" name="mentor">
+                                                        <option>Select an option</option>
+                                                        @foreach (var item in ViewBag.Mentor)
+                                                        {
+                                                            <option value="@item.EMEMP">
+                                                                @item.EMNAME
+                                                            </option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">Manager</label>
+                                                    <select class="form-select form-select-sm" data-control="select2" data-dropdown-parent="#exampleModal2" id="manager" name="manager">
+                                                        <option>Select an option</option>
+                                                        @foreach (var item in ViewBag.Mentor)
+                                                        {
+                                                            <option value="@item.EMEMP">
+                                                                @item.EMNAME
+                                                            </option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mt-5">
+                                            <h6 class="card-title">
+                                                <i class="las la-balance-scale me-2 fs-2"></i> Employment
+                                            </h6>
+                                            <hr>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="">Join Date</label>
+                                                    <input type="date"
+                                                           class="form-control form-control-sm"
+                                                           id="joindate2" name="joindate">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="">End Date</label>
+                                                    <input type="date"
+                                                           class="form-control form-control-sm"
+                                                           id="enddate2" name="enddate">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-2">
+                                                <div class="form-group">
+                                                    <label for="">Extend</label>
+                                                    <input type="date"
+                                                           class="form-control form-control-sm"
+                                                           id="extend2"
+                                                           name="extend">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-2">
+                                                <div class="form-group">
+                                                    <label for="">Allowance</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm" id="salary"
+                                                           name="salary" placeholder="Allowance"
+                                                           autocomplete="off" value="5000000">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-body hapus h5">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="submit2">
+                        Save
+                        changes
+                    </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-white">
+                    <h5 class="modal-title" id="exampleModalLabel"> ADD INTERN</h5>
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <span class="svg-icon svg-icon-2x">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path opacity="0.3" d="M6.7 19.4L5.3 18C4.9 17.6 4.9 17 5.3 16.6L16.6 5.3C17 4.9 17.6 4.9 18 5.3L19.4 6.7C19.8 7.1 19.8 7.7 19.4 8.1L8.1 19.4C7.8 19.8 7.1 19.8 6.7 19.4Z" fill="currentColor" />
+                                <path d="M19.5 18L18.1 19.4C17.7 19.8 17.1 19.8 16.7 19.4L5.40001 8.1C5.00001 7.7 5.00001 7.1 5.40001 6.7L6.80001 5.3C7.20001 4.9 7.80001 4.9 8.20001 5.3L19.5 16.6C19.9 16.9 19.9 17.6 19.5 18Z" fill="currentColor" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="modal-body" id="frmInput">
+                    <form action="" method="post" id="addInternForm">
+                        <input type="hidden" name="joindateold" />
+                        <input type="hidden" name="enddateold" />
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <h6 class="card-title">
+                                            <i class="las la-users-cog me-2 fs-2"></i> Personal Data
+                                        </h6>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">NIK</label>
+                                                    <input type="hidden" id="idintern" name="idintern">
+                                                    <input type="text"
+                                                           class="form-control form-control-sm" id="NIK"
+                                                           name="nik" autocomplete="off" placeholder="NIK">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">NIM</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm" id="NIM"
+                                                           name="nim" autocomplete="off" placeholder="NIM">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 mt-2">
+                                                <div class="form-group">
+                                                    <label for="">Name</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm" id="name"
+                                                           name="internname" autocomplete="off"
+                                                           placeholder="Intern Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-2">
+                                                <div class="form-group">
+                                                    <label for="">Gender</label>
+                                                    <select class="form-select form-select-sm " data-control="select2" data-dropdown-parent="#exampleModal" id="gender2" name="gender">
+                                                        <option>Select an option</option>
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-2">
+                                                <div class="form-group">
+                                                    <label for="">DOB</label>
+                                                    <input type="date"
+                                                           class="form-control form-control-sm" id="dob2"
+                                                           name="dob" placeholder="Date Of Birthday">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-2">
+                                                <div class="form-group">
+                                                    <label for="">Phone Number</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm" id="phone2"
+                                                           name="phone" placeholder="Phone Number"
+                                                           autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-2">
+                                                <div class="form-group">
+                                                    <label for="">Personal Mail</label>
+                                                    <input type="email"
+                                                           class="form-control form-control-sm"
+                                                           id="personalmail" name="personalmail"
+                                                           placeholder="Personal Mail" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-2">
+                                                <div class="form-group">
+                                                    <label for="">Major</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm" id="major2"
+                                                           name="major" placeholder="Major"
+                                                           autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-2">
+                                                <div class="form-group">
+                                                    <label for="">University</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm"
+                                                           id="university2" name="university"
+                                                           placeholder="University" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 mt-2">
+                                                <div class="form-group">
+                                                    <label for="">Address</label>
+                                                    <textarea name="address" id="address2" cols="30"
+                                                              rows="6"
+                                                              class="form-control-sm form-control"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">
+                                            <i class="las la-file-invoice-dollar me-2 fs-2"></i> Cost Center
+                                        </h6>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">KPK</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm" id="kpk2"
+                                                           name="kpk" autocomplete="off" placeholder="KPK">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Budget</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm" id="budget2"
+                                                           name="budget" autocomplete="off"
+                                                           placeholder="Budget">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-2">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Department</label>
+                                                    <select class="form-select form-select-sm" data-control="select2" data-dropdown-parent="#exampleModal" id="dept2" name="dept">
+                                                        <option>Select an option</option>
+                                                        @foreach (var item in ViewBag.Dept)
+                                                        {
+                                                            <option value="@item.DEPT_CODE">
+                                                                @item.DEPT_NAME
+                                                            </option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-2">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Section</label>
+                                                    <select class="form-select form-select-sm" data-control="select2" data-dropdown-parent="#exampleModal" id="section2" name="section">
+                                                        <option>Select an option</option>
+                                                        @foreach (var item in ViewBag.Section)
+                                                        {
+                                                            <option value="@item.SECT_CODE">
+                                                                @item.SECT_NAME
+                                                            </option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-2">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Project</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm"
+                                                           id="project2" name="project"
+                                                           placeholder="Project">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-2">
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">
+                                                        Office
+                                                        Mail
+                                                    </label>
+                                                    <input type="email"
+                                                           class="form-control form-control-sm"
+                                                           id="officemail2" name="officemail"
+                                                           autocomplete="off" placeholder="Office Mail">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mt-5">
+                                            <h6 class="card-title">
+                                                <i class="las la-sitemap me-2 fs-2"></i> Hierarchy
+                                            </h6>
+                                            <hr>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">Mentor</label>
+                                                    <select class="form-select form-select-sm" data-control="select2" data-dropdown-parent="#exampleModal" id="mentor2" name="mentor">
+                                                        <option>Select an option</option>
+                                                        @foreach (var item in ViewBag.Mentor)
+                                                        {
+                                                            <option value="@item.EMEMP">
+                                                                @item.EMNAME
+                                                            </option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">Manager</label>
+                                                    <select class="form-select form-select-sm" data-control="select2" data-dropdown-parent="#exampleModal" id="manager2" name="manager">
+                                                        <option>Select an option</option>
+                                                        @foreach (var item in ViewBag.Mentor)
+                                                        {
+                                                            <option value="@item.EMEMP">
+                                                                @item.EMNAME
+                                                            </option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mt-5">
+                                            <h6 class="card-title">
+                                                <i class="las la-balance-scale me-2 fs-2"></i> Employment
+                                            </h6>
+                                            <hr>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="">Join Date</label>
+                                                    <input type="date"
+                                                           class="form-control form-control-sm"
+                                                           id="joindate" name="joindate">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="">End Date</label>
+                                                    <input type="date"
+                                                           class="form-control form-control-sm"
+                                                           id="enddate" name="enddate">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-2">
+                                                <div class="form-group">
+                                                    <label for="">Extend</label>
+                                                    <input type="date"
+                                                           class="form-control form-control-sm"
+                                                           id="extend"
+                                                           name="extend">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 mt-2">
+                                                <div class="form-group">
+                                                    <label for="">Allowance</label>
+                                                    <input type="text"
+                                                           class="form-control form-control-sm" id="salary"
+                                                           name="salary" placeholder="Allowance"
+                                                           autocomplete="off" value="5000000">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+</div>
+                <div class="modal-body hapus h5">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="submit">
+                        Save
+                        changes
+                    </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalContract" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true" data-backdrop="false" data-keyboard="false">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Create Employee New Hire
+                    </h5>
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <span class="svg-icon svg-icon-2x">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path opacity="0.3" d="M6.7 19.4L5.3 18C4.9 17.6 4.9 17 5.3 16.6L16.6 5.3C17 4.9 17.6 4.9 18 5.3L19.4 6.7C19.8 7.1 19.8 7.7 19.4 8.1L8.1 19.4C7.8 19.8 7.1 19.8 6.7 19.4Z" fill="currentColor" />
+                                <path d="M19.5 18L18.1 19.4C17.7 19.8 17.1 19.8 16.7 19.4L5.40001 8.1C5.00001 7.7 5.00001 7.1 5.40001 6.7L6.80001 5.3C7.20001 4.9 7.80001 4.9 8.20001 5.3L19.5 16.6C19.9 16.9 19.9 17.6 19.5 18Z" fill="currentColor" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="modal-body input">
+                    <form id="formId" action="" method="POST">
+                        <div class="row">
+                            <div class="hide">
+                                <input type="hidden" required class="form-control" name="kpk" id="kpk" value="" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="">Join Date</label>
+                                    <input type="date" name="joindate" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="">End Date</label>
+                                    <input type="date" name="enddate" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="">Extend</label>
+                                    <input type="date" name="extend" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="text-center mt-5 mb-4">History Contract</h5>
+                        <div class="separator separator-dashed mt-6"></div>
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <table width="100%" align="center" id="contractDetail">
+                                    <thead>
+                                        <tr>
+                                            <th char="m-2 p-2">No</th>
+                                            <th char="m-2 p-2">Join Date</th>
+                                            <th char="m-2 p-2">End Date</th>
+                                            <th char="m-2 p-2">Extend</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn alert-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" id="btnactivity" class="btn btn-primary">Save</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#DownloadAttendanceIntern').DataTable({
+                paging: false,
+                scrollY: 590,
+                "pageLength": 25,
+                deferRender: true,
+                scroller: true,
+                order: false
+            });           
+            var table = $('#masterintern').DataTable({
+                searching: true,
+                processing: false,
+                scrollY: 600,
+                scrollX: true,
+                scrollCollapse: false,
+                paging: false,
+                destroy: true,
+                dom: 'Bfrtip',
+                "order": [[1, 'asc']],
+                buttons: [{
+                    extend: 'excelHtml5',
+                }],
+                initComplete: function () {
+                    var btns = $('.dt-button');
+                    btns.addClass('btn  btn-primary btn-sm btneport hide');
+                    btns.removeClass('dt-button');
+                    btns.text('Download Report')
+                },
+            });            
+            $("#master_intern").click(function () {
+                $('.btneport').trigger("click");
+            });
+            $('#kpk_master').on('keyup', function () {
+                table.columns(1).search(this.value).draw();
+            });
+            $('#kpk_intern').on('keyup', function () {
+                table.columns(1).search(this.value).draw();
+            });
+            $("#internname").keyup(function () {
+                table.columns(2).search(this.value).draw();
+            });
+            $('#dept_filter').on('change', function () {
+                table.columns(13).search(this.value).draw();
+            });
+            $('#sect_filter').on('change', function () {
+                table.columns(14).search(this.value).draw();
+            });
+            $('#mentor_filter').on('change', function () {
+                table.columns(16).search(this.value).draw();
+            });
+            $('#manager_filter').on('change', function () {
+                table.columns(17).search(this.value).draw();
+            });
+            $('#status_filter').on('change', function () {
+                table.columns(23).search(this.value).draw();
+            });
+            $("#btnRefresh").click(function () {
+                location.href = "/Intern/DataIntern";
+            });
+            $('#extend2').click(function () {
+                Swal.fire({
+                    text: "Internship has been extend, Please delete it and add new contract!",
+                    icon: "warning",
+                    buttonsStyling: false,
+                    confirmButtonText: "Ok, got it!",
+                    customClass: {
+                        confirmButton: "btn btn-primary"
+                    }
+                });
+            });
+            $('#joindate2').click(function () {
+                Swal.fire({
+                    text: "Internship has been extend, Please delete it and add new contract!",
+                    icon: "warning",
+                    buttonsStyling: false,
+                    confirmButtonText: "Ok, got it!",
+                    customClass: {
+                        confirmButton: "btn btn-primary"
+                    }
+                });
+            });
+            $('#enddate2').click(function () {
+                Swal.fire({
+                    text: "Internship has been extend, Please delete it and add new contract!",
+                    icon: "warning",
+                    buttonsStyling: false,
+                    confirmButtonText: "Ok, got it!",
+                    customClass: {
+                        confirmButton: "btn btn-primary"
+                    }
+                });
+            });
+        });
+        function create(kpk) {
+            $('#exampleModal').modal({
+                backdrop: false,
+                keyboard: false
+            });
+            $('.modal-title').html('ADD INTERN');
+            $('.modal-dialog').addClass('modal-sm');
+            $('.modal-dialog').removeClass('modal-sm');
+            $('#submit').html('Save');
+            $('.hapus').addClass('d-none');
+            $('#frmInput').removeClass('d-none');
+
+            $('[name="kpk"]').val(kpk);
+            $('[name="salary"]').val("5000000");
+            $('[name="address"]').val("Cikarang, Jawa Barat");
+
+            $('[name="kpk"]').addClass("readonly");
+
+            $('#addInternForm').attr('action', '/Intern/AddIntern');
+            $('#submit').click(function () {
+                var joindate = document.getElementById("joindate").value;
+                var enddate = document.getElementById("enddate").value;
+                var salary = document.getElementById("salary").value;
+                if (joindate != "" || enddate != "" || salary != "") {
+                    swal.fire({
+                        title: "Please Wait...",
+                        text: "Generate attendance!!",
+                        icon: "success",
+                        button: false,
+                        showConfirmButton: false,
+                        allowOutsideClick: false
+                        //icon: "success"
+                    });
+                }
+            });
+        }
+        function deleteintern(KPK, INTERNNAME) {
+            $('#exampleModal').modal({
+                backdrop: false,
+                keyboard: false
+            });
+            $('.modal-title').html('DELETE INTERN');
+
+            $('[name="kpk"]').val(KPK);
+            $('.hapus').html("Are you sure you want to delete this intern <b>" + INTERNNAME + "</b>?");
+            $('#addInternForm').attr('action', '/Intern/DeleteIntern');
+            $('#submit').click(function () {
+                var joindate = document.getElementById("joindate").value;
+                var enddate = document.getElementById("enddate").value;
+                var salary = document.getElementById("salary").value;
+                if (joindate != "" || enddate != "" || salary != "") {
+                    swal({
+                        title: "Please Wait...",
+                        text: "Generate attendance!!",
+                        icon: "/Content/images/icon/loading2.gif",
+                        button: false,
+                        showConfirmButton: false,
+                        allowOutsideClick: false
+                        //icon: "success"
+                    });
+                }
+            });
+            $('#submit').removeClass('d-none');
+
+            $('.modal-dialog').removeClass('modal-lg');
+            $('.modal-dialog').addClass('modal-lg');
+            $('#submit').html('Delete');
+            $('#frmInput').addClass('d-none');
+            $('.hapus').removeClass('d-none');
+
+
+            //hilangkan required
+            $('[name="KPK"]').removeAttr("required");
+            $('[name="EmployeeName"]').removeAttr("required");
+            $('[name="Plant"]').removeAttr("required");
+            $('[name="Gender"]').removeAttr("required");
+            $('[name="Active"]').removeAttr("required");
+            $('[name="Status"]').removeAttr("required");
+        }
+        function edit(NIK, NIM, INTERNNAME, GENDER, DOB, PHONE, PERSONALMAIL, MAJOR, UNIVERSITY, ADDRESS, KPK, BUDGET, DEPT, SECTION, PROJECT, OFFICEMAIL, MENTOR, MANAGER, JOINDATE, ENDDATE, SALARY, EXTEND, IDINTERN, NAMEMENTOR, NAMEMANAGER) {
+            $('#exampleModal').modal({
+                backdrop: false,
+                keyboard: false
+            });
+            $('.select-selection__rendered').html(GENDER);
+            $('.select-selection__rendered').html(MENTOR);
+            $('.select-selection__rendered').html(MANAGER);
+            $('.select-selection__rendered').html(DEPT);
+            $('.select-selection__rendered').html(SECTION);
+
+            $('[name="nik"]').val(NIK);
+            $('[name="gender"]').val(GENDER);
+            $('[name="joindateold"]').val(JOINDATE);
+            $('[name="enddateold"]').val(ENDDATE);
+            $('[name="mentor"]').val(MENTOR);
+            $('[name="manager"]').val(MANAGER);
+            $('[name="dept"]').val(DEPT);
+            $('[name="section"]').val(SECTION);
+            $('[name="nim"]').val(NIM);
+            $('[name="kpk"]').val(KPK);
+            $('[name="internname"]').val(INTERNNAME);
+            $('[name="dob"]').val(DOB);
+            $('[name="phone"]').val(PHONE);
+            $('[name="personalmail"]').val(PERSONALMAIL);
+            $('[name="major"]').val(MAJOR);
+            $('[name="university"]').val(UNIVERSITY);
+            $('[name="address"]').val(ADDRESS);
+            $('[name="budget"]').val(BUDGET);
+            $('[name="project"]').val(PROJECT);
+            $('[name="officemail"]').val(OFFICEMAIL);
+            $('[name="joindate"]').val(JOINDATE);
+            $('[name="enddate"]').val(ENDDATE);
+            $('[name="salary"]').val(SALARY);
+            $('[name="extend"]').val(EXTEND);
+            $('[name="idintern"]').val(IDINTERN);
+
+
+            $('[name="kpk"]').attr("required", "required");
+            $('[name="kpk"]').attr("readonly", "readonly");
+            $('[name="internname"]').attr("required", "required");
+
+            $('.modal-title').html('EDIT INTERN');
+            $('.modal-dialog').addClass('modal-sm');
+            $('.modal-dialog').removeClass('modal-sm');
+            $('#submit').html('Edit');
+            $('#submit').click(function () {
+                swal({
+                    title: "Do you want to save it?",
+                    text: "Please check Information before Submiting!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Save",
+                    cancelButtonText: "Cancel",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                    function (isConfirm) {
+                        if (isConfirm) {
+                            if (validateData() == true) {
+                                $("#addInternForm").submit()
+                            }
+                        } else {
+                            swal("Cancelled", "You have Cancelled Form Submission!", "error");
+                        }
+                    });
+            });
+            $('.hapus').addClass('d-none');
+            $('#frmInput').removeClass('d-none');
+            $('#addInternForm').attr('action', '/Intern/UpdateIntern');
+        }
+        function haveextend(NIK, NIM, INTERNNAME, GENDER, DOB, PHONE, PERSONALMAIL, MAJOR, UNIVERSITY, ADDRESS, KPK, BUDGET, DEPT, SECTION, PROJECT, OFFICEMAIL, MENTOR, MANAGER, JOINDATE, ENDDATE, SALARY, EXTEND, IDINTERN, NAMEMENTOR, NAMEMANAGER) {
+            $('#exampleModal2').modal({
+                backdrop: false,
+                keyboard: false
+            });
+            $('.select-selection__rendered').html(GENDER);
+            $('.select-selection__rendered').html(MENTOR);
+            $('.select-selection__rendered').html(MANAGER);
+            $('.select-selection__rendered').html(DEPT);
+            $('.select-selection__rendered').html(SECTION);
+
+            $('[name="nik"]').val(NIK);
+            $('[name="gender"]').val(GENDER);
+            $('[name="mentor"]').val(MENTOR);
+            $('[name="manager"]').val(MANAGER);
+            $('[name="dept"]').val(DEPT);
+            $('[name="section"]').val(SECTION);
+            $('[name="nim"]').val(NIM);
+            $('[name="kpk"]').val(KPK);
+            $('[name="internname"]').val(INTERNNAME);
+            $('[name="dob"]').val(DOB);
+            $('[name="phone"]').val(PHONE);
+            $('[name="personalmail"]').val(PERSONALMAIL);
+            $('[name="major"]').val(MAJOR);
+            $('[name="university"]').val(UNIVERSITY);
+            $('[name="address"]').val(ADDRESS);
+            $('[name="budget"]').val(BUDGET);
+            $('[name="project"]').val(PROJECT);
+            $('[name="officemail"]').val(OFFICEMAIL);
+            $('[name="joindate"]').val(JOINDATE);
+            $('[name="enddate"]').val(ENDDATE);
+            $('[name="salary"]').val(SALARY);
+            $('[name="extend"]').val(EXTEND);
+            $('[name="idintern"]').val(IDINTERN);
+
+
+            $('[name="kpk"]').attr("required", "required");
+            $('[name="kpk"]').attr("readonly", "readonly");
+            $('[name="internname"]').attr("required", "required");
+
+            $('.modal-title').html('EDIT INTERN');
+            $('.modal-dialog').addClass('modal-sm');
+            $('.modal-dialog').removeClass('modal-sm');
+            $('#submit2').html('Edit');
+            $('#submit2').click(function () {
+                swal({
+                    title: "Do you want to save it?",
+                    text: "Please check Information before Submiting!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Save",
+                    cancelButtonText: "Cancel",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                    function (isConfirm) {
+                        if (isConfirm) {
+                            if (validateData() == true) {
+                                $("#addInternForm").submit()
+                            }
+                        } else {
+                            swal("Cancelled", "You have Cancelled Form Submission!", "error");
+                        }
+                    });
+            });
+            $('.hapus').addClass('d-none');
+            $('#frmInput2').removeClass('d-none');
+            $('#addInternForm2').attr('action', '/Intern/UpdateIntern');
+        }
+        function newcontract(KPK, INTERNNAME) {             
+            $('#modalContract').modal({
+                backdrop: false,
+                keyboard: false
+            });
+            $('.modal-title').html('New Contract');
+
+            $.ajax({
+                url: "/Intern/DetailContract?KPK=" + KPK,
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    $("#contractDetail tbody").empty();
+                    var html = '';
+                    var count = 1;
+                    $.each(data, function (key, item) {
+                        $("#count").val(count);
+                        html += '<tr>';
+                        html += '<td>' + count + '</td>';
+                        html += '<td>' + item.DJoinDate + '</td>';
+                        html += '<td>' + item.DEndDate + '</td>';
+                        html += '<td>' + item.DExtend + '</td>';
+                        html += '</tr>';
+                        count++
+                    });
+                    $("#contractDetail tbody").append($(html));
+                },
+                error: function (textStatus, status) {
+                    console.log(textStatus);
+                    console.log(status);
+                }
+            });
+
+            $('[name="kpk"]').val(KPK);
+            $('#formId').attr('action', '/Intern/NewContract');
+            $('#btnactivity').removeClass('d-none');
+
+            $('.modal-dialog').removeClass('modal-lg');
+            $('.modal-dialog').addClass('modal-lg');
+            $('#frmInput').addClass('d-none');
+            $('.hapus').removeClass('d-none');
+        }
+    </script>
+</div>

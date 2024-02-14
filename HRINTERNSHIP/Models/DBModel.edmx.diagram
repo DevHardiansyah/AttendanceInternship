@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="77747e01295f43269ad5c80366360c62" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="DBModels.Departement" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.Employee" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.Intern_Activity" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.Intern_Attendance" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.Intern_AttendanceApproval" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.Intern_MasterData" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.Intern_Periode" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.Job" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.permission" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.Public_Holidays" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.Role" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.Section" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.SelfService_EmailService" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.sysdiagram" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.Temp_AttendanceIntern" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.Temp_AttendanceInternIn" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.Temp_AttendanceInternOut" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.Temp_InternActivity" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.User" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.nbr" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.Role_permissions" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.All_employee" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.ListUser" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.RoleList" Width="1.5" PointX="14.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.RolePermission" Width="1.5" PointX="14.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.VwIntern_AbsLate" Width="1.5" PointX="14.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModels.VwIntern_MasterDataIntern" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="DBModels.VwIntern_ReportPayment" Width="1.5" PointX="3.375" PointY="16.75" />
+        <EntityTypeShape EntityType="DBModels.Intern_DetailContract" Width="1.5" PointX="5.375" PointY="16.75" />
+        <EntityTypeShape EntityType="DBModels.Historical_employee" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DBModels.Emergency_employee" Width="1.5" PointX="17.375" PointY="5.75" />
+        <EntityTypeShape EntityType="DBModels.Intern_ListUsers" Width="1.5" PointX="9.375" PointY="13.75" />
+        <EntityTypeShape EntityType="DBModels.NewCalendarEvent" Width="1.5" PointX="17.375" PointY="14.75" />
+        <EntityTypeShape EntityType="DBModels.VwIntern_DashboardActLastWeek" Width="1.5" PointX="15.375" PointY="18.75" />
+        <EntityTypeShape EntityType="DBModels.EmployeeDress" Width="1.5" PointX="17.375" PointY="18.75" />
+        <EntityTypeShape EntityType="DBModels.GradeView" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DBModels.SALARY" Width="1.5" PointX="19.375" PointY="3.75" />
+        <EntityTypeShape EntityType="DBModels.TotalHour" Width="1.5" PointX="5.375" PointY="19.75" />
+        <EntityTypeShape EntityType="DBModels.Intern_AttendanceNew" Width="1.5" PointX="17.375" PointY="8.75" />
+        <EntityTypeShape EntityType="DBModels.Report_UmurEmployee" Width="1.5" PointX="19.375" PointY="6.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

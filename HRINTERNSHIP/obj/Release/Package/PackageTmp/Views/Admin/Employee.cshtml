@@ -1,0 +1,748 @@
+﻿@model IEnumerable<HRIS_Employee.Models.ALL_employee>
+@{
+    ViewBag.Title = "Employee";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+
+<div class="container-fluid">
+       
+    <div class="row" id="print">
+        <div class="col-lg-12 col-md-12 mt-3">
+            <div class="card" >
+                <div class="card-body">
+                    <i data-feather="book-open" class="pr-2"></i>Personal Information </h6>
+                       <button class="btn btn-sm btn-primary float-right ml-2" onclick="history.back()">Back</button>
+                       @foreach (var item in Model)
+                        {
+                       <a href="@Url.Action("Attendance", "Employee")?kpk=@ViewBag.getKPK&getStatusEmployee=@item.EMPAYT" class="btn btn-sm btn-primary float-right" >Show Attendance</a>
+                        }
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-4 mr-2 ml-4">
+                            <img src="~/Content/images/Employee/@ViewBag.getImg" class="" alt="..." width="120px" height="120px">
+                        </div>
+                        <div class="col-md-3">
+
+                            <div class="">
+                                <table class="table  ">
+                                    <tbody>
+                                         <tr>
+                                            <th>Plant</th>
+                                            @foreach (var item in Model)
+                                            {
+                                            <th> @item.EMCMPY</th>
+                                            }
+                                        </tr>
+                                        <tr>
+                                            <th>KPK</th>
+                                            
+                                            <th> @ViewBag.getKPK </th>
+                                           
+                                        </tr>
+                                        <tr>
+                                            <th>Employee Name</th>
+                                             @foreach (var item in Model)
+                                            {
+                                            <th> @item.EMNAME </th>
+                                            }
+                                        </tr>
+                                        <tr>
+                                            <th>Date Of Birth</th>
+                                            @foreach (var item in Model)
+                                            {
+                                             if (item.EMPAYT == "M")
+                                                {
+
+                                                    <th> @item.EMBIRT.Substring(6,2)-@item.EMBIRT.Substring(4,2)-@item.EMBIRT.Substring(0,4)</th>
+                                                }
+                                                else if(item.EMPAYT == "D" && @item.EMBIRT != null)
+                                                {
+                                                    if( @item.EMBIRT.Length == 22)
+                                                    {
+                                                        <th> @item.EMBIRT.Substring(0, 10)</th>
+                                                    }else if( @item.EMBIRT.Length == 21)
+                                                    {
+                                                        if(@item.EMBIRT.Substring(2, 1) == "/")
+                                                        {
+                                                             <th> @(item.EMBIRT.Substring(0, 2)+"-0"+item.EMBIRT.Substring(3, 1)+"-"+item.EMBIRT.Substring(5, 4))</th>
+                                                        }else
+                                                        {
+                                                           <th> @("0"+item.EMBIRT.Substring(0, 1)+"-"+item.EMBIRT.Substring(5, 2)+"-"+item.EMBIRT.Substring(5, 4))</th>
+                                                        }
+                                                        
+                                                    }else if( @item.EMBIRT.Length == 20)
+                                                    {
+                                                        <th> @("0"+ item.EMBIRT.Substring(0, 1)+"-0"+item.EMBIRT.Substring(4, 1)+"-"+item.EMBIRT.Substring(4, 4))</th>
+                                                    }
+                                                    
+                                                }else
+                                                {
+                                                    <th> @item.EMBIRT.Substring(6,2)-@item.EMBIRT.Substring(4,2)-@item.EMBIRT.Substring(0,4)</th>
+                                                }
+                                            }
+                                        </tr>
+                                        
+                                        <tr>
+                                            <th>Gender</th>
+                                            @foreach (var item in Model)
+                                                {
+                                                
+                                                if (item.EMSEXT == "F")
+                                                {
+                                                    <th>Female</th>
+                                                }
+                                                else
+                                                {
+                                                    <th>Male</th>
+                                                }
+                                            }
+                                        </tr>
+                                        
+                                       
+                                       
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-3">
+
+                            <div class="">
+                                <table class="table  ">
+                                    <tbody>
+                                        <tr>
+
+                                            <th>Marital Status</th>
+                                            @foreach (var item in Model)
+                                            {
+                                                 if (item.EMMRST == "M")
+                                                {
+                                                    <td> Married</td>
+                                                }
+                                                else if (item.EMMRST == "S")
+                                                {
+                                                    <td> Single</td>
+                                                }
+                                            }
+                                           
+                                            
+                                        </tr>
+                                        <tr>
+                                            <th>Email</th>
+                                            @foreach (var item in Model)
+                                            {
+                                                <th> @item.EMAIL</th>
+                                            }
+                                             <tr>
+                                          
+                                      
+                                        </tr>
+                                        <tr>
+                                            <th>Education</th>
+                                            @foreach (var item in Model)
+                                            {
+                                            <th>@item.EMBEDU</th>
+                                            }
+                                        </tr>
+                                        <tr>
+                                            <th>Religion</th>
+                                            @foreach (var item in Model)
+                                            {
+                                            <th>@item.EMRELI </th>
+                                            }
+                                        </tr>
+                                        
+                                        
+                                        <tr>
+                                            <th>BUS ROUTE</th>
+                                            @foreach (var item in Model)
+                                            {
+                                            <th>@item.EMBUSR</th>
+                                            }
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-4">
+
+                            <div class="">
+                                <table class="table  ">
+                                    <tbody>
+                                         <tr>
+                                            <th>Address</th>
+                                            @foreach (var item in Model)
+                                            {
+                                            <td> @(item.EMADD1) @(item.EMADD2) <br> @(item.EMADD3) </td>
+                                            }
+                                            
+                                        </tr>
+                                       <tr>
+                                            <th>ID Number</th>
+                                            @foreach (var item in Model)
+                                            {
+                                            <td> @item.EKTP</td>
+                                            }
+                                        </tr>
+                                         <tr>
+                                            <th>NPWP</th>
+                                            @foreach (var item in Model)
+                                            {
+                                            <td>@item.EMITAX</td>
+                                            }
+                                        </tr>
+                                         <tr>
+                                            <th>BPJS Kesehatan</th>
+                                            @foreach (var item in Model)
+                                            {
+                                            <td> @item.BPJS</td>
+                                            }
+                                        </tr>
+                                        <tr>
+                                            <th>BPJS Ketenagakerjaan</th>
+                                             @foreach (var item in Model)
+                                            {
+                                            <td> @item.BPJS_Ketenagakerjaan </td>
+                                            }
+                                        </tr>
+                                       
+                                       
+                                        
+                                        
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-xs-12 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <i data-feather="clipboard" class="pr-2"></i>Work
+                    <hr>
+                    <div class="table-responsive">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Status</th>
+                                     @foreach (var item in Model)
+                                    {
+                                        if(item.EMEMST == "P" || item.EMPAYT == "M")
+                                        {
+                                            <td>:Permanent </td>
+                                        }else
+                                        {   
+                                             <td>:Contract </td>
+                                        }
+                                            
+                                    }
+
+                                    <th scope="row">Departement</th>
+                                     @foreach (var item in Model)
+                                    {
+                                            <td> @item.DEPT_NAME </td>
+                                    }
+
+                                   <th scope="row">KPK Superior</th>
+                                    @foreach (var item in Model)
+                                        {
+                                            <td> @item.EMSUP_ </td>
+                                        }
+                                    <tr>
+                                    <th scope="row">Join Date</th>
+                                    @foreach (var item in Model)
+                                            {
+                                             if (item.EMPAYT == "M")
+                                                {
+
+                                                    <th> @item.EMCOMM.Substring(6,2)-@item.EMCOMM.Substring(4,2)-@item.EMCOMM.Substring(0,4)</th>
+                                                }
+                                                else if(item.EMPAYT == "D" && @item.EMCOMM != null)
+                                                {
+                                                    if( @item.EMCOMM.Length == 22)
+                                                    {
+                                                        <th> @item.EMCOMM.Substring(0, 10)</th>
+                                                    }else if( @item.EMCOMM.Length == 21)
+                                                    {
+                                                        if(@item.EMCOMM.Substring(2, 1) == "/")
+                                                        {
+                                                             <th> @(item.EMCOMM.Substring(0, 2)+"-0"+item.EMCOMM.Substring(3, 1)+"-"+item.EMCOMM.Substring(5, 4))</th>
+                                                        }else
+                                                        {
+                                                           <th> @("0"+item.EMCOMM.Substring(0, 1)+"-"+item.EMCOMM.Substring(5, 2)+"-"+item.EMCOMM.Substring(5, 4))</th>
+                                                        }
+                                                        
+                                                    }else if( @item.EMCOMM.Length == 20)
+                                                    {
+                                                        <th> @("0"+ item.EMCOMM.Substring(0, 1)+"-0"+item.EMCOMM.Substring(4, 1)+"-"+item.EMCOMM.Substring(4, 4))</th>
+                                                    }
+                                                    
+                                                }else
+                                                {
+                                                    <th> @item.EMCOMM.Substring(6,2)-@item.EMCOMM.Substring(4,2)-@item.EMCOMM.Substring(0,4)</th>
+                                                }
+                                            }
+                                    <th scope="row">Section</th>
+                                    @foreach (var item in Model)
+                                    {
+                                        <td>: @item.SECT_NAME </td>
+                                    }
+                                     <th scope="row">Superior</th>
+                                  @foreach (var item in Model)
+                                    {
+                                            <td>: @item.SUPNAME </td>
+                                    }
+                                </tr>
+                                    
+                                </tr>
+                                <tr>
+                                    <th scope="row">Grade</th>
+                                    @foreach (var item in Model)
+                                    {
+                                            <td>: @item.EMGRAD </td>
+                                    }
+                                    <th scope="row">Job Title</th>
+                                   @foreach (var item in Model)
+                                    {
+                                            <td>: @item.Description </td>
+                                    }
+                                </tr>
+                                <tr>
+
+                                </tr>
+                                <tr>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-9 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <i data-feather="user" class="pr-2"></i>Emergency
+                    <button type="button" class="btn btn-primary btn-icon float-right" data-toggle="modal" data-target=".bd-example-modal-lg">
+                        <i class="btn-icon-append" data-feather="edit"></i>
+                    </button>
+                    <hr>
+                    <div class="table-responsive mt-2">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <th width="200" scope="row">Name</th>
+                                    <th scope="row">Address</th>
+                                    <th scope="row">Phone Number</th>
+                                    <th scope="row">Relationship</th>
+                                </tr>
+                                @if (ViewBag.Emergency != null)
+                                {
+                                    foreach (var Emergency in ViewBag.Emergency)
+                                    {
+                                        <tr>
+                                            <td>@Emergency.Emergency_name</td>
+                                            <td>@Emergency.Emergency_address </td>
+                                            <td>@Emergency.Emergency_contact</td>
+                                            <td>@Emergency.Emergency_relation</td>
+
+                                        </tr>
+
+
+                                       
+
+                                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="card">
+                                                        <div class="card-body">
+    
+                                                                <h6 class="card-title">Update Emergency Contact  @foreach (var item in Model)
+                                                                    {
+                                                                            <strong>@item.EMNAME</strong>
+                                                                    }
+                                                                </h6>
+                                                              @using (Html.BeginForm())
+                                                                {
+                                                                    @Html.AntiForgeryToken()
+                                                                <div class="form-group row">
+                                                                    <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Name</label>
+                                                                    <div class="col-sm-9">
+                                                                    <input type="text" class="form-control" name="Emergency_name" id="exampleInputUsername2" placeholder="Name" value="@Emergency.Emergency_name">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Phone Number</label>
+                                                                    <div class="col-sm-9">
+                                                                    <input type="text" class="form-control" name="Emergency_contact" value="@Emergency.Emergency_contact" id="exampleInputMobile" placeholder="Mobile number">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                    <label for="exampleInputMobile" class="col-sm-3 col-form-label">Relationship</label>
+                                                                    <div class="col-sm-9">
+                                                                    <input type="text" class="form-control" name="Emergency_relation" value="@Emergency.Emergency_relation" id="exampleInputMobile" placeholder="Relationship">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                    <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Address</label>
+                                                                    <div class="col-sm-9">
+                                                                   
+                                                                    <textarea name="Emergency_address" id="" class="form-control" cols="30" rows="10">@Emergency.Emergency_address</textarea>
+                                                                    </div>
+                                                                </div>
+                                                               
+                                                                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                                                                <button class="btn btn-light">Cancel</button>
+                                                                }
+ 
+
+                                                        </div>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <Img src=""></Img>
+                    @foreach(var dress_employee in ViewBag.getEmployeeDress)
+                    {
+                        <td>Kode Baju @dress_employee.Dress_name</td>
+                    }
+                </div>
+            </div>
+        </div>
+         @foreach (var item in Model)
+        {
+            if(item.EMPAYT == "D")
+            {
+                <div class="col-lg-12 col-md-12 mt-3">
+                    <div class="card">
+                        <div class="card-body">
+                                <i data-feather="dollar-sign" class="pr-2"></i>Salary Details <p class="card-description float-right">Periode 
+                                  @foreach(var skill in ViewBag.TSkill)
+                                            {
+                                            <td>@skill.date_code</td>
+                                            }
+                                </p>
+                            <hr>
+                            <div class="table-responsive mt-2">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">UMK</th>
+                                            <th scope="row">Skill Allowance</th>
+                                            <th scope="row">Seniority Allowance</th>
+                                            <th scope="row">Salary</th>
+                                        </tr>
+                                        <tr>
+                                            @if (ViewBag.UMK != null)
+                                            {
+
+                                                foreach (var UMK in ViewBag.UMK)
+                                                {
+                                                    ViewBag.UMK = UMK.salary1;
+                                                    int getUmk = Int32.Parse(ViewBag.UMK);
+                                                    <td>Rp.@getUmk.ToString("N")</td>
+                                                }
+                                            }
+                                            @foreach (var skill in ViewBag.TSkill)
+                                            {
+                                                ViewBag.TSkill = skill.grade_value;
+                                                <td>@skill.grade_value</td>
+                                            }
+                                            @if (ViewBag.TSenior != null)
+                                            {
+                                                foreach (var senior in ViewBag.TSenior)
+                                                { ViewBag.TSenior = senior.Masa_kerja_value;
+                                                    <td>@senior.Masa_kerja_value</td>
+                                                }
+                                            }
+
+                                       
+                                               @if(ViewBag.TSenior != null)
+                                               {
+                                                var TSkill = ViewBag.TSkill.Replace("Rp", "").Replace(",", "");
+                                                var WorkExs = ViewBag.TSenior.Replace("Rp", "").Replace(",", "");
+                                                int number = Int32.Parse(ViewBag.UMK) + Int32.Parse(WorkExs) + Int32.Parse(TSkill);
+                                                     <td>  Rp.@number.ToString("N") </td>
+                                               }
+                                          
+                                        </tr>
+                                    
+                                               @*  @if(item.EMJOBA.Substring(0,1) == "P")
+                                                {   int number =   5028802;
+                                                        string final = Convert.ToDecimal(number).ToString("#,##0.00");
+                                                            <td> Rp. @final
+                                                                </td>
+                                                }else if(item.EMJOBA.Substring(0,1) == "C")
+                                                {
+                                                        int number =    4498962;
+                                                        string final = Convert.ToDecimal(number).ToString("#,##0.00");
+                                                            <td> Rp. @final
+                                                            </td>
+                                                }
+                                                @if(item.grade_value != "" || item.grade_value != null)
+                                                {
+                                                        <td> @item.grade_value</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>Rp.0</td>
+                                                    }
+                                                    @if( item.TOTALYEARS != null)
+                                                    {
+                                                        if( int.Parse(item.TOTALYEARS) >= 15 )
+                                                        {
+                                                            <td>Rp.130.823</td>
+                                                        }
+                                                        
+                                                        else if(item.Masa_kerja_value != "" || item.Masa_kerja_value != null)
+                                                        {
+                                                            <td> @item.Masa_kerja_value</td>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>Rp.0</td>
+                                                }
+
+                                                @if(item.EMJOBA.Substring(0,1) == "P")
+                                                {
+                                                    if (item.TOTALYEARS != null)
+                                                    {
+                                                        if (int.Parse(item.TOTALYEARS) >= 15)
+                                                        {
+                                                            string grade = item.grade_value;
+                                                            string grades = grade.Replace("Rp", "").Replace(",", "");
+
+                                                            int number = 5028802 + Int32.Parse(grades) + 130823;
+
+
+
+                                                            string final = Convert.ToDecimal(number).ToString("#,##0.00");
+                                                                    <td > <span class="bg-danger text-white"> Rp. @final </span>
+                                                                    </td>
+                                                        }
+                                                        else if (item.Masa_kerja_value != "" || item.Masa_kerja_value != null && item.grade_value != "" || item.grade_value != null)
+                                                        {
+                                                            string grade = item.grade_value;
+                                                            string grades = grade.Replace("Rp", "").Replace(",", "");
+                                                            string WorkEx = item.Masa_kerja_value;
+                                                            string WorkExs = WorkEx.Replace("Rp", "").Replace(",", "");
+                                                            int number = 5028802 + Int32.Parse(grades) + Int32.Parse(WorkExs);
+
+
+
+                                                            string final = Convert.ToDecimal(number).ToString("#,##0.00");
+                                                                        <td > <span class="class="bg-danger text-white""> Rp. @final </span>
+                                                                        </td>
+                                                        }
+                                                        else if (item.Masa_kerja_value != "" || item.Masa_kerja_value != null)
+                                                        {
+
+                                                            string WorkEx = item.Masa_kerja_value;
+                                                            string WorkExs = WorkEx.Replace("Rp", "").Replace(",", "");
+                                                            int number = 5028802 + Int32.Parse(WorkExs);
+
+
+
+                                                            string final = Convert.ToDecimal(number).ToString("#,##0.00");
+                                                                        <td > <span class="class="bg-danger text-white""> Rp. @final </span>
+                                                                        </td>
+                                                        }
+                                                        else if (item.grade_value != "" || item.grade_value != null)
+                                                        {
+                                                            string grade = item.grade_value;
+                                                            string grades = grade.Replace("Rp", "").Replace(",", "");
+
+                                                            int number = 5028802 + Int32.Parse(grades);
+
+
+
+                                                            string final = Convert.ToDecimal(number).ToString("#,##0.00");
+                                                                        <td > <span class="class="bg-danger text-white""> Rp. @final </span>
+                                                                        </td>
+                                                        }
+                                                        else
+                                                        {
+                                                            int number = 5028802;
+
+
+
+                                                            string final = Convert.ToDecimal(number).ToString("#,##0.00");
+                                                                        <td > <span class="class="bg-danger text-white""> Rp. @final </span>
+                                                                        </td>
+                                                        }
+                                                    }
+
+                                                }else if(item.EMJOBA.Substring(0,1) == "C")
+                                                {
+
+
+                                                if(item.TOTALYEARS != null)
+                                                {
+                                                    if(  int.Parse(item.TOTALYEARS) >= 15 )
+                                                    {
+                                                        string grade= item.grade_value;
+                                                        string grades = grade.Replace("Rp","").Replace(",","");
+
+                                                        int number =   4498962 + Int32.Parse(grades) + 130823 ;
+
+
+
+                                                        string final = Convert.ToDecimal(number).ToString("#,##0.00");
+                                                                <td > <span class="class="bg-danger text-white""> Rp. @final </span>
+                                                                </td>
+                                                            }
+                                                        else if(item.Masa_kerja_value != "" || item.Masa_kerja_value != null && item.grade_value != "" || item.grade_value != null)
+                                                        {
+                                                                string grade= item.grade_value;
+                                                                string grades = grade.Replace("Rp","").Replace(",","");
+                                                                string WorkEx= item.Masa_kerja_value;
+                                                                string WorkExs = WorkEx.Replace("Rp","").Replace(",","");
+                                                                int number =   4498962 + Int32.Parse(grades) + Int32.Parse(WorkExs);
+                                                                string final = Convert.ToDecimal(number).ToString("#,##0.00");
+                                                                <td > <span class="class="bg-danger text-white""> Rp. @final </span>
+                                                                </td>
+                                                        }
+                                                        else if(item.Masa_kerja_value != "" || item.Masa_kerja_value != null)
+                                                        {
+                                                            
+                                                                string WorkEx= item.Masa_kerja_value;
+                                                                string WorkExs = WorkEx.Replace("Rp","").Replace(",","");
+                                                                int number =   4498962 +  Int32.Parse(WorkExs) ;
+                                                                string final = Convert.ToDecimal(number).ToString("#,##0.00");
+                                                                <td > <span class="class="bg-danger text-white""> Rp. @final </span>
+                                                                </td>
+                                                        }else if(item.grade_value != "" || item.grade_value != null)
+                                                        {
+                                                            string grade= item.grade_value;
+                                                                string grades = grade.Replace("Rp","").Replace(",","");
+                                                                
+                                                                int number =   4498962 + Int32.Parse(grades)  ;
+
+
+
+                                                                string final = Convert.ToDecimal(number).ToString("#,##0.00");
+                                                                <td > <span class="class="bg-danger text-white""> Rp. @final </span>
+                                                                </td>
+                                                        }else{
+                                                                int number =   4498962  ;
+                                                                string final = Convert.ToDecimal(number).ToString("#,##0.00");
+                                                                <td > <span class="class="bg-danger text-white""> Rp. @final </span>
+                                                                </td>
+                                                        }
+                                                        }
+                                                        }
+                                        
+                                   
+                                   
+                                    </tbody> *@
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        
+        }
+
+        <div class="col-lg-12 mt-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">Historical</h6>
+                        <div class="table-responsive">
+                            <table class="table  table-bordered">
+                                <thead>
+                                    <tr>
+                                       
+                                        <th colspan="4" class="text-center">Before</th>
+                                        <th colspan="4"  class="text-center">After</th>
+                                        <th rowspan="2"  class="text-center">date effectivity</th>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <th  class="text-center">Plant</th>
+                                        <th  class="text-center">Department</th>
+                                        <th  class="text-center">Section</th>
+                                        <th  class="text-center">Job Title</th>
+                                        <th  class="text-center">Plant</th>
+                                        <th  class="text-center">Department</th>
+                                        <th  class="text-center">Section</th>
+                                        <th  class="text-center">Job Title</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   @foreach (var History in ViewBag.HistoryEmployee)
+                                   {
+                                    <tr>
+                                        
+                                        <td class="text-center">
+                                            @History.plant
+                                        </td>
+                                        <td class="text-center">
+                                            @History.department
+                                        </td>
+                                        <td class="text-center">
+                                            @History.section
+                                        </td>
+                                        <td class="text-center">
+                                            @History.job_title
+                                        </td>
+                                        <td class="text-center">
+                                            @History.plant_after
+                                        </td>
+                                        <td class="text-center">
+                                            @History.department_after
+                                        </td>
+                                        <td class="text-center">
+                                            @History.section_after
+                                        </td>
+                                        <td class="text-center">
+                                            @History.job_title_after
+                                        </td>
+                                        <td class="text-center">Week Ending @History.updated_at.Substring(3,3)  @History.updated_at.Substring(0,3)  @History.updated_at.Substring(6,5)</td>
+                                    </tr>
+                                   }
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+                </div>
+                </div>
+        </div>   
+
+
+        
+    </div>
+</div>

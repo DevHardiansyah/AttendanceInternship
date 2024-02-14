@@ -1,0 +1,76 @@
+﻿@model IEnumerable<HRINTERNSHIP.Models.ListUser>
+@{
+    ViewBag.Title = "ChangePassoword";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            @if (Session["username"] != null && Session["intern"] == null)
+            {
+                foreach (var item in Model)
+                {
+
+                    <input type="hidden" id="realOldPassword" value="@item.password">
+                    <input type="hidden" id="kpk" value="@item.EMEMP">
+                }
+            }
+            else if (Session["username"] != null && Session["intern"] != null)
+            {
+                foreach (var item in ViewBag.query)
+                {
+
+                    <input type="hidden" id="realOldPassword" value="@item.password">
+                    <input type="hidden" id="kpk" value="@item.username">
+                }
+            }
+            <div class="card-body">
+                <div class="alert alert-warning" role="alert">
+                    README <button class="btn btn-primary float-right">Back</button>
+                    <hr>
+                    <ul class="list-unstyled">
+                        <li>1. Don't share your account information.</li>
+                        <li>2. Change Password Every 3 Months</li>
+                        <li>3. Forgot Password? Plesea feel free to contact Super Admin(HRA)</li>
+                    </ul>
+                </div>
+                <div class="hide" id="passwordAlert">
+
+
+                    <div class="alert alert-danger" role="alert">
+                        Warning!<strong> Password doesn't match! </strong>
+                    </div>
+                </div>
+
+                <div class="hide" id="passwordAlertOld">
+
+
+                    <div class="alert alert-danger" role="alert">
+                        Warning!<strong> Wrong password! </strong>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Old Password</label>
+                    <input type="password" class="form-control" name="oldPassword" id="oldPassword" onkeyup="checkOldPassword()">
+                </div>
+                <div class="form-group">
+                    <label for="">New Password</label>
+                    <input type="password" class="form-control" name="newPassword" id="newPassword" onkeyup="checkPasswordConfirmation()">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Password Confirmation</label>
+                    <input type="password" class="form-control" name="passwordConfirmation" id="passwordConfirmation" onkeyup="checkPasswordConfirmation()">
+                </div>
+                <div class="form-group">
+                    <div class="btn-group">
+                        <button class="btn btn-primary ml-2" onclick="ChangePassword()" id="btn_update_password">Save Changes</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

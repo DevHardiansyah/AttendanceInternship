@@ -1,0 +1,121 @@
+﻿@model IEnumerable<HRIS_Employee.Models.PublicHolidays>
+    @{ ViewBag.Title = "Index"; Layout = "~/Views/Shared/_dashboard.cshtml"; }
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <button class="btn btn-default  btn-icon-text" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                    <i class="btn-icon-prepend" data-feather="list"></i>
+                                                Filter
+                                    </button>
+                        <button type="button" class="btn btn-primary  btn-icon-text" data-toggle="modal" data-target=".bd-example-modal-lg">
+                                        <i class="btn-icon-prepend bg-danger" data-feather="upload"></i>
+                                                Upload data
+                                    </button>
+                        <button class="btn btn-primary  btn-icon-text" type="button" id="master_employee_export_to_excel">
+                                        <i class="btn-icon-prepend bg-success" data-feather="download"></i>
+                                                Export to excel 
+                                    </button>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="input-group date datepicker dashboard-date mr-2 mb-2 mb-md-0 d-md-none d-xl-flex" id="dashboardDate">
+                                            <span class="input-group-addon bg-transparent"><i data-feather="terminal" class=" text-primary"></i></span>
+                                            <input type="hidden" id="term_start" value="" name="term_start">
+                                            <input type="hidden" id="term_end" value="" name="term_end">
+                                            <input type="number" id="kpk_master" value="" name="kpk" maxlength="6" oninput="javascript: if(this.value.length > this.max.length) this.value = this.value.slice(0, this.maxLength);" min="5" class="form-control" placeholder="Enter KPK">
+                                        </div>
+
+                                        <div class="input-group date datepicker dashboard-date mr-2 mb-2 mb-md-0 d-md-none d-xl-flex" id="dashboardDate">
+                                            <span class="input-group-addon bg-transparent"><i data-feather="users" class=" text-primary"></i></span> @Html.DropDownList("Departement_code", null, htmlAttributes: new { @class = "form-control-sm", id = "departement_master"
+                                            })
+                                        </div>
+                                        <div class="input-group date datepicker dashboard-date mr-2 mb-2 mb-md-0 d-md-none d-xl-flex" id="dashboardDate">
+                                            <span class="input-group-addon bg-transparent"><i data-feather="list" class=" text-primary"></i></span> @Html.DropDownList("section_code", null, htmlAttributes: new { @class = "form-control-sm", id = "Section"
+                                            })
+                                        </div>
+                                        <div class="input-group date datepicker dashboard-date mr-2 mb-2 mb-md-0 d-md-none d-xl-flex" id="dashboardDate">
+                                            <span class="input-group-addon bg-transparent"><i data-feather="menu" class=" text-primary"></i></span>
+                                            <select name="" id="" class="form-controll-sm">
+                                                <option value="">PTME</option>
+                                                <option value="">PTMW</option>
+                                            </select>
+                                        </div>
+                                        <button type="button" class="btn btn-primary btn-icon-text float-left">
+                                            <i class="btn-icon-prepend" data-feather="arrow-right-circle"></i>
+                                            Show
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
+                            <div class="d-flex align-items-center flex-wrap text-nowrap">
+                                <!-- Modal for show form upload file -->
+                                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog ">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Upload data <br><span class="text-muted">.Excel Only</span></h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        @using (Html.BeginForm("UploadMasterEmployeeSheet", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", id = "form-2" })) {
+                                                        <div class="form-group">
+                                                            <label for="">Upload Absent Sheet </label>
+                                                            <input type="file" id="postedFile1" name="postedFile" class="form-control-file" required>
+                                                            <br>
+                                                            <button class="file-upload-browse attendance_absent btn btn-primary" type="submit" id="upload_attendance_absent">Upload</button>
+                                                        </div>
+                                                        }
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="table-responsive  pt-b">
+                            <table class="table table-bordered" id="all-employee">
+                                <thead class="">
+                                    <tr>
+                                        <th rowspan="2">#</th>
+                                        <td colspan="2"><i data-feather="calendar"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-center">
+                                            <a href="btn btn-sm btn-outline-danger">delete</a>
+                                        </th>
+                                        <th class="text-center">
+                                            Name
+                                        </th>
+                                        <th class="text-center">
+                                            Code
+                                        </th>
+                                      
+                                    </tr>
+                                </thead>
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>

@@ -1,0 +1,186 @@
+﻿@model IEnumerable<HRINTERNSHIP.Models.ListUser>
+@{
+    ViewBag.Title = "ChangePassoword";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+<!--begin::Toolbar-->
+<div class="toolbar" id="kt_toolbar">
+    <!--begin::Container-->
+    <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+        <!--begin::Page title-->
+        <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
+             data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
+             class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+            <!--begin::Title-->
+            <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">
+                Dashboard
+                <!--begin::Separator-->
+                <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
+                <!--end::Separator-->
+                <!--begin::Description-->
+                <small class="text-muted fs-7 fw-bold my-1 ms-1">@ViewBag.title</small>
+                <!--end::Description-->
+            </h1>
+            <!--end::Title-->
+        </div>
+        <!--end::Page title-->
+    </div>
+    <!--end::Container-->
+</div>
+<!--end::Toolbar-->
+<!--begin::Post-->
+<div class="post d-flex flex-column-fluid" id="kt_post">
+    <!--begin::Container-->
+    <div id="kt_content_container" class="container-xxl">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    @if (Session["username"] != null && Session["intern"] == null)
+                    {
+                        foreach (var item in Model)
+                        {
+
+                            <input type="hidden" id="realOldPassword" value="@item.password">
+                            <input type="hidden" id="kpk" value="@item.EMEMP">
+                        }
+                    }
+                    else if (Session["username"] != null && Session["intern"] != null)
+                    {
+                        foreach (var item in ViewBag.query)
+                        {
+
+                            <input type="hidden" id="realOldPassword" value="@item.password">
+                            <input type="hidden" id="kpk" value="@item.username">
+                        }
+                    }
+                    <div class="card-body">
+                        <!--begin::Notice-->
+                        <div class="notice d-flex bg-light-warning rounded border-warning border border-dashed mb-9 p-6">
+                            <span class="svg-icon svg-icon-2tx svg-icon-warning me-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                    <rect x="11" y="14" width="7" height="2" rx="1" transform="rotate(-90 11 14)" fill="currentColor" />
+                                    <rect x="11" y="17" width="2" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor" />
+                                </svg>
+                            </span>
+                            <div class="d-flex flex-stack flex-grow-1">
+                                <div class="fw-bold">
+                                    <div class="fs-6 text-gray-700">
+                                        <strong class="me-1 fs-3">Warning!</strong>
+                                        <div class="separator separator-dashed mt-9 mb-6"></div>
+                                        <ul class="list-unstyled">
+                                            <li>1. Don't share your account information.</li>
+                                            <li>2. Change Password Every 3 Months</li>
+                                            <li>3. Forgot Password? Plesea feel free to contact Super Admin(HRA)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Notice-->
+                        <div class="hide" id="passwordAlert">
+                            <div class="alert alert-danger" role="alert">
+                                Warning!<strong> Password doesn't match! </strong>
+                            </div>
+                        </div>
+
+                        <div class="hide" id="passwordAlertOld">
+
+
+                            <div class="alert alert-danger" role="alert">
+                                Warning!<strong> Wrong password! </strong>
+                            </div>
+                        </div>
+                        <div class="form-group mt-5">
+                            <label for="">Old Password</label>
+                            <input type="password" class="form-control" name="oldPassword" id="oldPassword" onkeyup="checkOldPassword()">
+                        </div>
+                        <div class="form-group mt-5">
+                            <label for="">New Password</label>
+                            <input type="password" class="form-control" name="newPassword" id="newPassword" onkeyup="checkPasswordConfirmation()">
+                        </div>
+
+                        <div class="form-group mt-5">
+                            <label for="">Password Confirmation</label>
+                            <input type="password" class="form-control" name="passwordConfirmation" id="passwordConfirmation" onkeyup="checkPasswordConfirmation()">
+                        </div>
+                        <div class="form-group mt-10">
+                            <div class="btn-group">
+                                <button class="btn btn-primary ml-2" onclick="ChangePassword()" id="btn_update_password">Save Changes</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end::Container-->
+</div>
+<!--end::Post-->
+@* for change password *@
+<script>
+
+    function checkOldPassword() {
+        var realOldPassword = $('#realOldPassword').val();
+        var inputOldPassword = $('#oldPassword').val();
+
+
+
+        if (realOldPassword != inputOldPassword) {
+            $('#passwordAlertOld').removeClass('hide');
+            $('#btn_update_password').prop("disabled", true);
+            $('#newPassword').prop("disabled", true);
+            $('#passwordConfirmation').prop("disabled", true);
+        } else {
+            $('#passwordAlertOld').addClass('hide');
+            $('#btn_update_password').prop('disabled', false);
+            $('#newPassword').prop("disabled", false);
+            $('#passwordConfirmation').prop("disabled", false);
+        }
+
+    }
+
+    function checkPasswordConfirmation() {
+        var newPassword = $('#newPassword').val();
+        var passwordConfirmation = $('#passwordConfirmation').val();
+        if (newPassword != passwordConfirmation) {
+            $('#passwordAlert').removeClass('hide');
+            $('#btn_update_password').prop("disabled", true);
+        } else {
+            $('#passwordAlert').addClass('hide');
+            $('#btn_update_password').prop('disabled', false);
+        }
+    }
+
+    function ChangePassword() {
+        var oldPassword = $('#oldPassword').val();
+        var newPassword = $('#newPassword').val();
+        var kpk = $('#kpk').val();
+        var passwordConfirmation = $('#passwordConfirmation').val();
+
+        if (oldPassword != '' && newPassword != '' && passwordConfirmation != '') {
+
+
+
+            var jsonData = {
+                kpk: kpk,
+                newPassword: newPassword
+            }
+
+            $.ajax({
+                url: '/Admin/UpdatePassword',
+                type: 'post',
+                dataType: 'json',
+                data: jsonData,
+                success: function (response) {
+                    window.location.href = "https://localhost:44342/";
+                },
+                error: function (response) {
+                    console.log(response)
+                }
+            })
+        }
+    }
+</script>
+

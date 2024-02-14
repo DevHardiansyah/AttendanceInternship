@@ -1,0 +1,293 @@
+﻿@{
+    ViewBag.Title = "DetailsIntern";
+    Layout = "~/Views/Shared/_DashboardIntern.cshtml";
+}
+
+<div class="col-xl-8 col-xl-12 middle-wrapper mt-3">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header alert-success">
+                    <div class="card-title alert-success text-center mb-0">
+                        Data Intern
+                    </div>
+                </div>
+                <!-- Button trigger modal -->
+                <div class="card-body">
+                    <div class="modal-body">
+                        <form action="" method="post" id="addInternForm">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+
+                                            <h6 class="card-title"><i data-feather="user" class="icon-sm"></i> Personal Data</h6>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputUsername1">NIK</label>
+                                                        <input type="text"
+                                                               class="form-control form-control-sm"
+                                                               id="NIK"
+                                                               name="nik"
+                                                               autocomplete="off"
+                                                               placeholder="NIK"
+                                                               value="@ViewBag.NIK">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputUsername1">NIM</label>
+                                                        <input type="text"
+                                                               class="form-control form-control-sm"
+                                                               id="NIM"
+                                                               name="nim"
+                                                               autocomplete="off"
+                                                               placeholder="NIM"
+                                                               value="@ViewBag.NIM">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="">Name</label>
+                                                        <input type="text" class="form-control form-control-sm" id="name" name="internname" autocomplete="off" placeholder="Intern Name" value="@ViewBag.Name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="">Gender</label><br>
+                                                        <select class="js-example-basic-single w-340" style="width:420px;" id="gender" name="gender">
+                                                            <option selected="selected" value="@ViewBag.Gender">@ViewBag.Gender</option>
+                                                            <option value="">--Select Gender--</option>
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="">DOB</label>
+                                                        <input type="date" class="form-control form-control-sm" id="dob" name="dob" placeholder="Date Of Birthday" value="@ViewBag.DOB">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="">Phone Number</label>
+                                                        <input type="text" class="form-control form-control-sm" id="phone" name="phone" placeholder="Phone Number" autocomplete="off" value="@ViewBag.Phone">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="">Personal Mail</label>
+                                                        <input type="email" class="form-control form-control-sm" id="personalmail" name="personalmail" placeholder="Personal Mail" autocomplete="off" value="@ViewBag.Personalmail">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="">Major</label>
+                                                        <input type="text" class="form-control form-control-sm" id="major" name="major" placeholder="Major" autocomplete="off" value="major">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="">University</label>
+                                                        <input type="text" class="form-control form-control-sm" id="university" name="university" placeholder="University" autocomplete="off" value="university">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="">Address</label>
+                                                        <textarea name="address" id="address" cols="30" rows="6" class="form-control-sm form-control">@ViewBag.Address</textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-title"><i data-feather="briefcase" class="icon-sm"></i> Budget Data</h6>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputUsername1">KPK</label>
+                                                        <input type="text" class="form-control form-control-sm"
+                                                               id="kpk"
+                                                               name="kpk"
+                                                               autocomplete="off"
+                                                               placeholder="KPK"
+                                                               value="@ViewBag.KPK">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputUsername1">Budget</label>
+                                                        <input type="text" class="form-control form-control-sm"
+                                                               id="budget"
+                                                               name="budget"
+                                                               autocomplete="off"
+                                                               placeholder="Budget"
+                                                               @ViewBag.Budget>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputUsername1">Departemen</label><br />
+                                                        <select class="js-example-basic-single w-240" style="width: 420px;" id="dept" name="dept">
+                                                            <option selected="selected" value="@ViewBag.Departemen">@ViewBag.Departemen</option>
+                                                            <option value="">--Select Departemen--</option>
+                                                            @foreach (var item in ViewBag.Dept)
+                                                            {
+                                                                <option value="@item.DEPT_CODE">@item.DEPT_NAME</option>
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputUsername1">Section</label><br />
+                                                        <select class="js-example-basic-single w-240" style="width: 420px;" id="section" name="section">
+                                                            <option selected="selected" value="@ViewBag.Sect">@ViewBag.Sect</option>
+                                                            <option value="">--Select Section--</option>
+                                                            @foreach (var item in ViewBag.Section)
+                                                            {
+                                                                <option value="@item.SECT_CODE">@item.SECT_NAME</option>
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">Project</label>
+                                                        <input type="text" class="form-control form-control-sm"
+                                                               id="project"
+                                                               name="project"
+                                                               placeholder="Project"
+                                                               value="@ViewBag.Project">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputPassword1">Office Mail</label>
+                                                        <input type="email" class="form-control form-control-sm"
+                                                               id="officemail"
+                                                               name="officemail"
+                                                               autocomplete="off"
+                                                               placeholder="Office Mail"
+                                                               @ViewBag.Officemail>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <h6 class="card-title"><i data-feather="send" class="icon-sm"></i> Report To</h6>
+                                                <hr>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputPassword1">Mentor</label><br />
+                                                        <select class="js-example-basic-single w-240" style="width: 420px;" id="mentor" name="mentor">
+                                                            <option selected="selected" value="@ViewBag.Mentorr">@ViewBag.Mentorr</option>
+                                                            <option value="">--Select Mentor--</option>
+                                                            @foreach (var item in ViewBag.Mentor)
+                                                            {
+                                                                <option value="@item.EMEMP">@item.EMNAME</option>
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputPassword1">Manager</label><br />
+                                                        <select class="js-example-basic-single w-240" style="width: 420px;" id="manager" name="manager">
+                                                            <option selected="selected" value="@ViewBag.Managerr">@ViewBag.Managerr</option>
+                                                            <option value="">--Select Manager--</option>
+                                                            @foreach (var item in ViewBag.Mentor)
+                                                            {
+                                                                <option value="@item.EMEMP">@item.EMNAME</option>
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <h6 class="card-title"><i data-feather="calendar" class="icon-sm"></i> Year Of Service</h6>
+                                                <hr>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="">Join Date</label>
+                                                        <input type="date" class="form-control form-control-sm" id="joindate" name="joindate" placeholder="Date Of Birthday" value="@ViewBag.Joindate">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="">End Date</label>
+                                                        <input type="date" class="form-control form-control-sm" id="enddate" name="enddate" placeholder="Date Of Birthday" value="@ViewBag.Enddate">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="">Extend</label>
+                                                        <input type="date" class="form-control form-control-sm" id="extend" name="extend" placeholder="Date Of Birthday" value="@ViewBag.Extend">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="">Salary</label>
+                                                        <input type="text" class="form-control form-control-sm" id="salary" name="salary" placeholder="Salary" value="@ViewBag.Salary">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="submit" class="btn btn-primary" onclick="return Validate(ctl, event)">
+                            Save
+                            changes
+                        </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function Validate(ctl, event) {
+        event.preventDefault();
+        swal({
+            title: "Do you want to save it?",
+            text: "Please check Information before Submiting!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Save",
+            cancelButtonText: "Cancel",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+            function (isConfirm) {
+                if (isConfirm) {
+                    if (validateData() == true) {
+                        $("#CreateForm").submit();
+                    }
+                } else {
+                    swal("Cancelled", "You have Cancelled Form Submission!", "error");
+                }
+            });
+    }
+</script>
+

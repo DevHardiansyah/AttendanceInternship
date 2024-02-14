@@ -1,0 +1,1408 @@
+﻿@{
+    ViewBag.Title = "Employee Dashboard";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+<!--begin::Toolbar-->
+<div class="toolbar" id="kt_toolbar">
+    <!--begin::Container-->
+    <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+        <!--begin::Page title-->
+        <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
+             data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
+             class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+            <!--begin::Title-->
+            <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">
+                Dashboard
+                <!--begin::Separator-->
+                <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
+                <!--end::Separator-->
+                <!--begin::Description-->
+                <small class="text-muted fs-7 fw-bold my-1 ms-1">@ViewBag.title</small>
+                <!--end::Description-->
+            </h1>
+            <!--end::Title-->
+        </div>
+        <!--end::Page title-->
+    </div>
+    <!--end::Container-->
+</div>
+<!--end::Toolbar-->
+<!--begin::Post-->
+<div class="post d-flex flex-column-fluid" id="kt_post">
+    <!--begin::Container-->
+    <div id="kt_content_container" class="container-xxl">
+        <!--begin::Row-->
+        <div class="row gy-5 g-xl-8">
+            <!--begin::Col-->
+            <div class="col-xl-8">
+                <!--begin::Mixed Widget 2-->
+                <div class="card card-xl-stretch">
+                    <!--begin::Header-->
+                    <div class="card-header border-0 py-5">
+                        <h3 class="card-title fw-bolder">Base On Department</h3>
+                    </div>
+                    <!--end::Header-->
+                    <!--begin::Body-->
+                    <div class="card-body p-0">
+                        <!--begin::Stats-->
+                        <div class="mixed-widget-6-chart card-rounded-bottom" data-kt-color="info" style="height: 450px; min-height: 150px;"></div>
+                        <!--end::Stats-->
+                    </div>
+                    <!--end::Body-->
+                </div>
+                <!--end::Mixed Widget 2-->
+            </div>
+            <!--end::Col-->
+            <!--begin::Col-->
+            <div class="col-xl-4">
+                <!--begin::Mixed Widget 7-->
+                <div class="card card-xl-stretch-50 mb-5 mb-xl-8">
+                    <!--begin::Body-->
+                    <div class="card-body d-flex flex-column p-0">
+                        <!--begin::Stats-->
+                        <div class="flex-grow-1 card-p pb-0">
+                            <div class="d-flex flex-stack flex-wrap">
+                                <div class="me-2">
+                                    <a href="#" class="text-dark text-hover-primary fw-bolder fs-3">Base On Age Employee</a>
+                                    <div class="text-muted fs-7 fw-bold"></div>
+                                </div>
+                                <div class="fw-bolder fs-3 text-primary"></div>
+                            </div>
+                        </div>
+                        <!--end::Stats-->
+                        <!--begin::Chart-->
+                        <div class="mixed-widget-7-chart card-rounded-bottom" data-kt-color="danger" style="height: 150px; min-height: 150px;"></div>
+                        <!--end::Chart-->
+                    </div>
+                    <!--end::Body-->
+                </div>
+                <!--end::Mixed Widget 7-->
+                <!--begin::Mixed Widget 10-->
+                <div class="card card-xl-stretch-50 mb-5 mb-xl-8">
+                    <!--begin::Body-->
+                    <div class="card-body p-0 d-flex justify-content-between flex-column overflow-hidden">
+                        <!--begin::Hidden-->
+                        <div class="d-flex flex-stack flex-wrap flex-grow-1 px-9 pt-9 pb-3">
+                            <div class="me-2">
+                                <span class="fw-bolder text-gray-800 d-block fs-3">Base On Edu</span>
+                                <span class="text-gray-400 fw-bold"></span>
+                            </div>
+                            <div class="fw-bolder fs-3 text-primary"></div>
+                        </div>
+                        <!--end::Hidden-->
+                        <!--begin::Chart-->
+                        <div class="mixed-widget-10-chart" data-kt-color="warning" style="height: 175px; min-height: 183px;"></div>
+                        <!--end::Chart-->
+                    </div>
+                </div>
+                <!--end::Mixed Widget 10-->
+            </div>
+            <!--end::Col-->
+        </div>
+        <!--end::Row-->
+        <!--begin::Row-->
+        <div class="row g-5 g-xl-10 mb-xl-10">
+            <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-3 mb-md-5 mb-xl-10">
+                <!--begin::Card widget 4-->
+                <div class="card card-flush h-md-50 mb-5 mb-xl-10">
+                    <!--begin::Header-->
+                    <div class="card-header pt-5">
+                        <!--begin::Title-->
+                        <div class="card-title d-flex flex-column">
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center">
+                                <!--begin::Amount-->
+                                <span class="fs-2hx fw-bolder text-dark me-2 lh-1 ls-n2">Base On Plant</span>
+                                <!--end::Amount-->
+                            </div>
+                            <!--end::Info-->
+                        </div>
+                        <!--end::Title-->
+                    </div>
+                    <!--end::Header-->
+                    <!--begin::Card body-->
+                    <div class="card-body pt-2 pb-4 d-flex align-items-center">
+                        <!--begin::Chart-->
+                        <div class="d-flex flex-center me-5 pt-2">
+                            <div id="kt_chart_widgets_22_chart_1" class="mx-auto mb-4"></div>
+                        </div>
+                        <!--end::Chart-->
+                    </div>
+                    <!--end::Card body-->
+                </div>
+                <!--end::Card widget 4-->
+                <!--begin::Card widget 5-->
+                <div class="card card-flush h-md-50 mb-xl-10">
+                    <!--begin::Header-->
+                    <div class="card-header pt-5">
+                        <!--begin::Title-->
+                        <div class="card-title d-flex flex-column">
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center">
+                                <!--begin::Amount-->
+                                <span class="fs-2hx fw-bolder text-dark me-2 lh-1 ls-n2">Base On Status</span>
+                                <!--end::Amount-->
+                            </div>
+                            <!--end::Info-->
+                        </div>
+                        <!--end::Title-->
+                    </div>
+                    <!--end::Header-->
+                    <!--begin::Card body-->
+                    <div class="card-body pt-2 pb-4 d-flex align-items-center">
+                        <!--begin::Chart-->
+                        <div class="d-flex flex-center me-5 pt-2">
+                            <div id="kt_chart_widgets_23_chart_2" class="mx-auto mb-4"></div>
+                        </div>
+                        <!--end::Chart-->
+                    </div>
+                    <!--end::Card body-->
+                </div>
+                <!--end::Card widget 5-->
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-3 mb-md-5 mb-xl-10">
+                <!--begin::Card widget 4-->
+                <div class="card card-flush h-md-50 mb-5 mb-xl-10">
+                    <!--begin::Header-->
+                    <div class="card-header pt-5">
+                        <!--begin::Title-->
+                        <div class="card-title d-flex flex-column">
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center">
+                                <!--begin::Amount-->
+                                <span class="fs-2hx fw-bolder text-dark me-2 lh-1 ls-n2">Base On Gender</span>
+                                <!--end::Amount-->
+                            </div>
+                            <!--end::Info-->
+                        </div>
+                        <!--end::Title-->
+                    </div>
+                    <!--end::Header-->
+                    <!--begin::Card body-->
+                    <div class="card-body pt-2 pb-4 d-flex align-items-center">
+                        <!--begin::Chart-->
+                        <div class="d-flex flex-center me-5 pt-2">
+                            <div id="kt_chart_widgets_24_chart_3" class="mx-auto mb-4"></div>
+                        </div>
+                        <!--end::Chart-->
+                    </div>
+                    <!--end::Card body-->
+                </div>
+                <!--end::Card widget 4-->
+                <!--begin::Card widget 5-->
+                <div class="card card-flush h-md-50 mb-xl-10">
+                    <!--begin::Header-->
+                    <div class="card-header pt-5">
+                        <!--begin::Title-->
+                        <div class="card-title d-flex flex-column">
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center">
+                                <!--begin::Amount-->
+                                <span class="fs-2hx fw-bolder text-dark me-2 lh-1 ls-n2">Base On IDL & DL</span>
+                                <!--end::Amount-->
+                            </div>
+                            <!--end::Info-->
+                        </div>
+                        <!--end::Title-->
+                    </div>
+                    <!--end::Header-->
+                    <!--begin::Card body-->
+                    <div class="card-body pt-2 pb-4 d-flex align-items-center">
+                        <!--begin::Chart-->
+                        <div class="d-flex flex-center me-5 pt-2">
+                            <div id="kt_chart_widgets_25_chart_4" class="mx-auto mb-4"></div>
+                        </div>
+                        <!--end::Chart-->
+                    </div>
+                    <!--end::Card body-->
+                </div>
+                <!--end::Card widget 5-->
+            </div>
+            <!--begin::Col-->
+            <div class="col-lg-12 col-xl-12 col-xxl-6 mb-5 mb-xl-0">
+                <!--begin::Chart widget 3-->
+                <div class="card card-flush overflow-hidden h-md-100">
+                    <!--begin::Header-->
+                    <div class="card-header py-5">
+                        <!--begin::Title-->
+                        <h3 class="card-title align-items-start flex-column">
+                            <span class="fs-2hx fw-bolder text-gray-800 me-2 lh-1 ls-n2">Employee Movement</span>
+                        </h3>
+                        <!--end::Title-->
+                    </div>
+                    <!--end::Header-->
+                    <!--begin::Card body-->
+                    <div class="card-body d-flex justify-content-between flex-column pb-1 px-0">
+                        <!--begin::Chart-->
+                        <div class="mixed-widget-5-chart" data-kt-color="primary" style="height: 600px"></div>
+                        <!--end::Chart-->
+                    </div>
+                    <!--end::Card body-->
+                </div>
+                <!--end::Chart widget 3-->
+            </div>
+            <!--end::Col-->
+        </div>
+        <!--end::Row-->
+    </div>
+    <!--end::Container-->
+</div>
+<!--end::Post-->
+<script>
+    //Chart
+    "use strict";
+
+    // Class Plant
+    var KTChartsWidget22 = function () {
+        // Private methods
+        var initChart = function (tabSelector, chartSelector, data, initByDefault) {
+            var element = document.querySelector(chartSelector);
+
+            if (!element) {
+                return;
+            }
+
+            var height = parseInt(KTUtil.css(element, 'height'));
+
+            var options = {
+                series: data,
+                chart: {
+                    fontFamily: 'inherit',
+                    type: 'donut',
+                    width: 250,
+                },
+                plotOptions: {
+                    pie: {
+                        donut: {
+                            size: '50%',
+                            labels: {
+                                value: {
+                                    fontSize: '10px'
+                                }
+                            }
+                        }
+                    }
+                },
+                colors: [
+                    KTUtil.getCssVariableValue('--bs-primary'),
+                    KTUtil.getCssVariableValue('--bs-danger')
+                ],
+                stroke: {
+                    width: 0
+                },
+                labels: ['East', 'West'],
+                legend: {
+                    show: false,
+                },
+                fill: {
+                    type: 'false',
+                }
+            };
+
+            var chart = new ApexCharts(element, options);
+
+            var init = false;
+
+            var tab = document.querySelector(tabSelector);
+
+            if (initByDefault === true) {
+                chart.render();
+                init = true;
+            }
+
+            tab.addEventListener('shown.bs.tab', function (event) {
+                if (init == false) {
+                    chart.render();
+                    init = true;
+                }
+            })
+        }
+
+        // Public methods
+        return {
+            init: function () {
+                $.getJSON("/BussinessIntelligence/getPlant", function (data) {
+                    initChart('#kt_chart_widgets_22_tab_1', '#kt_chart_widgets_22_chart_1', [data['EastPlant'], data['WestPlant']], true);
+                });
+            }
+        }
+    }();
+    // Webpack support
+    if (typeof module !== 'undefined') {
+        module.exports = KTChartsWidget22;
+    }
+    // On document ready
+    KTUtil.onDOMContentLoaded(function () {
+        KTChartsWidget22.init();
+    });
+
+
+    // Class Status
+    var KTChartsWidget23 = function () {
+        // Private methods
+        var initChart = function (tabSelector, chartSelector, data, initByDefault) {
+            var element = document.querySelector(chartSelector);
+
+            if (!element) {
+                return;
+            }
+
+            var height = parseInt(KTUtil.css(element, 'height'));
+
+            var options = {
+                series: data,
+                chart: {
+                    fontFamily: 'inherit',
+                    type: 'donut',
+                    width: 250,
+                },
+                plotOptions: {
+                    pie: {
+                        donut: {
+                            size: '50%',
+                            labels: {
+                                value: {
+                                    fontSize: '10px'
+                                }
+                            }
+                        }
+                    }
+                },
+                colors: [
+                    KTUtil.getCssVariableValue('--bs-primary'),
+                    KTUtil.getCssVariableValue('--bs-danger')
+                ],
+                stroke: {
+                    width: 0
+                },
+                labels: ['Permanent', 'Contract'],
+                legend: {
+                    show: false,
+                },
+                fill: {
+                    type: 'false',
+                }
+            };
+
+            var chart = new ApexCharts(element, options);
+
+            var init = false;
+
+            var tab = document.querySelector(tabSelector);
+
+            if (initByDefault === true) {
+                chart.render();
+                init = true;
+            }
+
+            tab.addEventListener('shown.bs.tab', function (event) {
+                if (init == false) {
+                    chart.render();
+                    init = true;
+                }
+            })
+        }
+
+        // Public methods
+        return {
+            init: function () {
+                $.getJSON("/BussinessIntelligence/getStatuEmployee", function (data) {
+                    initChart('#kt_chart_widgets_23_tab_2', '#kt_chart_widgets_23_chart_2', [data['permanent'], data['contract']], true);
+                });
+            }
+        }
+    }();
+    // Webpack support
+    if (typeof module !== 'undefined') {
+        module.exports = KTChartsWidget23;
+    }
+    // On document ready
+    KTUtil.onDOMContentLoaded(function () {
+        KTChartsWidget23.init();
+    });
+
+
+    // Class Gender
+    var KTChartsWidget24 = function () {
+        // Private methods
+        var initChart = function (tabSelector, chartSelector, data, initByDefault) {
+            var element = document.querySelector(chartSelector);
+
+            if (!element) {
+                return;
+            }
+
+            var height = parseInt(KTUtil.css(element, 'height'));
+
+            var options = {
+                series: data,
+                chart: {
+                    fontFamily: 'inherit',
+                    type: 'donut',
+                    width: 250,
+                },
+                plotOptions: {
+                    pie: {
+                        donut: {
+                            size: '50%',
+                            labels: {
+                                value: {
+                                    fontSize: '10px'
+                                }
+                            }
+                        }
+                    }
+                },
+                colors: [
+                    KTUtil.getCssVariableValue('--bs-primary'),
+                    KTUtil.getCssVariableValue('--bs-danger')
+                ],
+                stroke: {
+                    width: 0
+                },
+                labels: ['Male', 'Female'],
+                legend: {
+                    show: false,
+                },
+                fill: {
+                    type: 'false',
+                }
+            };
+
+            var chart = new ApexCharts(element, options);
+
+            var init = false;
+
+            var tab = document.querySelector(tabSelector);
+
+            if (initByDefault === true) {
+                chart.render();
+                init = true;
+            }
+
+            tab.addEventListener('shown.bs.tab', function (event) {
+                if (init == false) {
+                    chart.render();
+                    init = true;
+                }
+            })
+        }
+
+        // Public methods
+        return {
+            init: function () {
+                $.getJSON("/BussinessIntelligence/getGender", function (data) {
+                    initChart('#kt_chart_widgets_24_tab_3', '#kt_chart_widgets_24_chart_3', [data['Male'], data['Female']], true);
+                });
+            }
+        }
+    }();
+    // Webpack support
+    if (typeof module !== 'undefined') {
+        module.exports = KTChartsWidget24;
+    }
+    // On document ready
+    KTUtil.onDOMContentLoaded(function () {
+        KTChartsWidget24.init();
+    });
+
+
+    // Class IDL & DL
+    var KTChartsWidget25 = function () {
+        // Private methods
+        var initChart = function (tabSelector, chartSelector, data, initByDefault) {
+            var element = document.querySelector(chartSelector);
+
+            if (!element) {
+                return;
+            }
+
+            var height = parseInt(KTUtil.css(element, 'height'));
+
+            var options = {
+                series: data,
+                chart: {
+                    fontFamily: 'inherit',
+                    type: 'donut',
+                    width: 250,
+                },
+                plotOptions: {
+                    pie: {
+                        donut: {
+                            size: '50%',
+                            labels: {
+                                value: {
+                                    fontSize: '10px'
+                                }
+                            }
+                        }
+                    }
+                },
+                colors: [
+                    KTUtil.getCssVariableValue('--bs-primary'),
+                    KTUtil.getCssVariableValue('--bs-danger')
+                ],
+                stroke: {
+                    width: 0
+                },
+                labels: ['IDL', 'DL'],
+                legend: {
+                    show: false,
+                },
+                fill: {
+                    type: 'false',
+                }
+            };
+
+            var chart = new ApexCharts(element, options);
+
+            var init = false;
+
+            var tab = document.querySelector(tabSelector);
+
+            if (initByDefault === true) {
+                chart.render();
+                init = true;
+            }
+
+            tab.addEventListener('shown.bs.tab', function (event) {
+                if (init == false) {
+                    chart.render();
+                    init = true;
+                }
+            })
+        }
+
+        // Public methods
+        return {
+            init: function () {
+                $.getJSON("/BussinessIntelligence/getEmjoba", function (data) {
+                    initChart('#kt_chart_widgets_25_tab_4', '#kt_chart_widgets_25_chart_4', [data['IDL'], data['DL']], true);
+                });
+            }
+        }
+    }();
+    // Webpack support
+    if (typeof module !== 'undefined') {
+        module.exports = KTChartsWidget25;
+    }
+    // On document ready
+    KTUtil.onDOMContentLoaded(function () {
+        KTChartsWidget25.init();
+    });
+
+    "use strict";
+
+    // Employee Movement
+    var KTWidgetsPersonal = function () {
+        // Statistics widgets
+
+
+        var EmployeeMovement = function () {
+            var charts = document.querySelectorAll('.mixed-widget-5-chart');
+
+            var color;
+            var height;
+            var labelColor = KTUtil.getCssVariableValue('--bs-gray-500');
+            var borderColor = KTUtil.getCssVariableValue('--bs-gray-200');
+            var baseLightColor;
+            var secondaryColor = KTUtil.getCssVariableValue('--bs-success');
+            var baseColor;
+            var options;
+            var chart;
+            $.getJSON("/BussinessIntelligence/getCountTotalNewHire", function (data) {
+                [].slice.call(charts).map(function (element) {
+                    color = element.getAttribute("data-kt-color");
+                    height = parseInt(KTUtil.css(element, 'height'));
+                    baseColor = KTUtil.getCssVariableValue('--bs-' + color);
+
+                    options = {
+                        series: [{
+                            name: 'New Hire',
+                            data: [data['jan'], data['feb'], data['mar'], data['apr'], data['mei'], data['jun'], data['jul'], data['aug'], data['sep'], data['oct'], data['nov'], data['dec']]
+                        }, {
+                            name: 'End Contract',
+                            data: [data['jan1'], data['feb1'], data['mar1'], data['apr1'], data['mei1'], data['jun1'], data['jul1'], data['aug1'], data['sep1'], data['oct1'], data['nov1'], data['dec1']]
+                        }],
+                        chart: {
+                            fontFamily: 'inherit',
+                            type: 'bar',
+                            height: height,
+                            toolbar: {
+                                show: false
+                            }
+                        },
+                        plotOptions: {
+                            bar: {
+                                horizontal: false,
+                                columnWidth: ['50%'],
+                                borderRadius: 4
+                            },
+                        },
+                        legend: {
+                            show: false
+                        },
+                        dataLabels: {
+                            enabled: false
+                        },
+                        stroke: {
+                            show: true,
+                            width: 1,
+                            colors: ['transparent']
+                        },
+                        xaxis: {
+                            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                            axisBorder: {
+                                show: false,
+                            },
+                            axisTicks: {
+                                show: false
+                            },
+                            labels: {
+                                style: {
+                                    colors: labelColor,
+                                    fontSize: '12px'
+                                }
+                            }
+                        },
+                        yaxis: {
+                            y: 0,
+                            offsetX: 0,
+                            offsetY: 0,
+                            labels: {
+                                style: {
+                                    colors: labelColor,
+                                    fontSize: '12px'
+                                }
+                            }
+                        },
+                        fill: {
+                            type: 'solid'
+                        },
+                        states: {
+                            normal: {
+                                filter: {
+                                    type: 'none',
+                                    value: 0
+                                }
+                            },
+                            hover: {
+                                filter: {
+                                    type: 'none',
+                                    value: 0
+                                }
+                            },
+                            active: {
+                                allowMultipleDataPointsSelection: false,
+                                filter: {
+                                    type: 'none',
+                                    value: 0
+                                }
+                            }
+                        },
+                        tooltip: {
+                            style: {
+                                fontSize: '12px'
+                            },
+                            y: {
+                                formatter: function (val) {
+                                    return "" + val + " employee"
+                                }
+                            }
+                        },
+                        colors: [baseColor, secondaryColor],
+                        grid: {
+                            padding: {
+                                top: 10
+                            },
+                            borderColor: borderColor,
+                            strokeDashArray: 4,
+                            yaxis: {
+                                lines: {
+                                    show: true
+                                }
+                            }
+                        }
+                    };
+
+                    chart = new ApexCharts(element, options);
+                    chart.render();
+                });
+            });
+        }
+
+        // Dark mode toggler
+        var initDarkModeToggle = function () {
+            var toggle = document.querySelector('#kt_user_menu_dark_mode_toggle');
+
+            if (toggle) {
+                toggle.addEventListener('click', function () {
+                    window.location.href = this.getAttribute('data-kt-url');
+                });
+            }
+        }
+
+        // Public methods
+        return {
+            init: function () {
+
+                // Dark Mode
+                initDarkModeToggle();
+
+                EmployeeMovement();
+
+            }
+        }
+    }();
+
+    // Webpack support
+    if (typeof module !== 'undefined') {
+        module.exports = KTWidgets;
+    }
+
+    // On document ready
+    KTUtil.onDOMContentLoaded(function () {
+        KTWidgetsPersonal.init();
+    });
+
+    //internship
+    var KTChartsWidgetInternhsip = function () {
+        // Private methods
+        var initChart = function (tabSelector, chartSelector, data, initByDefault) {
+            var element = document.querySelector(chartSelector);
+
+            if (!element) {
+                return;
+            }
+
+            var height = parseInt(KTUtil.css(element, 'height'));
+
+            var options = {
+                series: data,
+                chart: {
+                    fontFamily: 'inherit',
+                    type: 'donut',
+                    width: 250,
+                },
+                plotOptions: {
+                    pie: {
+                        donut: {
+                            size: '50%',
+                            labels: {
+                                value: {
+                                    fontSize: '10px'
+                                }
+                            }
+                        }
+                    }
+                },
+                colors: [
+                    KTUtil.getCssVariableValue('--bs-warning'),
+                    KTUtil.getCssVariableValue('--bs-danger')
+                ],
+                stroke: {
+                    width: 0
+                },
+                labels: ['Active', 'EOC'],
+                legend: {
+                    show: false,
+                },
+                fill: {
+                    type: 'false',
+                }
+            };
+
+            var chart = new ApexCharts(element, options);
+
+            var init = false;
+
+            var tab = document.querySelector(tabSelector);
+
+            if (initByDefault === true) {
+                chart.render();
+                init = true;
+            }
+
+            tab.addEventListener('shown.bs.tab', function (event) {
+                if (init == false) {
+                    chart.render();
+                    init = true;
+                }
+            })
+        }
+
+        // Public methods
+        return {
+            init: function () {
+                $.getJSON("/BussinessIntelligence/getInternship", function (data) {
+                    initChart('#kt_chart_widgets_22_tab_1', '#kt_chart_widgets_22_chart_internship', [data['InternActive'], data['InternEoc']], true);
+                });
+            }
+        }
+    }();
+    // Webpack support
+    if (typeof module !== 'undefined') {
+        module.exports = KTChartsWidget22;
+    }
+    // On document ready
+    KTUtil.onDOMContentLoaded(function () {
+        KTChartsWidgetInternhsip.init();
+    });
+</script>
+<script>
+    "use strict";
+
+    // Class definition
+    var KTWidgets = function () {
+        var initMixedWidget6 = function () {
+            var charts = document.querySelectorAll('.mixed-widget-6-chart');
+
+            var color;
+            var height;
+            var labelColor = KTUtil.getCssVariableValue('--bs-gray-500');
+            var borderColor = KTUtil.getCssVariableValue('--bs-gray-200');
+            var baseLightColor;
+            var secondaryColor = KTUtil.getCssVariableValue('--bs-gray-300');
+            var baseColor;
+            var options;
+            var chart;
+            $.getJSON("/BussinessIntelligence/getDepartment", function (data) {
+                [].slice.call(charts).map(function (element) {
+                    color = element.getAttribute("data-kt-color");
+                    height = parseInt(KTUtil.css(element, 'height'));
+                    baseColor = KTUtil.getCssVariableValue('--bs-' + color);
+
+                    options = {
+                        series: [{
+                            name: 'Total',
+                            data: [data['HumanResources'], data['ManufacturingWestPlant'], data['Engineering'], data['ProductDevelopment'], data['Ehs'], data['Quality'], data['Materials'], data['ManufacturingEastPlant'], data['IT'], data['Finance'], data['ManagingDirectorOffice']]
+                        }],
+                        chart: {
+                            fontFamily: 'inherit',
+                            type: 'bar',
+                            height: height,
+                            toolbar: {
+                                show: false
+                            }
+                        },
+                        plotOptions: {
+                            bar: {
+                                horizontal: false,
+                                columnWidth: ['50%'],
+                                borderRadius: 4
+                            },
+                        },
+                        legend: {
+                            show: false
+                        },
+                        dataLabels: {
+                            enabled: false
+                        },
+                        stroke: {
+                            show: true,
+                            width: 2,
+                            colors: ['transparent']
+                        },
+                        xaxis: {
+                            categories: ['HumanResources', 'ManufacturingWestPlant', 'Engineering', 'ProductDevelopment', 'Ehs', 'Quality', 'Materials', 'ManufacturingEastPlant', 'IT', 'Finance', 'ManagingDirectorOffice'],
+                            axisBorder: {
+                                show: false,
+                            },
+                            axisTicks: {
+                                show: false
+                            },
+                            labels: {
+                                style: {
+                                    colors: labelColor,
+                                    fontSize: '12px'
+                                }
+                            }
+                        },
+                        yaxis: {
+                            y: 0,
+                            offsetX: 0,
+                            offsetY: 0,
+                            labels: {
+                                style: {
+                                    colors: labelColor,
+                                    fontSize: '12px'
+                                }
+                            }
+                        },
+                        fill: {
+                            type: 'solid'
+                        },
+                        states: {
+                            normal: {
+                                filter: {
+                                    type: 'none',
+                                    value: 0
+                                }
+                            },
+                            hover: {
+                                filter: {
+                                    type: 'none',
+                                    value: 0
+                                }
+                            },
+                            active: {
+                                allowMultipleDataPointsSelection: false,
+                                filter: {
+                                    type: 'none',
+                                    value: 0
+                                }
+                            }
+                        },
+                        tooltip: {
+                            style: {
+                                fontSize: '12px'
+                            },
+                            y: {
+                                formatter: function (val) {
+                                    return "" + val + " Employee"
+                                }
+                            }
+                        },
+                        colors: [baseColor, secondaryColor],
+                        grid: {
+                            padding: {
+                                top: 10
+                            },
+                            borderColor: borderColor,
+                            strokeDashArray: 4,
+                            yaxis: {
+                                lines: {
+                                    show: true
+                                }
+                            }
+                        }
+                    };
+
+                    chart = new ApexCharts(element, options);
+                    chart.render();
+                });
+            });
+
+        }
+        var initMixedWidget7 = function () {
+            var charts = document.querySelectorAll('.mixed-widget-7-chart');
+
+            var color;
+            var height;
+            var labelColor = KTUtil.getCssVariableValue('--bs-gray-500');
+            var borderColor = KTUtil.getCssVariableValue('--bs-gray-200');
+            var baseLightColor;
+            var secondaryColor = KTUtil.getCssVariableValue('--bs-gray-300');
+            var baseColor;
+            var options;
+            var chart;
+            $.getJSON("/BussinessIntelligence/getAge", function (data) {
+                [].slice.call(charts).map(function (element) {
+                    color = element.getAttribute("data-kt-color");
+                    height = parseInt(KTUtil.css(element, 'height'));
+                    baseColor = KTUtil.getCssVariableValue('--bs-' + color);
+
+                    options = {
+                        series: [{
+                            name: 'Total',
+                            data: [data['one'], data['two'], data['tree'], data['four'], data['five'], data['six'], data['seven'], data['eight']]
+                        }],
+                        chart: {
+                            fontFamily: 'inherit',
+                            type: 'bar',
+                            height: height,
+                            toolbar: {
+                                show: false
+                            }
+                        },
+                        plotOptions: {
+                            bar: {
+                                horizontal: false,
+                                columnWidth: ['50%'],
+                                borderRadius: 4
+                            },
+                        },
+                        legend: {
+                            show: false
+                        },
+                        dataLabels: {
+                            enabled: false
+                        },
+                        stroke: {
+                            show: true,
+                            width: 2,
+                            colors: ['transparent']
+                        },
+                        xaxis: {
+                            categories: ['18-25', '26-30', '21-35', '36-40', '41-45', '46-50', '51-55', '<56'],
+                            axisBorder: {
+                                show: false,
+                            },
+                            axisTicks: {
+                                show: false
+                            },
+                            labels: {
+                                style: {
+                                    colors: labelColor,
+                                    fontSize: '12px'
+                                }
+                            }
+                        },
+                        yaxis: {
+                            y: 0,
+                            offsetX: 0,
+                            offsetY: 0,
+                            labels: {
+                                style: {
+                                    colors: labelColor,
+                                    fontSize: '12px'
+                                }
+                            }
+                        },
+                        fill: {
+                            type: 'solid'
+                        },
+                        states: {
+                            normal: {
+                                filter: {
+                                    type: 'none',
+                                    value: 0
+                                }
+                            },
+                            hover: {
+                                filter: {
+                                    type: 'none',
+                                    value: 0
+                                }
+                            },
+                            active: {
+                                allowMultipleDataPointsSelection: false,
+                                filter: {
+                                    type: 'none',
+                                    value: 0
+                                }
+                            }
+                        },
+                        tooltip: {
+                            style: {
+                                fontSize: '12px'
+                            },
+                            y: {
+                                formatter: function (val) {
+                                    return "" + val + " Employee"
+                                }
+                            }
+                        },
+                        colors: [baseColor, secondaryColor],
+                        grid: {
+                            padding: {
+                                top: 10
+                            },
+                            borderColor: borderColor,
+                            strokeDashArray: 4,
+                            yaxis: {
+                                lines: {
+                                    show: true
+                                }
+                            }
+                        }
+                    };
+
+                    chart = new ApexCharts(element, options);
+                    chart.render();
+                });
+            });
+            
+        }
+        var initMixedWidget2 = function () {
+            var charts = document.querySelectorAll('.mixed-widget-2-chart');
+
+            var color;
+            var strokeColor;
+            var height;
+            var labelColor = KTUtil.getCssVariableValue('--bs-gray-500');
+            var borderColor = KTUtil.getCssVariableValue('--bs-gray-200');
+            var options;
+            var chart;
+
+            [].slice.call(charts).map(function (element) {
+                height = parseInt(KTUtil.css(element, 'height'));
+                color = KTUtil.getCssVariableValue('--bs-' + element.getAttribute("data-kt-color"));
+                strokeColor = KTUtil.colorDarken(color, 15);
+
+                options = {
+                    series: [{
+                        name: 'Net Profit',
+                        data: [30, 45, 32, 70, 40, 40, 40]
+                    }],
+                    chart: {
+                        fontFamily: 'inherit',
+                        type: 'area',
+                        height: height,
+                        toolbar: {
+                            show: false
+                        },
+                        zoom: {
+                            enabled: false
+                        },
+                        sparkline: {
+                            enabled: true
+                        },
+                        dropShadow: {
+                            enabled: true,
+                            enabledOnSeries: undefined,
+                            top: 5,
+                            left: 0,
+                            blur: 3,
+                            color: strokeColor,
+                            opacity: 0.5
+                        }
+                    },
+                    plotOptions: {},
+                    legend: {
+                        show: false
+                    },
+                    dataLabels: {
+                        enabled: false
+                    },
+                    fill: {
+                        type: 'solid',
+                        opacity: 0
+                    },
+                    stroke: {
+                        curve: 'smooth',
+                        show: true,
+                        width: 3,
+                        colors: [strokeColor]
+                    },
+                    xaxis: {
+                        categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+                        axisBorder: {
+                            show: false,
+                        },
+                        axisTicks: {
+                            show: false
+                        },
+                        labels: {
+                            show: false,
+                            style: {
+                                colors: labelColor,
+                                fontSize: '12px'
+                            }
+                        },
+                        crosshairs: {
+                            show: false,
+                            position: 'front',
+                            stroke: {
+                                color: borderColor,
+                                width: 1,
+                                dashArray: 3
+                            }
+                        }
+                    },
+                    yaxis: {
+                        min: 0,
+                        max: 80,
+                        labels: {
+                            show: false,
+                            style: {
+                                colors: labelColor,
+                                fontSize: '12px'
+                            }
+                        }
+                    },
+                    states: {
+                        normal: {
+                            filter: {
+                                type: 'none',
+                                value: 0
+                            }
+                        },
+                        hover: {
+                            filter: {
+                                type: 'none',
+                                value: 0
+                            }
+                        },
+                        active: {
+                            allowMultipleDataPointsSelection: false,
+                            filter: {
+                                type: 'none',
+                                value: 0
+                            }
+                        }
+                    },
+                    tooltip: {
+                        style: {
+                            fontSize: '12px',
+                        },
+                        y: {
+                            formatter: function (val) {
+                                return "$" + val + " thousands"
+                            }
+                        },
+                        marker: {
+                            show: false
+                        }
+                    },
+                    colors: ['transparent'],
+                    markers: {
+                        colors: [color],
+                        strokeColor: [strokeColor],
+                        strokeWidth: 3
+                    }
+                };
+
+                chart = new ApexCharts(element, options);
+                chart.render();
+            });
+        }
+        var initMixedWidget10 = function () {
+            var charts = document.querySelectorAll('.mixed-widget-10-chart');
+
+            var color;
+            var height;
+            var labelColor = KTUtil.getCssVariableValue('--bs-gray-500');
+            var borderColor = KTUtil.getCssVariableValue('--bs-gray-200');
+            var baseLightColor;
+            var secondaryColor = KTUtil.getCssVariableValue('--bs-gray-300');
+            var baseColor;
+            var options;
+            var chart;
+            $.getJSON("/BussinessIntelligence/getEdu", function (data) {
+                [].slice.call(charts).map(function (element) {
+                    color = element.getAttribute("data-kt-color");
+                    height = parseInt(KTUtil.css(element, 'height'));
+                    baseColor = KTUtil.getCssVariableValue('--bs-' + color);
+
+                    options = {
+                        series: [{
+                            name: 'Total',
+                            data: [data['SD'], data['SMP'], data['SMU'], data['D3'], data['S1'], data['S2'], data['Null']],
+                        }],
+                        chart: {
+                            fontFamily: 'inherit',
+                            type: 'bar',
+                            height: height,
+                            toolbar: {
+                                show: false
+                            }
+                        },
+                        plotOptions: {
+                            bar: {
+                                horizontal: false,
+                                columnWidth: ['50%'],
+                                borderRadius: 4
+                            },
+                        },
+                        legend: {
+                            show: false
+                        },
+                        dataLabels: {
+                            enabled: false
+                        },
+                        stroke: {
+                            show: true,
+                            width: 2,
+                            colors: ['transparent']
+                        },
+                        xaxis: {
+                            categories: ['SD', 'SMP', 'SMU', 'D3', 'S1', 'S2', 'Null'],
+                            axisBorder: {
+                                show: false,
+                            },
+                            axisTicks: {
+                                show: false
+                            },
+                            labels: {
+                                style: {
+                                    colors: labelColor,
+                                    fontSize: '12px'
+                                }
+                            }
+                        },
+                        yaxis: {
+                            y: 0,
+                            offsetX: 0,
+                            offsetY: 0,
+                            labels: {
+                                style: {
+                                    colors: labelColor,
+                                    fontSize: '12px'
+                                }
+                            }
+                        },
+                        fill: {
+                            type: 'solid'
+                        },
+                        states: {
+                            normal: {
+                                filter: {
+                                    type: 'none',
+                                    value: 0
+                                }
+                            },
+                            hover: {
+                                filter: {
+                                    type: 'none',
+                                    value: 0
+                                }
+                            },
+                            active: {
+                                allowMultipleDataPointsSelection: false,
+                                filter: {
+                                    type: 'none',
+                                    value: 0
+                                }
+                            }
+                        },
+                        tooltip: {
+                            style: {
+                                fontSize: '12px'
+                            },
+                            y: {
+                                formatter: function (val) {
+                                    return "" + val + " Employee"
+                                }
+                            }
+                        },
+                        colors: [baseColor, secondaryColor],
+                        grid: {
+                            padding: {
+                                top: 10
+                            },
+                            borderColor: borderColor,
+                            strokeDashArray: 4,
+                            yaxis: {
+                                lines: {
+                                    show: true
+                                }
+                            }
+                        }
+                    };
+
+                    chart = new ApexCharts(element, options);
+                    chart.render();
+                });
+            });
+        }
+        return {
+            init: function () {
+                initMixedWidget6();
+                initMixedWidget2();
+                initMixedWidget7();
+                initMixedWidget10();
+            }
+        }
+    }();
+
+    // Webpack support
+    if (typeof module !== 'undefined') {
+        module.exports = KTWidgets;
+    }
+
+    // On document ready
+    KTUtil.onDOMContentLoaded(function () {
+        KTWidgets.init();
+    });
+</script>

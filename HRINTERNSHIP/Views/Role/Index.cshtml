@@ -1,0 +1,182 @@
+﻿@model IEnumerable<HRIS_Employee.Models.RoleList>
+    @{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+    }
+    <style type="text/css">
+    .custom-control-label::before,
+    .custom-control-label::after {
+        top: .8rem;
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+    </style>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                @if(ViewBag.Success == "sucess-update-role"){
+                                <div class="alert alert-info" role="alert">
+                                    <strong>Heads up!</strong> permission has been granted.
+                                </div>
+                                }
+
+                                @if(ViewBag.Success == "sucess-add-role"){
+                                <div class="alert alert-info" role="alert">
+                                    <strong>Role </strong>successfully activated.
+                                </div>
+                                }
+
+                                @if(ViewBag.Success == "success-delete-role"){
+                                <div class="alert alert-info" role="alert">
+                                    <strong>Role </strong>successfully deleted.
+                                </div>
+                                }
+                                <h6 class="card-title">Management Role</h6>
+                                <table class="table table-bordered" id="table-role">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <!-- Button trigger modal create departement-->
+                                                <button class="btn btn-sm btn-icon  btn-primary" title="update" data-toggle="modal" data-target="#addrole"><i data-feather="plus-circle"></i></button>
+                                            </th>
+                                            <th>Role Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in ViewBag.ListRole)
+                                        {
+                                        <tr>
+                                            <td>
+
+                                                @using (Html.BeginForm("DeleteRole", "Role", FormMethod.Post, new { id = "myFrom" }))
+                                                {
+                                                    if(item.role_id != "4")
+                                                    {
+                                                         <input type="hidden" name="role_id" value="@item.role_id"/>
+                                                    <button type="submit"  class="btn btn-sm btn-icon btn-danger mb-2"><i data-feather="trash"></i></button>
+                                                     }else{
+                                                     
+                                                     }
+                                                   
+                                                }
+
+
+                                                <button class="btn btn-sm btn-icon btn-primary" data-toggle="modal" onclick="getListAction(@item.role_id)" data-target="#modal-@item.role_id"><i data-feather="edit"></i></button>
+                                            </td>
+                                            <td style="">@item.role_name</td>
+                                        </tr>
+                                          <div class="modal fade" id="modal-@item.role_id">
+                                               <div class="modal-dialog modal-lg" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                                <span class="sr-only">Close</span>
+                                                            </button>
+                                                            <h4 class="modal-title">Edit Data @item.role_name</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="row">
+                                                                <div class="col-md-12 mt-1" >
+                                                                   <div  id="@item.role_id">
+                                                                   
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                               <!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
+                                        }
+                                        <div id="addrole" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-xl" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title" id="gridModalLabel">Add role</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                       @using (Html.BeginForm("Addrole", "Role", FormMethod.Post, new { id = "myFrom" }))
+                                                       {
+                                                        <input type="hidden" name="role_id" id="random_id_string">
+                                                           <div class="form-group row">
+                                                               <label for="role" class="col-sm-2 form-control-label">Role Name</label>
+                                                               <div class="col-sm-10">
+                                                                   <input type="" class="form-control" id="role_name" name="role_name" placeholder="Role name">
+                                                               </div>
+                                                           </div>
+
+                                                           <div class="form-group row">
+                                                               <label class="col-sm-2">Permission</label>
+                                                               <div class="col-sm-10">
+                                                                 @foreach(var action in ViewBag.ListAction){
+                                                                   <label class="checkbox-inline">
+                                                                       <input type="checkbox" id="inlineCheckbox1" value="@action.permission_id" name="permission_@action.permission_id"> @action.permission_description
+                                                                   </label>
+                                                               }
+                                                                   
+                                                               </div>
+                                                           </div>
+                                                          
+                                                           <div class="form-group row">
+                                                               <div class="col-sm-offset-2 col-sm-10">
+                                                                   <button type="submit" class="btn btn-secondary">Save</button>
+                                                               </div>
+                                                           </div>
+                                                       }
+                                                    </div>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                     <div class="card">
+                        <div class="card-body">
+                            @if(TempData["message"]=="success-update-role-user"){
+                             <div class="alert alert-success" role="alert">
+                                <strong>Well done!</strong> successfully updated the user role. 
+                            </div>
+                            }
+                           
+                            <h6 class="card-title">Management Users</h6>
+                            <div class="table-responsive">
+                                <table class="table  table-bordered" id="table_user">
+                                    <thead>
+                                        <tr>
+                                             <th>Action</th>
+                                            <th>
+                                                <!-- Button trigger modal create departement-->
+                                                kpk
+                                            </th>
+                                            <th>Employee Name</th>
+                                            <th class="text-white bg-danger">Role Name</th>
+                                            <th>Department</th>
+                                            <th>Section</th>
+                                            <th>Job Title</th>
+                                           
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>

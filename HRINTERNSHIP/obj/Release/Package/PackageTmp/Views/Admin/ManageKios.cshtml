@@ -1,0 +1,653 @@
+﻿@model IEnumerable<HRIS_Employee.Models.kio>
+@{ ViewBag.Title = "ManageKios"; Layout = "~/Views/Shared/_Uniform.cshtml"; }
+    <div class="row">
+        <div class="card" style="">
+            <div class="card-header" style="background-color: #a11f1f; color:white;">
+                
+            </div>
+            <div class="card-body">
+                <div class="col-lg-12">
+                    <ul class="nav nav-tabs nav-tabs-line" id="lineTab" role="tablist" >
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-line-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+                                <p class="lead"><strong>Distribution</strong></p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact-line-tab" data-toggle="tab" href="#newhire" role="tab" aria-controls="contact" aria-selected="false">
+                                <p class="lead"><strong>New Hire</strong></p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact-line-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
+                                <p class="lead"><strong>ERT</strong></p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-line-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+                                <p class="lead"><strong>Report</strong></p>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content mt-3" id="lineTabContent">
+                        @* menu distribution *@
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-line-tab">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                        
+                                                @if (ViewBag.Message == "Data not found") {
+                                                <div class="alert alert-icon-danger" role="alert">
+                                                    <i data-feather="alert-circle"></i> Data Not Found
+                                                </div>
+                                                }
+                                               
+                                                    <form>
+                                                        <div class="row">
+                                                            <div class="col-md-2">
+                                                                <div class="input-group date datepicker dashboard-date mr-2 mb-2 mb-md-0 d-md-none d-xl-flex" id="dashboardDate">
+                                                                    <span class="input-group-addon bg-transparent"><i data-feather="calendar"
+                                                                class=" text-primary"></i></span>
+                                                                    <select name="Month" id="month_filter" class="form-control-sm">
+                                                            <option value="1">January</option>
+                                                            <option value="2">February</option>
+                                                            <option value="3">March</option>
+                                                            <option value="4">April</option>
+                                                            <option value="5">May</option>
+                                                            <option value="6">June</option>
+                                                            <option value="7">July</option>
+                                                            <option value="8">August</option>
+                                                            <option value="9">September</option>
+                                                            <option value="10">October</option>
+                                                            <option value="11">November</option>
+                                                            <option value="12">December</option>
+                                                        </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="btn-group-sm">
+                                                                    <button class="btn   " style="background-color: #a11f1f; color:white;" type="button" data-toggle="collapse" id="export_to_excel_kioss">
+                                                             
+                                                            Download Report
+                                                        </button>
+
+                                                                    <button type="submit" class="btn " style="background-color: #a11f1f; color:white;">
+                                                        
+                                                            Show
+                                                        </button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                            </div>
+                                                      
+                                                    </form>
+                                               
+                                            </div>
+                                            <br>
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered" id="table-kios">
+                                                    <thead>
+                                                        <tr>
+                                                            <th rowspan="2" class="" style="background-color: #e30b0b;color: white">status</th>
+                                                            <th colspan="3" class="text-center " style="background-color: #e30b0b;color: white">Employee Information</th>
+                                                            <th colspan="7" class="text-center" style="background-color: #e30b0b;color: white">Uniform Information</th>
+                                                            <th colspan="2" class="text-center" style="background-color: #e30b0b;color: white">Date Information</th>
+
+                                                            <th colspan="3" class="text-center" style="background-color: #e30b0b;color: white">Work Information</th>
+                                                            <th rowspan="2" class="text-center" style="background-color: #e30b0b;color: white">Notes</th>
+                                                        </tr>
+                                                        <tr style="background-color: #e30b0b;color: white">
+                                                            <th class="text-white">
+                                                                KPK
+                                                            </th>
+
+                                                            <th class="text-white">
+                                                                Employee Name
+                                                            </th>
+                                                            <th class="text-white">
+                                                                DOB
+                                                            </th>
+
+
+
+                                                            <th class="text-white" style="background-color: #a11f1f;">
+                                                                Uniforms  Size
+                                                            </th>
+                                                             <th class="text-white">
+                                                                Lengan Pendek
+                                                            </th>
+                                                            <th class="text-white">
+                                                                Lengan Panjang
+                                                            </th>
+                                                           
+                                                            <th class="text-white" style="background-color: #a11f1f;">
+                                                                Pants Size
+                                                            </th>
+                                                            <th class="text-white">
+                                                                Jeans
+                                                            </th>
+
+                                                            <th class="text-white">
+                                                                Non Jeans
+                                                            </th>
+
+                                                            <th class="text-white">
+                                                                Collar Color
+                                                            </th>
+                                                            <th class="text-white">Year</th>
+
+                                                            <th class="text-white">
+                                                                Date Registered
+                                                            </th>
+
+                                                            <th class="text-white">
+                                                                Department Code
+                                                            </th>
+                                                            <th class="text-white">
+                                                                Section Code
+                                                            </th>
+                                                            <th class="text-white">
+                                                                Job Code
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @if (Model != null) { foreach (var item in Model) { // i have an element that contains all data
+                                                        <tr id="TR-ManageKios-@item.EMEMP">
+                                                            <td class="">
+                                                                <div class="btn btn-group-md">
+                                                                    <button type="button" class="btn  text-white" style="background-color: #a11f1f;" data-toggle="modal" data-target="#exampleModal-@item.EMEMP">
+                                                                Edit data
+                                                                
+                                                                </button>
+                                                                    <button onclick="ProcessTransactionInventory('@item.EMEMP')" type="button" class="btn text-white " style="background-color: #e30b0b;">
+                                                                Confirm
+                                                                
+                                                                </button>
+                                                                </div>
+                                                                <input type="hidden" value="@item.TRANSACTION_ID" id="transaction_id-@item.EMEMP">
+                                                            </td>
+
+                                                            <td>
+                                                                @Html.DisplayFor(modelItem => item.KPK)
+                                                            </td>
+                                                            <td>
+                                                                @Html.DisplayFor(modelItem => item.EMPLOYEE_NAME)
+                                                            </td>
+                                                            <td>
+
+                                                                @if(item.EMBIRT.ToString().Length == 21){
+                                                                if (item.EMBIRT.Substring(1, 2) != "/")
+                                                                {
+                                                                <p> @item.EMBIRT.Substring(0,2) </p>
+                                                                }else{
+                                                                  <p> @item.EMBIRT.Substring(0,1) </p>
+                                                                }
+                                                                }else if (item.EMBIRT.ToString().Length == 20){
+                                                                    <p> @item.EMBIRT.Substring(0,1) </p>
+                                                                }else if(item.EMBIRT.ToString().Length == 22){
+                                                                <p> @item.EMBIRT.Substring(0,2)</p>
+                                                                }
+                                                            </td>
+
+
+                                                            <td id="ukuran_baju_Inventory-@item.EMEMP">@Html.DisplayFor(modelItem => item.CSHIRT_SIZE)</td>
+                                                        
+                                                                @if(item.Month == "7"){
+                                                                    <td id="lengan_pendek_Inventory-@item.EMEMP">@Html.DisplayFor(modelItem => item.NLONGSHIRT)</td>
+                                                            
+                                                               <td id="lengan_panjang_Inventory-@item.EMEMP">@Html.DisplayFor(modelItem => item.NSHORTSHRIT)</td>
+                                                                }else{
+                                                                <td id="lengan_pendek_Inventory-@item.EMEMP">@Html.DisplayFor(modelItem => item.NSHORTSHRIT)</td>
+                                                            
+                                                               <td id="lengan_panjang_Inventory-@item.EMEMP">@Html.DisplayFor(modelItem => item.NLONGSHIRT)</td>    
+                                                                }
+                                                                
+                                                         
+                                                         
+                                                            
+                                                             <td id="ukuran_celana_Inventory-@item.EMEMP">@Html.DisplayFor(modelItem => item.CPANT_SIZE)</td>
+                                                            <td id="jeans_Inventory-@item.EMEMP">@Html.DisplayFor(modelItem => item.CPANTS_TYPE)</td>
+                                                            <td id="nonjeans_Inventory-@item.EMEMP">@Html.DisplayFor(modelItem => item.NPANTS)</td>
+
+                                                            @if(item.Exception != null && item.EMDEPT == "II"){
+                                                            <td id="dress_name-@item.EMEMP">Blue Mekanik</td>
+                                                            }else if(item.Dress_name == "BLUE"){
+                                                            <td id="dress_name-@item.EMEMP">Blue Mekanik</td>
+                                                            }else if(item.Dress_name == "LIGHT_BLUE"){
+                                                            <td id="dress_name-@item.EMEMP">Light Blue</td>
+                                                            }else{
+                                                            <td id="dress_name-@item.EMEMP">@item.Dress_name</td>
+                                                            }
+                                                            <td id="TRANSACTION_DATES">@Html.DisplayFor(modelItem => item.YEAR)</td>
+                                                            <td>@Html.DisplayFor(modelItem => item.TRANSACTION_DATE)</td>
+                                                            <td id="department-@item.EMEMP">@item.EMDEPT</td>
+                                                            <td>@item.EMLOC</td>
+                                                            <td>@item.EMJOBD</td>
+
+                                                            @if(item.Exception != null && item.EMDEPT == "II"){
+                                                            <td id="exception-@item.EMEMP" style="background-color: #182f4d;color: white">Blue Mekanik</td>
+                                                            }else{
+                                                            <td id="exception-@item.EMEMP"></td>
+                                                            }
+
+
+
+                                                        </tr>
+
+
+                                                        <div class="modal fade" id="exampleModal-@item.EMEMP" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">Edit KPK : @item.EMEMP Nama : @item.EMPLOYEE_NAME </h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="card">
+                                                                            <div class="card-body">
+                                                                                <div class="form-group">
+                                                                                    <label for="" class="">Ukuran Seragam</label>
+                                                                                    <select name="" id="ukuran_baju-@item.EMEMP" class="form-control">
+                                                                                        <option disabled selected>Ukuran Baju</option>
+                                                                                        <option value="S">S</option>
+                                                                                        <option value="M">M</option>
+                                                                                        <option value="L">L</option>
+                                                                                        <option value="XL">XL</option>
+                                                                                        <option value="XXL">XXL</option>
+                                                                                        <option value="3XL">3XL</option>
+                                                                                        <option value="4XL">4XL</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    @if(item.Month == "7"){
+                                                                                        <label for="" class="">Lengan Pendek</label>
+                                                                                    }else{
+                                                                                        <label for="" class="">Lengan Panjang</label>
+                                                                                    }
+                                                                                    <label for="" class="">Lengan Panjang</label>
+                                                                                    <select name="" id="lengan_panjang-@item.EMEMP" class="form-control" onclick="disableOtherOption('@item.EMEMP')">
+                                                                                    <option disabled selected>Lengan panjang</option>
+                                                                                    <option value="1">1</option>
+                                                                                    <option value="2">2</option>
+                                                                                </select>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    @if(item.Month == "7"){
+                                                                                        <label for="" class="">Lengan Panjang</label>
+                                                                                    }else{
+                                                                                        <label for="" class="">Lengan Pendek</label>
+                                                                                    }
+                                                                                    <select name="" id="lengan_pendek-@item.EMEMP" class="form-control" onclick="disableOtherOption('@item.EMEMP')">
+                                                                                    <option disabled selected>Lengan pendek</option>
+                                                                                    <option value="1">1</option>
+                                                                                    <option value="2">2</option>
+                                                                                </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="card mt-2">
+                                                                            <div class="card-body">
+                                                                                <div class="form-group">
+                                                                                    <label for="" class="">Ukuran Jeans/non Jeans</label>
+                                                                                    <select name="" id="ukuran_jeans-@item.EMEMP" class="form-control">
+                                                                                    <option disabled selected>Type Celenan</option>
+                                                                                    <option value="jeans">jeans</option>
+                                                                                    <option value="nonjeans">non jeans</option>
+                                                                                </select>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label for="" class="" class="form-control">Ukuran</label>
+                                                                                    <select name="" id="Ukuranjeans-@item.EMEMP" onclick="disableOtherOption('@item.EMEMP')">
+                                                                                    <option disabled selected>Ukuran Jeans</option>
+                                                                                    <option value="26">26</option>
+                                                                                    <option value="27">27</option>
+                                                                                    <option value="28">28</option>
+                                                                                    <option value="29">29</option>
+                                                                                    <option value="30">30</option>
+                                                                                    <option value="31">31</option>
+                                                                                    <option value="32">32</option>
+                                                                                    <option value="33">33</option>
+                                                                                    <option value="34">34</option>
+                                                                                    <option value="35">35</option>
+                                                                                    <option value="36">36</option>
+                                                                                    <option value="37">37</option>
+                                                                                    <option value="38">38</option>
+                                                                                    <option value="39">39</option>
+                                                                                    <option value="40">40</option>
+                                                                                    <option value="41">41</option>
+                                                                                    <option value="42">42</option>
+                                                                                </select>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label for="" class="" class="form-control">Jeans</label>
+                                                                                    <select name="" id="jeans-@item.EMEMP" onclick="disableOtherOption('@item.EMEMP')">
+                                                                                    <option disabled selected>Jeans</option>
+                                                                                    <option value="1">1</option>
+                                                                                    <option value="2">2</option>
+                                                                                </select>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label for="" class="" class="form-control">Non Jeans</label>
+                                                                                    <select name="" id="nonjeans-@item.EMEMP" onclick="disableOtherOption('@item.EMEMP')">
+                                                                                    <option disabled selected>Non Jeans</option>
+                                                                                    <option value="1">1</option>
+                                                                                    <option value="2">2</option>
+                                                                                </select>
+                                                                                </div>
+
+                                                                                <input class="form-control" type="hidden" name="" id="getId-@item.EMEMP" value="@item.TRANSACTION_ID">
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                        <button type="button" class="btn btn-danger" onclick="resetOption('@item.EMEMP')">Reset</button>
+                                                                        <button type="button" class="btn btn-primary" id="btn-update-@item.EMEMP" onclick="trasactionUpdateOption('@item.EMEMP')">Save changes</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        } } else {
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        @* end *@
+                        @* menu new hire *@
+                        <div class="tab-pane fade" id="newhire" role="tabpanel" aria-labelledby="contact-line-tab">
+                            <div class="card">
+                                <div class="card-body">
+                                    <a href="~/NewHire/New Hire.xlsx" download="" class="btn btn-success">Download Report New Hire @TempData["FAILED-UPLOAD"]</a>
+                                    <hr>
+                                    <form enctype="multipart/form-data" action="/Admin/UploadNewHire" method="post">
+                                        <div class="form-group">
+                                            <label for="">upload new hire</label>
+                                            <input type="file" id="postedFile" class="form-control" name="postedFile">
+                                        </div>
+                                        <button class="btn btn-danger" type="submit">upload</button>
+                                    </form>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-lg-5">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="card-title">
+                                                        <center>
+                                                            <div class="btn-group">
+                                                                <Button class="btn btn-danger text-right mr-1" onclick="remove_data_new_hire()">Reset data</Button>
+                                                                <Button class="btn btn-primary text-right" type="button" id="process_data_new_hire">Process</Button>
+                                                            </div>
+                                                        </center>
+                                                    </div>
+                                                    <table class="table table-bordered text-center" id="table-new-hire">
+                                                        <thead>
+                                                            <tr>
+                                                                <th colspan="4">Work Information</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>KPK</th>
+                                                                <th>SIZE</th>
+                                                                <th>Color</th>
+                                                                <th>Qty</th>
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="card-title">
+                                                        Report New Hire Last update @DateTime.Now;
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <table class="table table-bordered text-center" id="table-report-new-hire">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>KPK</th>
+                                                                    <th>Name</th>
+                                                                    <th>Department</th>
+                                                                    <th>Section</th>
+                                                                    <th>Collar</th>
+                                                                    <th>Size</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @* report *@
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-line-tab">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="card-title">
+                                                Final Report Uniform Management System
+                                                <hr> Report @DateTime.Now
+                                                <button class="btn btn-success" id="downloadReportUniform">download report</button>
+                                                <hr>
+                                                <div class="">
+                                                    <table class="table table-bordered" id="tableReportUniform">
+                                                        <thead class=" text-center">
+                                                            <tr>
+                                                                <th colspan="4">Personal Information</th>
+                                                                <th colspan="9">Transaction Information</th>
+                                                                <th colspan="2">Work Information</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Plant</th>
+                                                                <th>KPK</th>
+                                                                <th>Employee NAME</th>
+                                                                <th>DOB</th>
+
+                                                                <th class="" style="background-color: #a11f1f;color:white">
+                                                                    Size Baju
+                                                                </th>
+                                                                <th class="">
+                                                                    Lengan Panjang
+                                                                </th>
+                                                                <th class="">
+                                                                    Lengan Pendek
+                                                                </th>
+                                                                <th class="" style="background-color: #a11f1f; color:white">
+                                                                    Size Celana
+                                                                </th>
+                                                                <th class="">
+                                                                    Jeans
+                                                                </th>
+
+                                                                <th class="">
+                                                                    Non Jeans
+                                                                </th>
+
+                                                                <th class="">
+                                                                    Dress Code
+                                                                </th>
+                                                                <th>
+                                                                    Registered at
+                                                                </th>
+                                                                <th class="">
+                                                                    Claimed date
+                                                                </th>
+
+
+                                                                <th>Department</th>
+                                                                <th>Section</th>
+
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @* end report *@
+                        @* ERT *@
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-line-tab">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-5">
+                                            <div class="card-title">
+                                                
+                                                <button class="btn btn-success" id="downloadReportERT">download report member ERT</button>
+                                                <hr>
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered" id="tableERT">
+                                                        <thead class=" text-center">
+                                                            <tr>
+                                                                <th>Action List</th>
+                                                                <th>KPK</th>
+                                                                <th>Employee Name</th>
+                                                                <th>DOB</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <div class="card-title">
+                                                Form set ERT Member
+                                                <hr>
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="input-group">
+                                                            <select class="form-select form-control form-ert" id="nameEMployee" name="nameEMployee" style="font-size: 12px;" placeholder="type kpk or name to search..." data-url="DetailShow" aria-label="Default select example">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card mt-1">
+                                                    <div class="card-body">
+                                                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                                            <strong id="message_ert"></strong>
+                                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @* end ERT *@
+                    </div>
+                </div>
+                @* Inventory *@
+                <div class="col-lg-12 mt-2">
+                    <div class="card">
+                         <div class="card-header" style="background-color: #197331; color:white;">
+                
+                             </div>
+                        <div class="card-body">
+                            <h3 class="card-text">Inventory</h3>
+                            <p class="card-text">Realtime update</p>
+                            <div class="btn-group btn-sm"> <button class="btn mr-2" style="background-color: #267537;color: white">add new item</button><button class="btn mr-2" style="background-color: #2a8542;color: white" id="btn_report_uniform">download report</button></div>
+                            <hr>
+                            <div class="btn-group btn-group-lg">
+                                <select name="" id="type_uniform" class="form-control mr-2 text-dark" onclick="changeColor()">
+                                            <option value="" selected disabled>Pilih type</option>
+                                                <option value="Short Sleeve">Short Sleeve</option>
+                                                <option value="Long Sleeve">Long Sleeve</option>
+                                                <option value="Jeans">Jeans</option>
+                                                <option value="Trousers">Trousers</option>
+                                        </select>
+                                <select name="" id="type_color" class="form-control mr-2 text-dark" onclick="changeUkuran()">
+                                            <option value="" selected disabled>Pilih collar</option>
+                                        </select>
+                            </div>
+                            <table class="table table-bordered" id="table-stock">
+                                <thead class="">
+                                    <tr>
+                                        <td rowspan="2" class="" style="background-color:#197331;color: white">action</td>
+                                        <th colspan="4" class="text-center"  style="background-color:#197331;color: white">summary</th>
+                                        <th colspan="2" class="text-center" style="background-color:#197331;color: white">result</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="background-color:#36d160;color: white">size</th>
+                                        <th style="background-color:#197331;color: white">type</th>
+                                        <th style="background-color:#197331;color: white">colar</th>
+                                        <th style="background-color:#197331;color: white">Description</th>
+                                        <th style="background-color:#36d160;color: white">stock</th>
+                                        <th style="background-color:#197331;color: white">last update</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>

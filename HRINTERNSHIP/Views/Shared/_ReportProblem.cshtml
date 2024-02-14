@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="_token" content="r0jm9Q0QbgITp1DcHcjKFqH5SWUojoCavOOjQpPs">
+
+    <link rel="shortcut icon" href="~/Content/images/Mattel_logo.png">
+
+    <link href="~/Content/fonts/feather-font/css/iconfont.css" rel="stylesheet" />
+    <link href="~/Content/plugins/flag-icon-css/css/flag-icon.min.css" rel="stylesheet" />
+    <link href="~/Content/plugins/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" />
+    <link href="~/Content/plugins/dropzone/dropzone.min.css" rel="stylesheet" />
+    <link href="~/Content/plugins/jquery-steps/jquery.steps.css" rel="stylesheet" />
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="https://datatables.net/release-datatables/extensions/FixedColumns/css/fixedColumns.bootstrap4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/datetime/1.1.0/css/dataTables.dateTime.min.css">
+
+    <style>
+        .red {
+            color: #ff2a00
+        }
+
+        .orange {
+            color: #ff5900
+        }
+
+        .yellow {
+            color: #ffee00;
+        }
+
+        .purple {
+            color: #e3308f;
+        }
+
+        .high_purple {
+            color: #6200d9;
+        }
+
+        .blue_sky {
+            color: #0089d9;
+        }
+    </style>
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between ">
+        <p class="text-muted text-center text-md-left ">Copyright © 2021 <a href=" " target="_blank ">HRD</a>. All rights reserved</p>
+        <p class="text-muted text-center text-md-left mb-0 d-none d-md-block ">Handcrafted With <i class="mb-1 text-primary ml-1 icon-small "></i></p>
+    </footer>
+
+    <!-- base js -->
+    <script src="~/Scripts/js/app.js "></script>
+    <script src="~/Content/plugins/feather-icons/feather.min.js "></script>
+    <script src="~/Content/plugins/perfect-scrollbar/perfect-scrollbar.min.js "></script>
+    <script src="~/Content/plugins/dropzone/dropzone.min.js"></script>
+    <script src="~/Scripts/js/template.js "></script>
+    <script src="~/Scripts/js/dropzone.js"></script>
+    <!-- plugin js -->
+    <script src="~/Content/plugins/jquery-steps/jquery.steps.min.js"></script>
+    <!-- end plugin js -->
+    <script src="~/Content/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+    <script src="~/Scripts/js/wizard.js"></script>
+
+    <!-- plugin js -->
+    <script src="~/Content/plugins/chartjs/Chart.min.js"></script>
+    <!-- end plugin js -->
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
+    <script src="https://datatables.net/release-datatables/extensions/FixedColumns/js/dataTables.fixedColumns.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pluralize/2.0.0/pluralize.min.js" integrity="sha512-sPu0zrlB4HVnsMxnN5vacxWvlA5pxlpVjgiRW3zF4GCgLjiSsTea/Ox1Deh00G447eG7WCu+CYDnGWo/WlGmDg==" crossorigin="anonymous"></script>
+    @* <script src="/Scripts/own/preloader.js"></script> *@
+
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script src="https://cdn.datatables.net/searchbuilder/1.1.0/js/dataTables.searchBuilder.min.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.1.0/js/dataTables.dateTime.min.js"></script>
+    <!-- end base js -->
+</body>
+</html>

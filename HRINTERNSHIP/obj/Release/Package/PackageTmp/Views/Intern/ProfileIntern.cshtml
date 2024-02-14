@@ -1,0 +1,165 @@
+﻿
+@{
+    ViewBag.Title = "ProfileIntern";
+    Layout = "~/Views/Shared/_DashboardIntern.cshtml";
+}
+
+<div class="profile-page tx-13">
+    <div class="row">
+        <div class="col-12 grid-margin">
+            <div class="profile-header">
+                <div class="cover">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card-body">
+                                <div class="cover-body d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <img class="profile-pic" src="~/Content/images/Employee/@(Session["username"].ToString()).jpg" alt="profile" style="height: 100px; width: 100px;">
+                                        <span class="profile-name">@Session["user"]</span>
+                                    </div>
+                                    <div class="d-none d-md-block">
+                                        <button class="btn btn-sm btn-primary btn-icon-text btn-edit-profile">
+                                            <i data-feather="edit" class="btn-icon-prepend"></i> Edit profile
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                        <div class="col-12">
+                            <div class="header-links">
+                                <ul class="nav nav-tabs nav-tabs-line" id="lineTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="profile-line-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Personal Information</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content mt-3" id="lineTabContent">
+        <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-line-tab">
+            <div class="row profile-body">
+                <!-- middle wrapper start -->
+                <div class="col-md-8 col-xl-9 middle-wrapper">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title">Timeline</h6>
+                                    <div id="content">
+                                        <ul class="timeline">
+                                            @foreach (var item in ViewBag.Timeline)
+                                            {
+                                                <li class="event" data-date="@Convert.ToDateTime(item.Entry_Date_Time).ToString("hh:mm tt") - @Convert.ToDateTime(item.Entry_Out).ToString("hh:mm tt")">
+                                                    <h3>@Convert.ToDateTime(item.test).ToString("dddd, MM/dd/yyyy")</h3>
+                                                    <p>@item.Activity</p>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- middle wrapper end -->
+                <!-- right wrapper start -->
+                <div class="d-none d-xl-block col-xl-3 right-wrapper">
+                    <div class="row">
+                        <div class="col-md-12 grid-margin">
+                            <div class="card rounded">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <h6 class="card-title mb-0">About</h6>
+                                        <div class="dropdown">
+                                            <button class="btn p-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="edit-2" class="icon-sm mr-2"></i> <span class="">Edit</span></a>
+                                                <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="git-branch" class="icon-sm mr-2"></i> <span class="">Update</span></a>
+                                                <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="eye" class="icon-sm mr-2"></i> <span class="">View all</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>Hi! I'm Amiah the Senior UI Designer at NobleUI. We hope you enjoy the design and quality of Social.</p>
+                                    <div class="mt-3">
+                                        <label class="tx-11 font-weight-bold mb-0 text-uppercase">Joined:</label>
+                                        <p class="text-muted">November 15, 2015</p>
+                                    </div>
+                                    <div class="mt-3">
+                                        <label class="tx-11 font-weight-bold mb-0 text-uppercase">Lives:</label>
+                                        <p class="text-muted">New York, USA</p>
+                                    </div>
+                                    <div class="mt-3">
+                                        <label class="tx-11 font-weight-bold mb-0 text-uppercase">Email:</label>
+                                        <p class="text-muted">me@nobleui.com</p>
+                                    </div>
+                                    <div class="mt-3">
+                                        <label class="tx-11 font-weight-bold mb-0 text-uppercase">Website:</label>
+                                        <p class="text-muted">www.nobleui.com</p>
+                                    </div>
+                                    <div class="mt-3 d-flex social-links">
+                                        <a href="javascript:;" class="btn d-flex align-items-center justify-content-center border mr-2 btn-icon github">
+                                            <i data-feather="github" data-toggle="tooltip" title="github.com/nobleui"></i>
+                                        </a>
+                                        <a href="javascript:;" class="btn d-flex align-items-center justify-content-center border mr-2 btn-icon twitter">
+                                            <i data-feather="twitter" data-toggle="tooltip" title="twitter.com/nobleui"></i>
+                                        </a>
+                                        <a href="javascript:;" class="btn d-flex align-items-center justify-content-center border mr-2 btn-icon instagram">
+                                            <i data-feather="instagram" data-toggle="tooltip" title="instagram.com/nobleui"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 grid-margin">
+                            <div class="card rounded">
+                                <div class="card-body">
+                                    <h6 class="card-title">Report</h6>
+                                    <div class="latest-photos">
+                                        <div class="row">
+                                            <div class="col-md-12 col-lg-12 col-xl-12">
+                                                <!--begin::Card-->
+                                                <div class="card h-100">
+                                                    <!--begin::Card body-->
+                                                    <div class="card-body d-flex justify-content-center text-center flex-column p-8">
+                                                        <!--begin::Name-->
+                                                        <a href="/metronic8/demo1/../demo1/apps/file-manager/files.html" class="text-gray-800 text-hover-primary d-flex flex-column">
+                                                            <!--begin::Image-->
+                                                            <div class="symbol symbol-60px mb-5">
+                                                                <img src="https://preview.keenthemes.com/metronic8/demo1/assets/media/svg/files/pdf.svg" alt="" />
+                                                            </div>
+                                                            <!--end::Image-->
+                                                            <!--begin::Title-->
+                                                            <div class="fs-5 fw-bolder mb-2">Project Reqs..</div>
+                                                            <!--end::Title-->
+                                                        </a>
+                                                        <!--end::Name-->
+                                                        <!--begin::Description-->
+                                                        <div class="fs-7 fw-bold text-gray-400">3 days ago</div>
+                                                        <!--end::Description-->
+                                                    </div>
+                                                    <!--end::Card body-->
+                                                </div>
+                                                <!--end::Card-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- right wrapper end -->
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="~/Content/Images/Mattel_logo.png">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/mycss/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript">
+        function printChecked() {
+            const heading = document.querySelector('table > thead > tr');
+            const items = document.querySelectorAll('table > tbody > tr');
+            let selectedRows = 0;
+
+            for (let i = 0; i < items.length; i++) {
+                const tr = items[i];
+                const input = tr.querySelector('input[type=checkbox]')
+                const isChecked = input.checked
+
+                if (isChecked) {
+                    selectedRows += 1;
+                    heading.classList.remove('no-print');
+                    tr.classList.remove('no-print');
+                } else {
+                    tr.classList.add('no-print');
+                }
+
+                if (!selectedRows) {
+                    heading.classList.add('no-print');
+                }
+            }
+            window.print();
+        }
+        function selectAll() {
+            $(':checkbox').each(function () {
+                this.checked = true;
+            });
+        }
+        function resetAll() {
+            $(':checkbox').each(function () {
+                this.checked = false;
+            });
+        }
+    </script>
+    <style>
+        body {
+            zoom: 0.75;
+        }
+
+        .perfect-scrollbar-example {
+            position: relative;
+            max-height: 250px;
+        }
+
+        .red {
+            color: #ff2a00
+        }
+
+        .orange {
+            color: #ff5900
+        }
+
+        .yellow {
+            color: #ffee00;
+        }
+
+        .purple {
+            color: #e3308f;
+        }
+
+        .high_purple {
+            color: #6200d9;
+        }
+
+        .blue_sky {
+            color: #0089d9;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        /*left right modal*/
+
+
+        .images ul li img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .images ul li {
+            display: inline-block;
+        }
+
+
+        .fade_in {
+            opacity: 0;
+        }
+
+        ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color: #909;
+        }
+
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: #909;
+            opacity: 1;
+        }
+
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: #909;
+            opacity: 1;
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #909;
+        }
+
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: #909;
+        }
+
+        ::placeholder { /* Most modern browsers support this now. */
+            color: #909;
+        }
+
+
+
+        .overlay {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            background: rgba(255,255,255,0.8) url("../Content/images/loader21.gif") center no-repeat;
+        }
+
+        /* Turn off scrollbar when body element has the loading class */
+        body.loading {
+            overflow: hidden;
+        }
+            /* Make spinner image visible when body element has the loading class Table-leave-balanced */
+            body.loading .overlay {
+                display: block;
+            }
+
+        .hide-message {
+            display: none;
+        }
+
+        .btn-red-mattel {
+            background-color: #a11f1f;
+            color: white;
+        }
+
+        .btn-cyan {
+            background-color: #17A2B8;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>*@
+
+
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>
+

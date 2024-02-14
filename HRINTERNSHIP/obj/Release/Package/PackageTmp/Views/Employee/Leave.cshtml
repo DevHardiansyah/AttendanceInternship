@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "Leave";
+    Layout = "~/Views/Shared/_dashboard.cshtml";
+}
+                <div class="row inbox-wrapper">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-2 email-aside border-lg-right">
+                                        <div class="aside-content">
+                                            <div class="aside-header">
+                                                <button class="navbar-toggle" data-target=".aside-nav" data-toggle="collapse" type="button">
+                                                    <span class="icon"><i data-feather="chevron-down"></i></span>
+                                                    </button>
+                                                <span class="title text-muted font-weight-bold">Leave Request</span>
+                                                <p class="text-muted">HR-Service@mattel.com</p>
+                                            </div>
+                                            
+                                            <div class="aside-nav collapse">
+                                                <ul class="nav">
+                                                    <li><a href="@Url.Action("HistoryLeave", "Employee")"><span class="icon"><i data-feather="inbox"></i></span>History</li></a>
+                                                    <li class="active"><a href="#"><span class="icon"><i data-feather="mail"></i></span>Sent Mail</a></li>
+                                                    
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9 email-content">
+                                        
+                                        <div class="email-head">
+                                            <div class="email-head-title d-flex align-items-center">
+                                                <span data-feather="edit" class="icon-md mr-2"></span> Personal Action 
+                                            </div>
+                                        </div>
+                                        <div class="email-compose-fields">
+                                            <div class="to cc">
+                                                <div class="form-group row pt-1 pb-3">
+                                                    <label class="col-md-1 control-label">Type</label>
+                                                    <div class="col-md-11">
+                                                        <select class="form-control" id="leave__type" onchange="hide_form_upload()">
+                                                            <option value="annual-leave">Annual Leave</option>
+                                                            <option value="etc..">etc..</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="subject mb-2 mt-1">
+                                                <div class="form-group row py-0">
+                                                    <label class="col-md-1 control-label">Start date</label>
+                                                    <div class="col-md-11">
+                                                        <input id="disabled-days" type="datetime-local" class="datepicker-here form-control" data-language='en' data-multiple-dates-separator=", " data-position='top left' />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="subject mb-2 mt-1">
+                                                <div class="form-group row py-0">
+                                                    <label class="col-md-1 control-label">End date</label>
+                                                    <div class="col-md-11">
+                                                        <input id="disabled-days"  type="datetime-local"class="datepicker-here form-control" data-language='en' data-multiple-dates-separator=", " data-position='top left' />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="to cc" id="file__upload">
+                                                <div class="form-group">
+                                                    <label>Document (Required)</label>
+                                                    <input type="file" class="form-control-file" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <div class="email editor">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="control-label sr-only" for="simpleMdeEditor">Descriptions </label>
+                                                    <textarea class="form-control" rows="5" placeholder="Expalain Here.."></textarea>
+                                                </div>
+                                            </div>
+                                        
+                                        </div>
+                                        <div class="email editor">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="control-label sr-only" for="simpleMdeEditor">Descriptions </label>
+                                                    <textarea class="form-control" rows="5" placeholder="Expalain Here.."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="email action-send">
+                                                <div class="col-md-12">
+                                                    <div class="form-group mb-0">
+                                                        <button class="btn btn-primary btn-space" type="submit"><i class="icon s7-mail"></i> Send</button>
+                                                        <button class="btn btn-secondary btn-space" type="button"><i class="icon s7-close"></i> Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
